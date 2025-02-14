@@ -1,4 +1,5 @@
 import React from "react";
+import Slider from "react-slick";
 import styles from "../../assets/styles/SignUp.module.css";
 
 const SignUp = () => {
@@ -33,13 +34,11 @@ const SignUp = () => {
 <div className={styles.row}>
 
     <div className={styles.lastNameContainer}>
-        <label className={styles.label}>الإسم الأخير</label>
         <input type="text" placeholder="الإسم الأخير" className={styles.lastNameInput} />
     </div>
 
 
     <div className={styles.firstNameContainer}>
-        <label className={styles.label}>الإسم الأول</label>
         <input type="text" placeholder="الإسم الأول" className={styles.firstNameInput} />
     </div>
 </div>
@@ -47,13 +46,11 @@ const SignUp = () => {
 
 
           <div className={styles.inputContainer}>
-            <label className={styles.label}>البريد الإلكتروني</label>
             <input type="email" placeholder="البريد الإلكتروني" className={styles.inputField} />
           </div>
 
 
           <div className={styles.inputContainer}>
-            <label className={styles.label}>كلمة السر</label>
             <input type="password" placeholder="كلمة السر" className={styles.inputField} />
           </div>
 

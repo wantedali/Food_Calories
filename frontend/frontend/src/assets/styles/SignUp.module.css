@@ -25,7 +25,7 @@ body, html {
 .leftSection {
     width: 35%;
     height: 90%;
-    background-image: url('../images/coffe.jpg'); 
+    background-image: url('../../../public/images/coffe.jpg'); 
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -70,7 +70,7 @@ body, html {
     text-decoration: underline;
 }
 
-/* Form */
+
 .form {
     width: 100%;
     max-width: 400px;
@@ -79,8 +79,6 @@ body, html {
     gap: 25px;
 }
 
-/* First Name & Last Name */
-/* First Name & Last Name Row */
 .row {
     display: flex;
     justify-content: space-between;
@@ -106,32 +104,6 @@ body, html {
 }
 
 
-.firstNameInput {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #d1b57f;
-    background-color: #283347;
-    color: white;
-    font-size: 16px;
-    text-align: right; 
-    direction: rtl; 
-}
-
-
-.lastNameInput {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #d1b57f;
-    background-color: #283347;
-    color: white;
-    font-size: 16px;
-    text-align: right;
-    direction: ltr; 
-}
-
-
 .firstNameContainer .label {
     text-align: right; 
     direction: rtl; 
@@ -150,15 +122,21 @@ body, html {
 }
 
 
-.smallInput, .inputField {
+.smallInput, .inputField, .firstNameInput, .lastNameInput {
     width: 100%;
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid #d1b57f;
+    border: none; 
     background-color: #283347;
     color: white;
     font-size: 16px;
     text-align: right;
+    transition: border 0.3s ease-in-out;
+}
+
+.smallInput:focus, .inputField:focus, .firstNameInput:focus, .lastNameInput:focus {
+    border: 1px solid #d1b57f; 
+    outline: none; 
 }
 
 .inputField {
@@ -170,29 +148,35 @@ body, html {
 }
 
 
+
 .checkboxContainer {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: flex-start;
-    margin-top: 15px;
-    margin-left: 120px;
+display: flex;
+align-items: center;
+justify-content: flex-end; 
+gap: 10px;
+margin-top: 15px;
+width: 100%;
+padding-right: 10px;
 }
 
+
 .checkbox {
-    width: 18px;
-    height: 18px;
-    accent-color: #d1b57f;
+width: 18px;
+height: 18px;
+accent-color: #d1b57f;
+margin-right: -176px;
 }
 
 .shroot {
-    font-size: 14px;
-    color: #d1b57f;
+font-size: 14px;
+color: #d1b57f;
+text-align: right;
+white-space: nowrap;
 }
 
 /* Submit Button */
 .submitButton {
-    width: 100%;
+    width: 109%;
     padding: 18px;
     background: linear-gradient(90deg, #e5c07b, #cfaf5d);
     border: none;
