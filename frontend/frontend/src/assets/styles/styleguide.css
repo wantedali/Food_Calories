@@ -1,0 +1,14 @@
+:root {
+    --h1-main-page-titles-font-family: "Quicksand", Helvetica;
+    --h1-main-page-titles-font-size: 48px;
+    --h1-main-page-titles-font-style: normal;
+    --h1-main-page-titles-font-weight: 700;
+    --h1-main-page-titles-letter-spacing: 0px;
+    --h1-main-page-titles-line-height: normal;
+    --paragraphs-descriptions-font-family: "Quicksand", Helvetica;
+    --paragraphs-descriptions-font-size: 18px;
+    --paragraphs-descriptions-font-style: normal;
+    --paragraphs-descriptions-font-weight: 400;
+    --paragraphs-descriptions-letter-spacing: 0px;
+    --paragraphs-descriptions-line-height: normal;
+}

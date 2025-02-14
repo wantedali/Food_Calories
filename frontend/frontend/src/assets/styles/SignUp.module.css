@@ -1,0 +1,240 @@
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
+/* Full Page Navy Blue Background with Pattern */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(27, 36, 48, 0.85), rgba(27, 36, 48, 0.85)), 
+                url('../images/Pattern.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Tajawal", sans-serif;
+}
+
+/* Main Layout */
+.signUp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Change to space-evenly */
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    padding: 0 5%;
+    box-sizing: border-box; /* Prevents unexpected width issues */
+}
+/* Left Side - Floating Coffee Image */
+.leftSection {
+    width: 35%;
+    height: 90%;
+    background-image: url('../images/coffe.jpg'); /* Make sure the path is correct */
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px; /* Smooth rounded edges */
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5); /* Floating effect */
+    position: absolute;
+    left: 9%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Right Side - Form Section */
+.rightSection {
+    width: 50%;
+    text-align: right;
+    margin-left: 850px;
+    margin-top: -50px;
+}
+
+/* Header */
+.header {
+    text-align: right;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.subtext {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #d1b57f;
+}
+
+.loginText {
+    color: #d1b57f;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Form */
+.form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* First Name & Last Name */
+/* First Name & Last Name Row */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+/* First Name - Right Side */
+.firstNameContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: right; /* Align label to the right */
+}
+
+/* Last Name - Left Side */
+.lastNameContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: left; /* Align label to the left */
+}
+
+/* First Name Input (Right Side) */
+.firstNameInput {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d1b57f;
+    background-color: #283347;
+    color: white;
+    font-size: 16px;
+    text-align: right; /* Ensure text is aligned to right */
+    direction: rtl; /* Force Arabic text direction */
+}
+
+/* Last Name Input (Left Side) */
+.lastNameInput {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d1b57f;
+    background-color: #283347;
+    color: white;
+    font-size: 16px;
+    text-align: right; /* Ensure text is aligned to left */
+    direction: ltr; /* Force English text direction */
+}
+
+/* Fix Label Alignment */
+.firstNameContainer .label {
+    text-align: right; /* Moves the label text to the right */
+    direction: rtl; /* Ensure Arabic is properly aligned */
+}
+
+.lastNameContainer .label {
+    text-align: right; /* Moves the label text to the left */
+    direction: ltr; /* Ensure English is properly aligned */
+}
+
+/* Labels */
+.label {
+    font-size: 14px;
+    color: #d1b57f;
+    margin-bottom: 8px;
+}
+
+/* Inputs */
+.smallInput, .inputField {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d1b57f;
+    background-color: #283347;
+    color: white;
+    font-size: 16px;
+    text-align: right;
+}
+
+.inputField {
+    padding: 16px;
+}
+
+.smallInput::placeholder, .inputField::placeholder {
+    color: #b3b3b3;
+}
+
+/* Checkbox */
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-top: 15px;
+    margin-left: 120px;
+}
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #d1b57f;
+}
+
+.shroot {
+    font-size: 14px;
+    color: #d1b57f;
+}
+
+/* Submit Button */
+.submitButton {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(90deg, #e5c07b, #cfaf5d);
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    margin-top: 20px;
+}
+
+.submitButton:hover {
+    background: linear-gradient(90deg, #cfaf5d, #e5c07b);
+}
+
+/* Text Under Coffee Image */
+.coffeeText {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: #d1b57f;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Amiri', serif; /* Apply Amiri font */
+}
+
+/* Dots Indicator */
+.indicators {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dot, .activeDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #b3b3b3;
+}
+
+.activeDot {
+    background-color: #d1b57f;
+}

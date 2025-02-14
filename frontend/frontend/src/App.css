@@ -1,0 +1,346 @@
+.signUp {
+  padding: 26px;
+  overflow: hidden;
+}
+
+@media (max-width: 991px) {
+  .signUp {
+    padding: 20px;
+  }
+}
+
+.container {
+  gap: 20px;
+  display: flex;
+}
+
+@media (max-width: 991px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0px;
+  }
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  line-height: normal;
+  width: 50%;
+  margin-left: 0px;
+}
+
+@media (max-width: 991px) {
+  .leftColumn {
+    width: 100%;
+  }
+}
+
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 10px 10px 33px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  min-height: 972px;
+  width: 100%;
+  padding: 30px 32px 30px 80px;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .imageWrapper {
+    max-width: 100%;
+    margin-top: 40px;
+    padding: 20px;
+  }
+}
+
+.backgroundImage {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.logo {
+  position: relative;
+  align-self: end;
+  gap: 9px;
+  font-family:
+    Fredoka,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .logo {
+    white-space: initial;
+  }
+}
+
+.arabicSlogan {
+  position: relative;
+  color: #e5c07b;
+  font-size: 41px;
+  font-family:
+    Amiri,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 676px;
+}
+
+@media (max-width: 991px) {
+  .arabicSlogan {
+    margin-top: 40px;
+  }
+}
+
+.progressIndicator {
+  position: relative;
+  display: flex;
+  margin-top: 37px;
+  align-items: center;
+  gap: 18px;
+  justify-content: start;
+}
+
+.progressDot {
+  border-radius: 6px;
+  background-color: #283347;
+  align-self: stretch;
+  display: flex;
+  margin: auto 0;
+  width: 60px;
+  flex-shrink: 0;
+  height: 8px;
+}
+
+.progressDotActive {
+  border-radius: 6px;
+  background-color: #cfaf5d;
+  align-self: stretch;
+  display: flex;
+  margin: auto 0;
+  width: 70px;
+  flex-shrink: 0;
+  height: 8px;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  line-height: normal;
+  width: 50%;
+  margin-left: 20px;
+}
+
+@media (max-width: 991px) {
+  .rightColumn {
+    width: 100%;
+  }
+}
+
+.formContainer {
+  display: flex;
+  margin: auto 0;
+  width: 100%;
+  flex-direction: column;
+  align-self: stretch;
+  align-items: stretch;
+}
+
+@media (max-width: 991px) {
+  .formContainer {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.headerContainer {
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-family:
+    Tajawal,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  text-align: right;
+}
+
+.title {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  align-self: end;
+}
+
+@media (max-width: 991px) {
+  .title {
+    font-size: 40px;
+  }
+}
+
+.loginLink {
+  color: #e5c07b;
+  font-size: 22px;
+  font-weight: 400;
+  margin-top: 32px;
+}
+
+.nameInputs {
+  display: flex;
+  margin-top: 113px;
+  width: 100%;
+  align-items: stretch;
+  gap: 40px 42px;
+  font-family:
+    Tajawal,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  text-align: right;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+  .nameInputs {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.input {
+  align-self: stretch;
+  border-radius: 8px;
+  background-color: #283347;
+  min-height: 82px;
+  padding: 28px 26px;
+  color: #a89156;
+  flex: 1;
+}
+
+@media (max-width: 991px) {
+  .input {
+    padding: 28px 20px;
+  }
+}
+
+.activeInput {
+  composes: input;
+  border: 3px solid #cfaf5d;
+  color: #fff;
+}
+
+.emailInput {
+  composes: input;
+  margin-top: 36px;
+}
+
+.passwordContainer {
+  composes: input;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 23px 26px;
+  margin-top: 36px;
+}
+
+.passwordIcon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 37px;
+  align-self: stretch;
+  margin: auto 0;
+  flex-shrink: 0;
+}
+
+.termsContainer {
+  align-self: end;
+  display: flex;
+  margin-top: 36px;
+  align-items: stretch;
+  gap: 28px;
+}
+
+.termsText {
+  color: #e5c07b;
+  font-size: 18px;
+  font-family:
+    Tajawal,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-weight: 400;
+  text-align: right;
+  margin: auto 0;
+  flex-basis: auto;
+}
+
+.checkbox {
+  border-radius: 4px;
+  background-color: #fff;
+  display: flex;
+  padding: 6px;
+  align-items: center;
+  gap: 10px;
+  width: 32px;
+  justify-content: center;
+  height: 32px;
+}
+
+.checkIcon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 20px;
+  align-self: stretch;
+  margin: auto;
+}
+
+.submitButton {
+  align-self: stretch;
+  border-radius: 12px;
+  margin-top: 64px;
+  min-height: 78px;
+  padding: 25px 248px;
+  font-family:
+    Tajawal,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .submitButton {
+    padding: 25px 20px;
+    margin-top: 40px;
+  }
+}
