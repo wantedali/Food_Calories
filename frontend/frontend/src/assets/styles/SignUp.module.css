@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
-/* Full Page Navy Blue Background with Pattern */
+
 body, html {
     height: 100%;
     margin: 0;
@@ -10,33 +10,33 @@ body, html {
     font-family: "Tajawal", sans-serif;
 }
 
-/* Main Layout */
+
 .signUp {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Change to space-evenly */
+    justify-content: space-between; 
     height: 100vh;
     width: 100vw;
     color: white;
     padding: 0 5%;
-    box-sizing: border-box; /* Prevents unexpected width issues */
+    box-sizing: border-box; 
 }
-/* Left Side - Floating Coffee Image */
+
 .leftSection {
     width: 35%;
     height: 90%;
-    background-image: url('../images/coffe.jpg'); /* Make sure the path is correct */
+    background-image: url('../images/coffe.jpg'); 
     background-size: cover;
     background-position: center;
-    border-radius: 20px; /* Smooth rounded edges */
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5); /* Floating effect */
+    border-radius: 20px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5); 
     position: absolute;
     left: 9%;
     top: 50%;
     transform: translateY(-50%);
 }
 
-/* Right Side - Form Section */
+
 .rightSection {
     width: 50%;
     text-align: right;
@@ -44,7 +44,7 @@ body, html {
     margin-top: -50px;
 }
 
-/* Header */
+
 .header {
     text-align: right;
     width: 100%;
@@ -89,23 +89,23 @@ body, html {
     width: 100%;
 }
 
-/* First Name - Right Side */
+
 .firstNameContainer {
     display: flex;
     flex-direction: column;
     width: 50%;
-    text-align: right; /* Align label to the right */
+    text-align: right; 
 }
 
-/* Last Name - Left Side */
+
 .lastNameContainer {
     display: flex;
     flex-direction: column;
     width: 50%;
-    text-align: left; /* Align label to the left */
+    text-align: left; 
 }
 
-/* First Name Input (Right Side) */
+
 .firstNameInput {
     width: 100%;
     padding: 12px;
@@ -114,11 +114,11 @@ body, html {
     background-color: #283347;
     color: white;
     font-size: 16px;
-    text-align: right; /* Ensure text is aligned to right */
-    direction: rtl; /* Force Arabic text direction */
+    text-align: right; 
+    direction: rtl; 
 }
 
-/* Last Name Input (Left Side) */
+
 .lastNameInput {
     width: 100%;
     padding: 12px;
@@ -127,29 +127,29 @@ body, html {
     background-color: #283347;
     color: white;
     font-size: 16px;
-    text-align: right; /* Ensure text is aligned to left */
-    direction: ltr; /* Force English text direction */
+    text-align: right;
+    direction: ltr; 
 }
 
-/* Fix Label Alignment */
+
 .firstNameContainer .label {
-    text-align: right; /* Moves the label text to the right */
-    direction: rtl; /* Ensure Arabic is properly aligned */
+    text-align: right; 
+    direction: rtl; 
 }
 
 .lastNameContainer .label {
-    text-align: right; /* Moves the label text to the left */
-    direction: ltr; /* Ensure English is properly aligned */
+    text-align: right; 
+    direction: ltr; 
 }
 
-/* Labels */
+
 .label {
     font-size: 14px;
     color: #d1b57f;
     margin-bottom: 8px;
 }
 
-/* Inputs */
+
 .smallInput, .inputField {
     width: 100%;
     padding: 12px;
@@ -169,7 +169,7 @@ body, html {
     color: #b3b3b3;
 }
 
-/* Checkbox */
+
 .checkboxContainer {
     display: flex;
     align-items: center;
@@ -208,7 +208,7 @@ body, html {
     background: linear-gradient(90deg, #cfaf5d, #e5c07b);
 }
 
-/* Text Under Coffee Image */
+
 .coffeeText {
     position: absolute;
     bottom: 20px;
@@ -217,10 +217,10 @@ body, html {
     color: #d1b57f;
     font-size: 32px;
     font-weight: bold;
-    font-family: 'Amiri', serif; /* Apply Amiri font */
+    font-family: 'Amiri', serif; 
 }
 
-/* Dots Indicator */
+
 .indicators {
     margin-top: 8px;
     display: flex;
