@@ -1,5 +1,4 @@
 import React from "react";
-import Slider from "react-slick";
 import styles from "../../assets/styles/SignUp.module.css";
 
 const SignUp = () => {
@@ -59,7 +58,6 @@ const SignUp = () => {
             <label htmlFor="terms" className={styles.shroot}>أوافق على الشروط والأحكام</label>
           </div>
 
-          {/* Submit Button */}
           <button type="submit" className={styles.submitButton}>إنشاء حساب</button>
         </form>
       </div>
