@@ -160,9 +160,10 @@ body, html {
     padding: 16px;
 }
 
-.smallInput::placeholder, .inputField::placeholder {
-    color: #b3b3b3;
+.smallInput::placeholder, .inputField::placeholder ,.firstNameInput::placeholder , .lastNameInput::placeholder  {
+    color: #baa579;
 }
+
 
 
 
