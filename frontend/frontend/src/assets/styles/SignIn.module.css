@@ -17,7 +17,6 @@
     right: 0;
     bottom: 0;
     background-image: url('../images/Pattern.png');
-    /* Replace with your pattern */
     background-size: cover;
     opacity: 1.00;
     pointer-events: none;
@@ -34,13 +33,23 @@
 }
 
 .logo {
-    font-family: 'Fredoka', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.logoIcon {
+    width: 2rem;
+    height: 2rem;
+    color: #D4B675;
+}
+
+.logoText {
+    font-family: 'Amiri', serif;
     color: white;
-    font-size: 2rem;
-    font-weight: 500;
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
+    font-size: 1.75rem;
+    font-weight: 700;
 }
 
 .imageContainer {
@@ -52,12 +61,6 @@
     background-size: cover;
     background-position: center;
 }
-
-/* .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-} */
 
 .imageOverlay {
     position: absolute;
@@ -111,7 +114,7 @@
 }
 
 .formContent {
-    max-width: 800px; /* Increase to match input width */
+    max-width: 800px;
 }
 
 .formHeader {
@@ -163,7 +166,7 @@
     font-family: 'Tajawal', sans-serif;
     font-size: 1rem;
     transition: all 0.3s ease;
-    max-width: 800px; /* Increase this value as needed */
+    max-width: 800px;
 }
 
 .input:focus {
@@ -198,6 +201,19 @@
     color: white;
 }
 
+.forgotPasswordLink {
+    color: #D4B675;
+    text-decoration: underline;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: block;
+    text-align: right;
+}
+
+.forgotPasswordLink:hover {
+    color: #E5C686;
+}
+
 .submitButton {
     width: 100%;
     background-color: #D4B675;
@@ -215,6 +231,40 @@
 
 .submitButton:hover {
     background-color: #E5C686;
+}
+
+.backButton {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: rgba(212, 182, 117, 0.1);
+    border: 1px solid #D4B675;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.backButton:hover {
+    background: rgba(212, 182, 117, 0.2);
+    transform: translateX(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.backIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #D4B675;
+    transition: color 0.3s ease;
+}
+
+.backButton:hover .backIcon {
+    color: #E5C686;
 }
 
 @media (max-width: 1024px) {
