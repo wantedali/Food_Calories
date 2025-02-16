@@ -15,20 +15,25 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: space-between; 
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
     color: white;
     padding: 0 5%;
     box-sizing: border-box; 
 }
 
+.signUp img {
+  width: 100%;
+  height: 90vh;
+  border-radius: 5%;
+}
+
 .leftSection {
     width: 35%;
-    height: 90%;
-    background-image: url('../../../public/images/coffe.jpg'); 
+    height: 90vh;
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
+    border-radius: 5%;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5); 
     position: absolute;
     left: 9%;
@@ -40,8 +45,8 @@ body, html {
 .rightSection {
     width: 50%;
     text-align: right;
-    margin-left: 850px;
-    margin-top: -50px;
+    margin-left: 830px;
+    margin-top: 30px;
 }
 
 
@@ -206,7 +211,7 @@ white-space: nowrap;
 }
 
 
-.coffeeText {
+/* .coffeeText {
     position: absolute;
     bottom: 20px;
     width: 100%;
@@ -215,7 +220,7 @@ white-space: nowrap;
     font-size: 32px;
     font-weight: bold;
     font-family: 'Amiri', serif; 
-}
+} */
 
 
 .indicators {
@@ -234,4 +239,21 @@ white-space: nowrap;
 
 .activeDot {
     background-color: #d1b57f;
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css");
+
+
+.slick-dots {
+  bottom: 10px;
+  
+}
+.slick-dots li button:before {
+  color: #d1b57f;
+  font-size: 12px;
+}
+.slick-dots li.slick-active button:before {
+  color: #d1b57f;
+  font-size: 14px;
 }
