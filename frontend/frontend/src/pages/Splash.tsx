@@ -29,7 +29,7 @@ function App() {
                     </div>
                     <div className={styles.navButtons}>
                         <button className={styles.loginButton} onClick={() => navigate("/signin")}>تسجيل الدخول</button>
-                        <button className={styles.signupButton}>إنشاء حساب</button>
+                        <button className={styles.signupButton}onClick={() => navigate("/SignUp")}>إنشاء حساب</button>
                     </div>
                 </div>
             </nav>

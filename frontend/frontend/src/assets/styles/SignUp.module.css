@@ -5,7 +5,7 @@ body, html {
     margin: 0;
     padding: 0;
     background: url('../images/Pattern.png') no-repeat center center fixed;
-    background-color: #1B2430;
+    background-color: #1B2537;
     background-size: cover;
     font-family: "Tajawal", sans-serif;
 }
@@ -16,10 +16,22 @@ body, html {
     align-items: center;
     justify-content: space-between; 
     height: 90vh;
-    width: 100vw;
+    width: 100%;
     color: white;
     padding: 0 5%;
-    box-sizing: border-box; 
+    box-sizing: border-box;  
+    border-radius: 1rem;
+
+}
+
+.imageContainer {
+    position: relative;
+    height: 750px;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-image: url('../images/023027acf113738c28e6e6a4fdef0b72.jpeg');
+    background-size: cover;
+    background-position: center;
 }
 
 .signUp img {
@@ -37,7 +49,7 @@ body, html {
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5); 
     position: absolute;
     left: 9%;
-    top: 50%;
+    top: 7%;
     transform: translateY(-50%);
 }
 
@@ -55,6 +67,7 @@ body, html {
     width: 100%;
     max-width: 400px;
     margin-bottom: 40px;
+    margin-left: 2.75rem;
 }
 
 .title {
@@ -78,10 +91,11 @@ body, html {
 
 .form {
     width: 100%;
-    max-width: 400px;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     gap: 25px;
+    margin-left: -80px;
 }
 
 
@@ -128,27 +142,33 @@ body, html {
 }
 
 .firstNameInput {
-  width: 104%;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  background-color: #283347;
-  color: white;
-  font-size: 16px;
-  text-align: right;
-  transition: border 0.3s ease-in-out; 
+    width: 100%;
+    background-color: #2A3547;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    outline: none;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    max-width: 800px;
+    text-align: right;
 }
 
 .smallInput, .inputField, .lastNameInput {
     width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: none; 
-    background-color: #283347;
+    background-color: #2A3547;
     color: white;
-    font-size: 16px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    outline: none;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    max-width: 800px;
     text-align: right;
-    transition: border 0.3s ease-in-out; 
 }
 
 .smallInput:focus, .inputField:focus, .firstNameInput:focus, .lastNameInput:focus {
@@ -161,7 +181,7 @@ body, html {
 }
 
 .smallInput::placeholder, .inputField::placeholder ,.firstNameInput::placeholder , .lastNameInput::placeholder  {
-    color: #baa579;
+    color: #6B7280;
 }
 
 
@@ -182,7 +202,7 @@ padding-right: 10px;
 width: 18px;
 height: 18px;
 accent-color: #d1b57f;
-margin-right: -170px;
+margin-right: -195px;
 }
 
 
@@ -257,4 +277,83 @@ white-space: nowrap;
 .slick-dots li.slick-active button:before {
   color: #d1b57f;
   font-size: 14px;
+}
+
+
+.backButton {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: rgba(212, 182, 117, 0.1);
+    border: 1px solid #D4B675;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.backButton:hover {
+    background: rgba(212, 182, 117, 0.2);
+    transform: translateX(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.backIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #D4B675;
+    transition: color 0.3s ease;
+}
+
+.backButton:hover .backIcon {
+    color: #E5C686;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    margin-left: 21.75rem;
+}
+
+.logoIcon {
+    width: 2rem;
+    height: 2rem;
+    color: #D4B675;
+}
+
+.logoText {
+    font-family: 'Amiri', serif;
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+
+.imageOverlay {
+    position: absolute;
+    bottom: 3rem;
+    right: 2rem;
+    color: white;
+    text-align: right;
+}
+
+.arabicTitle {
+    font-family: 'Amiri', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.arabicSubtitle {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.5rem;
+    color: #D4B675;
 }
