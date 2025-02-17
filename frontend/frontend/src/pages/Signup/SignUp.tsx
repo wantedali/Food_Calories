@@ -1,70 +1,112 @@
-import React from "react";
+import React, { useState , useEffect } from "react";
+import Slider from "react-slick";
 import styles from "../../assets/styles/SignUp.module.css";
+import { Eye, ChefHat, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css"; 
 
 const SignUp = () => {
+  const navigate = useNavigate(); 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      once: true, 
+      easing: "ease-in-out", 
+    });
+  }, []);
+
+  const settings = {
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    arrows: false,
+  };
+
   return (
-    <div className={styles.signUp}>
-      {/* Left Side (Coffee Image) */}
-      <div className={styles.leftSection}>
-        <div className={styles.coffeeText}>
-          <p>وجبتك بلقطة، صحتك بخيارك</p>
-          <div className={styles.indicators}>
-            <span className={styles.dot}></span>
-            <span className={styles.dot}></span>
-            <span className={styles.activeDot}></span>
+    <div className={styles.signUp} data-aos="fade-in">
+      {/* Left Section with Slider */}
+             <button className={styles.backButton} onClick={() => navigate("/")}>
+                  <ArrowLeft className={styles.backIcon} />
+              </button>
+      <div className={styles.leftSection} data-aos="fade-left" data-aos-delay="200">
+        <Slider {...settings}>
+          <div>
+            <img src="/images/falafel.jpg" alt="Falafel" />
           </div>
-        </div>
+          <div>
+            <img src="/images/hummus.jpg" alt="Hummus" />
+          </div>
+          <div>
+            <img src="/images/kebab.jpg" alt="Kebab" />
+          </div>
+        </Slider>
+             <div className={styles.imageOverlay}>
+                <h2 className={styles.arabicTitle}>،وجبتك بلقطة</h2>
+                <p className={styles.arabicSubtitle}>صحتك بخيارك</p>
+            </div>
       </div>
 
-      {/* Right Side (Form Section) */}
-      <div className={styles.rightSection}>
+      {/* Right Section with Form */}
+      <div className={styles.rightSection} data-aos="fade-right" data-aos-delay="200">
+      <div className={styles.logo}>
+                <ChefHat className={styles.logoIcon} />
+                <span className={styles.logoText}>لقمتي</span>
+            </div>
         <div className={styles.header}>
           <h2 className={styles.title}>إنشاء حساب</h2>
           <p className={styles.subtext}>
-            لديك حساب بالفعل؟ <span className={styles.loginText}>تسجيل الدخول</span>
+            لديك حساب بالفعل؟{" "}
+            <span className={styles.loginText}  onClick={() => navigate("/signin")}>تسجيل الدخول</span>
           </p>
         </div>
 
-        {/* Form */}
         <form className={styles.form}>
-          {/* First Name & Last Name (Aligned Properly) */}
-<div className={styles.row}>
-    {/* First Name - Right Side */}
-<div className={styles.row}>
-    {/* Last Name - Left Side */}
-    <div className={styles.lastNameContainer}>
-        <label className={styles.label}>الإسم الأخير</label>
-        <input type="text" placeholder="الإسم الأخير" className={styles.lastNameInput} />
-    </div>
-
-    {/* First Name - Right Side */}
-    <div className={styles.firstNameContainer}>
-        <label className={styles.label}>الإسم الأول</label>
-        <input type="text" placeholder="الإسم الأول" className={styles.firstNameInput} />
-    </div>
-</div>
-</div>
-
-          {/* Email Field */}
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>البريد الإلكتروني</label>
-            <input type="email" placeholder="البريد الإلكتروني" className={styles.inputField} />
+          <div className={styles.row}>
+            <div className={styles.lastNameContainer}>
+              <input
+                type="text"
+                placeholder="الإسم الأخير"
+                className={styles.lastNameInput}
+              />
+            </div>
+            <div className={styles.firstNameContainer}>
+              <input
+                type="text"
+                placeholder="الإسم الأول"
+                className={styles.firstNameInput}
+              />
+            </div>
           </div>
 
-          {/* Password Field */}
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>كلمة السر</label>
-            <input type="password" placeholder="كلمة السر" className={styles.inputField} />
+          <div>
+            <input
+              type="email"
+              placeholder="البريد الإلكتروني"
+              className={styles.inputField}
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              placeholder="كلمة السر"
+              className={styles.inputField}
+            />
           </div>
 
-          {/* Checkbox */}
           <div className={styles.checkboxContainer}>
             <input type="checkbox" id="terms" className={styles.checkbox} />
-            <label htmlFor="terms" className={styles.shroot}>أوافق على الشروط والأحكام</label>
+            <label htmlFor="terms" className={styles.shroot}>
+              أوافق على الشروط والأحكام
+            </label>
           </div>
 
-          {/* Submit Button */}
-          <button type="submit" className={styles.submitButton}>إنشاء حساب</button>
+          <button type="submit" className={styles.submitButton}>
+            إنشاء حساب
+          </button>
         </form>
       </div>
     </div>

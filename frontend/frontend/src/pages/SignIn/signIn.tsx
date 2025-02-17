@@ -1,34 +1,54 @@
-import React, { useState, useEffect } from 'react'; // Import useEffect
+import React, { useState, useEffect } from 'react'; 
 import { Eye, ChefHat, ArrowLeft } from 'lucide-react';
 import styles from '../../assets/styles/SignIn.module.css';
 import { useNavigate } from 'react-router-dom';
-import AOS from 'aos'; // Import AOS
-import 'aos/dist/aos.css'; // Import AOS CSS
+import Slider from "react-slick";
+import AOS from 'aos'; 
+import 'aos/dist/aos.css'; 
 
 function App() {
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
-    // Initialize AOS
     useEffect(() => {
         AOS.init({
-            duration: 1000, // Animation duration
-            once: true, // Only animate once
-            easing: 'ease-in-out', // Smooth easing
+            duration: 1000,
+            once: true, 
+            easing: 'ease-in-out', 
         });
     }, []);
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2500,
+        arrows: false,
+      };
 
     return (
         <div className={styles.container} data-aos="fade-in">
             <div className={styles.patternOverlay}></div>
-            {/* Back Button */}
             <button className={styles.backButton} onClick={() => navigate("/")}>
                 <ArrowLeft className={styles.backIcon} />
             </button>
 
             <div className={styles.gridContainer}>
-                {/* Left Side - Image */}
                 <div className={styles.imageContainer} data-aos="fade-right" data-aos-delay="200">
+                        <Slider {...settings}>
+                        <div>
+                            <img src="/images/falafel.jpg" alt="Falafel" />
+                        </div>
+                        <div>
+                            <img src="/images/hummus.jpg" alt="Hummus" />
+                        </div>
+                        <div>
+                            <img src="/images/kebab.jpg" alt="Kebab" />
+                        </div>
+                        </Slider>
                     <div className={styles.imageOverlay}>
                         <h2 className={styles.arabicTitle}>وجبتك بلقطة،</h2>
                         <p className={styles.arabicSubtitle}>صحتك بخيارك</p>
@@ -53,7 +73,7 @@ function App() {
                             <h1>مرحبا بك مرة اخري!</h1>
                             <p>
                                 ليس لديك حساب؟{' '}
-                                <a href="#" className={styles.link}>
+                                <a href="/SignUp" className={styles.link} >
                                     إنشاء حساب
                                 </a>
                             </p>

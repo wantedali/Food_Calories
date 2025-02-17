@@ -34,9 +34,9 @@
 
 .logo {
     display: flex;
-    align-items: center;
+    align-items:start;
     gap: 0.75rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .logoIcon {
@@ -60,7 +60,16 @@
     background-image: url('../images/023027acf113738c28e6e6a4fdef0b72.jpeg');
     background-size: cover;
     background-position: center;
+    width: 100%;
+    height: 90vh;
+    border-radius: 5%;
 }
+
+.imageContainer img {
+    width: 100%;
+    height: 90vh;
+    border-radius: 5%;
+  }
 
 .imageOverlay {
     position: absolute;
@@ -295,3 +304,4 @@
         font-size: 2rem;
     }
 }
+
