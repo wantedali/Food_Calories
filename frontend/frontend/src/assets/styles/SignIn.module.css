@@ -18,7 +18,7 @@
     bottom: 0;
     background-image: url('../images/Pattern.png');
     background-size: cover;
-    opacity: 1.00;
+    opacity: 0.50;
     pointer-events: none;
 }
 

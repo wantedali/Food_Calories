@@ -144,7 +144,7 @@ function App() {
                         <div className={styles.footerBrand}>
                             <div className={styles.footerLogo}>
                                 <ChefHat className={styles.logoIcon} />
-                                <span className={styles.logoText}>نكهتي</span>
+                                <span className={styles.logoText}>لقمتي</span>
                             </div>
                             <p className={styles.footerDescription}>
                                 منصة ذكية لتحليل الأطعمة وحساب السعرات الحرارية باستخدام تقنيات الذكاء الاصطناعي
@@ -178,7 +178,7 @@ function App() {
                             <a href="#" className={styles.socialLink}><Mail /></a>
                         </div>
                         <p className={styles.copyright}>
-                            © ٢٠٢٤ نكهتي. جميع الحقوق محفوظة
+                            © ٢٠٢٤ لقمتي. جميع الحقوق محفوظة
                         </p>
                     </div>
                 </div>
