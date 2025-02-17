@@ -32,7 +32,7 @@ const SignUp = () => {
              <button className={styles.backButton} onClick={() => navigate("/")}>
                   <ArrowLeft className={styles.backIcon} />
               </button>
-      <div className={styles.leftSection} data-aos="fade-right" data-aos-delay="200">
+      <div className={styles.leftSection} data-aos="fade-left" data-aos-delay="200">
         <Slider {...settings}>
           <div>
             <img src="/images/falafel.jpg" alt="Falafel" />
@@ -51,7 +51,7 @@ const SignUp = () => {
       </div>
 
       {/* Right Section with Form */}
-      <div className={styles.rightSection} data-aos="fade-left" data-aos-delay="200">
+      <div className={styles.rightSection} data-aos="fade-right" data-aos-delay="200">
       <div className={styles.logo}>
                 <ChefHat className={styles.logoIcon} />
                 <span className={styles.logoText}>لقمتي</span>
