@@ -28,7 +28,6 @@ const SignUp = () => {
 
   return (
     <div className={styles.signUp} data-aos="fade-in">
-      {/* Left Section with Slider */}
              <button className={styles.backButton} onClick={() => navigate("/")}>
                   <ArrowLeft className={styles.backIcon} />
               </button>
@@ -50,7 +49,6 @@ const SignUp = () => {
             </div>
       </div>
 
-      {/* Right Section with Form */}
       <div className={styles.rightSection} data-aos="fade-right" data-aos-delay="200">
       <div className={styles.logo}>
                 <ChefHat className={styles.logoIcon} />
@@ -91,7 +89,7 @@ const SignUp = () => {
           </div>
           <div>
             <input
-              type="password"
+              type="text"
               placeholder="كلمة السر"
               className={styles.inputField}
             />

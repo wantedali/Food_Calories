@@ -30,7 +30,7 @@
     z-index: 50;
     padding: 1.5rem 2rem;
     background: rgba(27, 37, 55, 0.98);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(20pxx);
     border-bottom: 1px solid rgba(212, 182, 117, 0.1);
 }
 

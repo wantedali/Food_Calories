@@ -53,11 +53,6 @@ function App() {
                         <h2 className={styles.arabicTitle}>وجبتك بلقطة،</h2>
                         <p className={styles.arabicSubtitle}>صحتك بخيارك</p>
                     </div>
-                    <div className={styles.indicators}>
-                        <span className={styles.indicator}></span>
-                        <span className={styles.indicator}></span>
-                        <span className={`${styles.indicator} ${styles.indicatorActive}`}></span>
-                    </div>
                 </div>
 
                 {/* Right Side - Login Form */}
