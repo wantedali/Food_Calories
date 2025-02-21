@@ -192,7 +192,7 @@
 
 .passwordToggle {
     position: absolute;
-    left: 1rem;
+    left: -0.5rem;
     top: 50%;
     transform: translateY(-50%);
     background: none;
@@ -224,7 +224,7 @@
 }
 
 .submitButton {
-    width: 100%;
+    width: 106%;
     background-color: #D4B675;
     color: #1B2537;
     padding: 1rem;
