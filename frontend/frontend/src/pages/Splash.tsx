@@ -20,7 +20,6 @@ function App() {
         <div className={styles.container}>
             <div className={styles.patternOverlay}></div>
 
-            {/* Navbar */}
             <nav className={styles.navbar}>
                 <div className={styles.navContent}>
                     <div className={styles.logo}>
@@ -34,7 +33,6 @@ function App() {
                 </div>
             </nav>
 
-            {/* Hero Section */}
             <main className={styles.hero}>
                 <div className={styles.heroContent} data-aos="fade-left">
                     <h1 className={styles.title}>اكتشف مكونات طبقك المفضل</h1>
@@ -54,7 +52,6 @@ function App() {
                 </div>
             </main>
 
-            {/* Stats Section */}
             <section className={styles.stats}>
                 <div className={styles.statsContent}>
                     <div className={styles.statItem} data-aos="fade-up" data-aos-delay="0">
@@ -72,7 +69,6 @@ function App() {
                 </div>
             </section>
 
-            {/* Features Section */}
             <section className={styles.features}>
                 <h2 className={styles.sectionTitle} data-aos="fade-up">مميزات تطبيقنا</h2>
                 <div className={styles.featuresGrid}>
@@ -94,7 +90,6 @@ function App() {
                 </div>
             </section>
 
-            {/* Testimonials */}
             <section className={styles.testimonials}>
                 <h2 className={styles.sectionTitle} data-aos="fade-up">آراء المستخدمين</h2>
                 <div className={styles.testimonialGrid}>
@@ -137,7 +132,6 @@ function App() {
                 </div>
             </section>
 
-            {/* Footer */}
             <footer className={styles.footer}>
                 <div className={styles.footerContent}>
                     <div className={styles.footerMain}>

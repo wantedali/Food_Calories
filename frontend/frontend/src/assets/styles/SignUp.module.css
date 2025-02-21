@@ -95,7 +95,7 @@ body, html {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    margin-left: -80px;
+    margin-left: -45px;
 }
 
 
@@ -185,37 +185,33 @@ body, html {
 }
 
 
-
-
 .checkboxContainer {
-display: flex;
-align-items: center;
-justify-content: flex-end; 
-gap: 10px;
-margin-top: 15px;
-width: 100%;
-padding-right: 10px;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end;
+    gap: 10px; 
+    margin-top: 15px;
+    width: 100%;
+    padding-right: 10px;
 }
-
 
 .checkbox {
-width: 18px;
-height: 18px;
-accent-color: #d1b57f;
-margin-right: -195px;
+    width: 18px;
+    height: 18px;
+    accent-color: #d1b57f;
+    margin: 0; 
 }
 
-
 .shroot {
-font-size: 14px;
-color: #d1b57f;
-text-align: right;
-white-space: nowrap; 
+    font-size: 14px;
+    color: #d1b57f;
+    white-space: nowrap;
+    margin: 0;
 }
 
 
 .submitButton {
-    width: 109%;
+    width: 100%;
     padding: 18px;
     background: linear-gradient(90deg, #e5c07b, #cfaf5d);
     border: none;
@@ -223,7 +219,7 @@ white-space: nowrap;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    color: white;
+    color: #1B2537;
     margin-top: 20px;
 }
 
