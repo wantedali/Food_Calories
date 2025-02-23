@@ -11,6 +11,85 @@
     direction: rtl;
 }
 
+/* Navbar Styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    grid-column: 1 / -1;
+    z-index: 50;
+    padding: 1rem 2rem;
+    background: rgba(27, 37, 55, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(212, 182, 117, 0.1);
+}
+
+.navContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logoIcon {
+    width: 2rem;
+    height: 2rem;
+    color: #D4B675;
+}
+
+.logoText {
+    font-family: 'Amiri', serif;
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 1px solid rgba(212, 182, 117, 0.1);
+    padding: 2rem 1rem;
+}
+
+.sidebarContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebarButton {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: none;
+    background: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebarButton:hover {
+    background: rgba(212, 182, 117, 0.1);
+}
+
+.sidebarButton.active {
+    background: #D4B675;
+    color: #1B2537;
+}
+
+.sidebarIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
 /* Main Content Styles */
 .mainContent {
     padding: 2rem;
@@ -172,35 +251,159 @@
     font-size: 2rem;
 }
 
-.foodName {
+/* Detected Foods Styles */
+.detectedFoods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     margin-bottom: 2rem;
-    padding: 1rem;
-    background: rgba(212, 182, 117, 0.1);
-    border-radius: 0.5rem;
 }
 
-.foodName h3 {
-    color: #D4B675;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+.foodCard {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(212, 182, 117, 0.1);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
 }
 
-.foodName p {
+.foodCard:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(212, 182, 117, 0.2);
+    transform: translateY(-2px);
+}
+
+.foodHeader {
+    margin-bottom: 1.5rem;
+}
+
+.foodHeader h3 {
     color: white;
     font-size: 1.5rem;
     margin-bottom: 0.25rem;
+    font-family: 'Amiri', serif;
 }
 
-.foodName span {
+.foodHeader span {
     color: #D4B675;
     font-size: 1rem;
 }
 
+/* Portion Size Styles */
+.portionSection {
+    background: rgba(212, 182, 117, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.portionHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.portionIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #D4B675;
+}
+
+.portionHeader span {
+    color: #D4B675;
+    font-size: 1rem;
+}
+
+.portionDisplay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portionDisplay span {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.editButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 1px solid #D4B675;
+    color: #D4B675;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.editButton:hover {
+    background: rgba(212, 182, 117, 0.1);
+}
+
+.editIcon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.portionEdit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.portionButton {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.portionButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.portionButtonIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #D4B675;
+}
+
+.portionValue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+}
+
+.portionNumber {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.portionUnit {
+    color: #D4B675;
+    font-size: 0.875rem;
+}
+
+/* Nutrition Grid Styles */
 .nutritionGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    margin-bottom: 2rem;
 }
 
 .nutritionItem {
@@ -222,6 +425,20 @@
     font-weight: 500;
 }
 
+/* Total Nutrition Styles */
+.totalNutrition {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 182, 117, 0.1);
+}
+
+.totalNutrition h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Amiri', serif;
+}
+
 .saveButton {
     display: flex;
     align-items: center;
@@ -238,6 +455,7 @@
     transition: all 0.3s ease;
     width: 100%;
     justify-content: center;
+    margin-top: 2rem;
 }
 
 .saveButton:hover {
@@ -255,12 +473,20 @@
         grid-template-columns: 1fr;
     }
 
+    .sidebar {
+        display: none;
+    }
+
     .previewSection {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 640px) {
+    .navbar {
+        padding: 1rem;
+    }
+
     .mainContent {
         padding: 1rem;
     }
