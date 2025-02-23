@@ -29,7 +29,7 @@ body {
     bottom: 0;
     background-image: url('../images/Pattern.png');
     background-size: cover;
-    opacity: 1.00;
+    opacity: 0.50;
     pointer-events: none;
 }
 
@@ -202,7 +202,7 @@ body {
 
 .passwordToggle {
     position: absolute;
-    left: 1.5rem;
+    left: -0.5rem;
     top: 50%;
     transform: translateY(-50%);
     background: none;
@@ -234,7 +234,7 @@ body {
 }
 
 .submitButton {
-    width: 100%;
+    width: 106%;
     background-color: #D4B675;
     color: #1B2537;
     padding: 1rem;

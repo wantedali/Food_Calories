@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap');
+
+.container {
+    min-height: 100vh;
+    background-color: #1B2537;
+    position: relative;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto 1fr;
+    direction: rtl;
+}
+
+/* Main Content Styles */
+.mainContent {
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.pageHeader {
+    margin-bottom: 2rem;
+}
+
+.pageHeader h1 {
+    font-family: 'Amiri', serif;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.pageHeader p {
+    font-family: 'Tajawal', sans-serif;
+    color: #D4B675;
+    font-size: 1.25rem;
+}
+
+/* Upload Section Styles */
+.uploadSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.uploadCard {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    border: 2px dashed rgba(212, 182, 117, 0.3);
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.uploadCard:hover {
+    border-color: #D4B675;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.fileInput {
+    display: none;
+}
+
+.uploadLabel {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.uploadIcon {
+    width: 4rem;
+    height: 4rem;
+    background: rgba(212, 182, 117, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    width: 2rem;
+    height: 2rem;
+    color: #D4B675;
+}
+
+.uploadLabel h3 {
+    font-family: 'Tajawal', sans-serif;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.uploadLabel p {
+    color: #D4B675;
+    font-size: 1rem;
+}
+
+/* Preview Section Styles */
+.previewSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid rgba(212, 182, 117, 0.1);
+}
+
+.imagePreview {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.imagePreview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Analysis Animation */
+.analyzing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.spinnerIcon {
+    width: 3rem;
+    height: 3rem;
+    color: #D4B675;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.analyzing p {
+    color: white;
+    font-size: 1.25rem;
+}
+
+/* Results Styles */
+.results {
+    padding: 1rem;
+}
+
+.resultHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.resultIcon {
+    width: 2rem;
+    height: 2rem;
+    color: #D4B675;
+}
+
+.resultHeader h2 {
+    font-family: 'Amiri', serif;
+    color: white;
+    font-size: 2rem;
+}
+
+.foodName {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(212, 182, 117, 0.1);
+    border-radius: 0.5rem;
+}
+
+.foodName h3 {
+    color: #D4B675;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.foodName p {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.foodName span {
+    color: #D4B675;
+    font-size: 1rem;
+}
+
+.nutritionGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.nutritionItem {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(212, 182, 117, 0.1);
+}
+
+.nutritionItem h4 {
+    color: #D4B675;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.nutritionItem p {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.saveButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #D4B675;
+    color: #1B2537;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: center;
+}
+
+.saveButton:hover {
+    background: #E5C686;
+    transform: translateY(-2px);
+}
+
+.saveIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .previewSection {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .mainContent {
+        padding: 1rem;
+    }
+
+    .pageHeader h1 {
+        font-size: 2rem;
+    }
+
+    .uploadLabel h3 {
+        font-size: 1.25rem;
+    }
+
+    .nutritionGrid {
+        grid-template-columns: 1fr;
+    }
+}

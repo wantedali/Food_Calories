@@ -29,8 +29,8 @@
     right: 0;
     z-index: 50;
     padding: 1.5rem 2rem;
-    background: rgba(27, 37, 55, 0.98);
-    backdrop-filter: blur(20pxx);
+    background: rgba(27, 37, 55, 0.50);
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(212, 182, 117, 0.1);
 }
 
@@ -315,105 +315,7 @@
     opacity: 0.8;
 }
 
-/* Footer */
-.footer {
-    background: rgba(27, 37, 55, 0.98);
-    border-top: 1px solid rgba(212, 182, 117, 0.1);
-    padding: 4rem 2rem 2rem;
-}
-
-.footerContent {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.footerMain {
-    display: grid;
-    grid-template-columns: 1.5fr 2fr;
-    gap: 4rem;
-    margin-bottom: 3rem;
-}
-
-.footerBrand {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.footerLogo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.footerDescription {
-    font-family: 'Tajawal', sans-serif;
-    color: #D4B675;
-    line-height: 1.6;
-    font-size: 1rem;
-}
-
-.footerLinks {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-}
-
-.footerSection h3 {
-    font-family: 'Amiri', serif;
-    color: white;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.footerSection ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.footerSection a {
-    font-family: 'Tajawal', sans-serif;
-    color: #D4B675;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footerSection a:hover {
-    color: #E5C686;
-}
-
-.footerBottom {
-    padding-top: 2rem;
-    border-top: 1px solid rgba(212, 182, 117, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.socialLinks {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.socialLink {
-    color: #D4B675;
-    transition: all 0.3s ease;
-}
-
-.socialLink:hover {
-    color: #E5C686;
-    transform: translateY(-2px);
-}
-
-.copyright {
-    font-family: 'Tajawal', sans-serif;
-    color: #D4B675;
-    font-size: 0.875rem;
-}
-
+/* Media Queries */
 @media (max-width: 1024px) {
     .hero {
         grid-template-columns: 1fr;
@@ -443,17 +345,6 @@
 
     .statItem h3 {
         font-size: 2.5rem;
-    }
-
-    .footerMain {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .footerBottom {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
     }
 }
 
@@ -496,9 +387,5 @@
     .features,
     .testimonials {
         padding: 3rem 1rem;
-    }
-
-    .footerLinks {
-        grid-template-columns: 1fr;
     }
 }

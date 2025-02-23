@@ -103,7 +103,7 @@ function App() {
                                 </a>
                             </div>
 
-                            <button type="submit" className={styles.submitButton}>
+                            <button type="submit" className={styles.submitButton} onClick={() => navigate("/home")}>
                                 تسجيل الدخول
                             </button>
                         </form>
