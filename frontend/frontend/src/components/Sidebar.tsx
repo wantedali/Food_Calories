@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
 import {
     Home,
@@ -14,7 +15,12 @@ const Sidebar: React.FC = () => {
     const location = useLocation();
 
     return (
-        <aside className={styles.sidebar}>
+        <motion.aside
+            initial={{ x: -100, opacity: 0 }} 
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className={styles.sidebar} 
+        >
             <div className={styles.sidebarContent}>
                 <NavLink
                     to="/Home"
@@ -76,7 +82,7 @@ const Sidebar: React.FC = () => {
                     <span>الإعدادات</span>
                 </NavLink>
             </div>
-        </aside>
+        </motion.aside>
     );
 };
 

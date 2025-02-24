@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
     Upload,
     Image as ImageIcon,
@@ -31,6 +32,7 @@ function App() {
     const [isAnalyzing, setIsAnalyzing] = useState(false);
     const [detectedFoods, setDetectedFoods] = useState<DetectedFood[]>([]);
     const [editingPortionId, setEditingPortionId] = useState<string | null>(null);
+    const [isHovered, setIsHovered] = useState(false);
 
     const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -46,7 +48,6 @@ function App() {
 
     const simulateAnalysis = () => {
         setIsAnalyzing(true);
-        // Simulate AI processing with multiple detected foods
         setTimeout(() => {
             setIsAnalyzing(false);
             setDetectedFoods([
@@ -111,13 +112,23 @@ function App() {
             {/* Sidebar */}
             <Sidebar />
 
-
-            {/* Main Content */}
             <main className={styles.mainContent}>
-                <div className={styles.pageHeader}>
+                <motion.div
+                    initial={{ y: -50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    className={styles.pageHeader}
+                >
                     <h1>مرحباً بك في لوحة التحكم</h1>
-                    <p>ابدأ بتحليل وجبتك للحصول على معلومات تغذية دقيقة</p>
-                </div>
+                    <motion.p
+                        initial={{ y: 30, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+                    >
+                        ابدأ بتحليل وجبتك للحصول على معلومات تغذية دقيقة
+                    </motion.p>
+                </motion.div>
+
 
                 <div className={styles.uploadSection}>
                     <div className={styles.uploadCard}>
@@ -128,17 +139,33 @@ function App() {
                             className={styles.fileInput}
                             onChange={handleImageUpload}
                         />
-                        <label htmlFor="imageUpload" className={styles.uploadLabel}>
-                            <div className={styles.uploadIcon}>
+                        
+                        <motion.label
+                            htmlFor="imageUpload"
+                            className={styles.uploadLabel}
+                            whileHover={{}} 
+                            onHoverStart={() => setIsHovered(true)} 
+                            onHoverEnd={() => setIsHovered(false)} 
+                        >
+                            <motion.div
+                                className={styles.uploadIcon}
+                                animate={isHovered ? { y: [0, -5, 0] } : { y: 0 }}
+                                transition={{
+                                    repeat: isHovered ? Infinity : 0, 
+                                    duration: 0.6, 
+                                    ease: "easeInOut"
+                                }}
+                            >
                                 {imagePreview ? (
                                     <ImageIcon className={styles.icon} />
                                 ) : (
                                     <Upload className={styles.icon} />
                                 )}
-                            </div>
+                            </motion.div>
+
                             <h3>التقط صورة لوجبتك أو حمّلها من المعرض</h3>
                             <p>اسحب الصورة هنا أو انقر للاختيار</p>
-                        </label>
+                        </motion.label>
                     </div>
 
                     {imagePreview && (

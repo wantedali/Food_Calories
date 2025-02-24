@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ChefHat, Camera, Brain, Utensils, Star } from 'lucide-react'; // Removed unused icons
+import { ChefHat, Camera, Brain, Utensils, Star } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import styles from '../assets/styles/Splash.module.css';

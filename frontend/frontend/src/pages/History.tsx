@@ -15,7 +15,7 @@ interface NutritionDetails {
 interface MealCard {
   id: string;
   imageUrl: string;
-  name : String;
+  name: string;
   calories: number;
   nutritionDetails: NutritionDetails;
 }
@@ -79,29 +79,48 @@ const History: React.FC = () => {
 
   return (
     <div className={styles.container}>
-            {/* Navbar */}
-            <Navbar />
 
-            {/* Sidebar */}
-            <Sidebar />
-         <div className={styles.wrapper}>
-         <div className={styles.sectionHeader}>
-            <h1 className={styles.mainHeading}>سجل وجباتك السابقة</h1>
-            <p className={styles.subHeading}>راجع وجباتك واستكشف معلوماتك الغذائية</p>
-        </div>
-           {meals.length === 0 ? (
+      <Navbar />
+
+      <Sidebar />
+
+      <div className={styles.wrapper}>
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className={styles.sectionHeader}
+        >
+          <h1 className={styles.mainHeading}>سجل وجباتك السابقة</h1>
+          <p className={styles.subHeading}>راجع وجباتك واستكشف معلوماتك الغذائية</p>
+        </motion.div>
+
+        {meals.length === 0 ? (
           <div className={styles.emptyState}>
             <h2 className={styles.emptyStateText}>
               لا توجد وجبات محسوبة
             </h2>
           </div>
         ) : (
-          <div className={styles.grid}>
+          <motion.div 
+            className={styles.grid}
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+            }}
+          >
             {meals.map((meal) => (
               <motion.div
                 key={meal.id}
-                layout
                 className={styles.card}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.3 }}
+                whileHover={{ scale: 1.05 }}
               >
                 <div>
                   <img
@@ -110,10 +129,10 @@ const History: React.FC = () => {
                     className={styles.cardImage}
                   />
                 </div>
-                
+
                 <div className={styles.cardContent}>
                   <div className={styles.calories}>
-                  <p> الوجبة: {meal.name}</p>
+                    <p> الوجبة: {meal.name}</p>
                     <p>السعرات الحرارية: {meal.calories}</p>
                   </div>
 
@@ -136,7 +155,7 @@ const History: React.FC = () => {
                     {expandedId === meal.id && (
                       <motion.div
                         initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
+                        animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                         className={styles.expandedContent}
@@ -152,11 +171,11 @@ const History: React.FC = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
-        {/* Footer */}
-        <Footer />
+
+      <Footer />
     </div>
   );
 };

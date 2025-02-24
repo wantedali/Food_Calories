@@ -1,16 +1,22 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { ChefHat } from "lucide-react";
 import styles from "../assets/styles/Navbar.module.css";
 
 interface NavbarProps {
-    showButtons?: boolean; // Optional prop to show/hide buttons
-    onLoginClick?: () => void; // Optional callback for login button
-    onSignUpClick?: () => void; // Optional callback for sign-up button
+    showButtons?: boolean;
+    onLoginClick?: () => void; 
+    onSignUpClick?: () => void;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ showButtons = false, onLoginClick, onSignUpClick }) => {
     return (
-        <nav className={styles.navbar}>
+        <motion.nav
+            initial={{ y: -100, opacity: 0 }} 
+            animate={{ y: 0, opacity: 1 }} 
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className={styles.navbar} 
+        >
             <div className={styles.navContent}>
                 <div className={styles.logo}>
                     <ChefHat className={styles.logoIcon} />
@@ -28,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ showButtons = false, onLoginClick, onSi
                     </div>
                 )}
             </div>
-        </nav>
+        </motion.nav>
     );
 };
 

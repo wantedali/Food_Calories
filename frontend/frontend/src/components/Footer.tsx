@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
     ChefHat,
     Instagram,
@@ -8,10 +9,14 @@ import {
 } from 'lucide-react';
 import styles from "../assets/styles/Footer.module.css";
 
-const Sidebar: React.FC = () => {
-
+const Footer: React.FC = () => {
     return (
-        <footer className={styles.footer}>
+        <motion.footer
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className={styles.footer} 
+        >
             <div className={styles.footerContent}>
                 <div className={styles.footerMain}>
                     <div className={styles.footerBrand}>
@@ -55,7 +60,8 @@ const Sidebar: React.FC = () => {
                     </p>
                 </div>
             </div>
-        </footer>);
+        </motion.footer>
+    );
 };
 
-export default Sidebar;
+export default Footer;
