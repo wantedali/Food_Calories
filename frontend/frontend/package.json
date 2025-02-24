@@ -5,6 +5,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "cra-template": "1.2.0",
+    "framer-motion": "^12.4.7",
     "lucide-react": "^0.475.0",
     "motion": "^12.4.7",
     "react": "^19.0.0",

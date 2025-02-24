@@ -17,6 +17,7 @@
 .sidebarButton {
     display: flex;
     align-items: center;
+    text-decoration: none;
     gap: 1rem;
     padding: 1rem;
     border: none;
