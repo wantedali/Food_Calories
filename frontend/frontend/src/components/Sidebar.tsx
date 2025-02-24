@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
     Home,
     Camera,
@@ -8,17 +9,21 @@ import {
     Settings,
 } from 'lucide-react';
 import styles from "../assets/styles/Sidebar.module.css";
+import History1 from '../pages/History';
 
 const Sidebar: React.FC = () => {
     // Move useState inside the component
     const [selectedTab, setSelectedTab] = useState('home');
+    const navigate = useNavigate();
 
     return (
         <aside className={styles.sidebar}>
             <div className={styles.sidebarContent}>
                 <button
                     className={`${styles.sidebarButton} ${selectedTab === 'home' ? styles.active : ''}`}
-                    onClick={() => setSelectedTab('home')}
+                    onClick={() => {setSelectedTab('home');
+                        navigate('/Home')
+                    }}
                 >
                     <Home className={styles.sidebarIcon} />
                     <span>الرئيسية</span>
@@ -32,7 +37,9 @@ const Sidebar: React.FC = () => {
                 </button>
                 <button
                     className={`${styles.sidebarButton} ${selectedTab === 'history' ? styles.active : ''}`}
-                    onClick={() => setSelectedTab('history')}
+                    onClick={() => {setSelectedTab('history');
+                        navigate('/History');
+                    }}
                 >
                     <History className={styles.sidebarIcon} />
                     <span>سجل الأطعمة</span>

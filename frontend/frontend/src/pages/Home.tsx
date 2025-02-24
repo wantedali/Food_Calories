@@ -187,7 +187,7 @@ function App() {
                                                             </div>
                                                             <button
                                                                 className={styles.portionButton}
-                                                                onClick={() => handlePortionChange(food.id, food.portionSize + 50)}
+                                                                onClick={() => handlePortionChange(food.id, food.portionSize + 10)}
                                                             >
                                                                 <Plus className={styles.portionButtonIcon} />
                                                             </button>
