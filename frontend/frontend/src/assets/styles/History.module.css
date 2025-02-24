@@ -43,7 +43,7 @@
 }
 
 .card {
-  background-color: white;
+  background-color: #D4B675;
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -80,16 +80,21 @@
   border-radius: 0.5rem;
   font-size: 0.875rem;
   font-weight: 500;
-  background: linear-gradient(90deg, #e5c07b, #cfaf5d);
-  color: #1B2537;
-  transition: all 0.2s;
+  background: #1B2537;
+  color: white;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
 .button:hover {
-  background: linear-gradient(90deg, #cfaf5d, #e5c07b);
+  transform: translateY(-3px); 
+  background: #25324A; 
 }
 
+.button:active {
+  transform: translateY(0px);
+  background: #162033; 
+}
 .expandedContent {
   margin-top: 1rem;
   padding-top: 1rem;
@@ -102,7 +107,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  color: #4b5563;
+  color: white;
 }
 
 @media (max-width: 1024px) {
