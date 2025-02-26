@@ -102,7 +102,7 @@ const SignUp = () => {
             </label>
           </div>
 
-          <button type="submit" className={styles.submitButton}>
+          <button type="submit" className={styles.submitButton} onClick={() => navigate("/info")}>
             إنشاء حساب
           </button>
         </form>

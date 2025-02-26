@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ChefHat } from "lucide-react";
 import styles from "../assets/styles/Navbar.module.css";
+import { useNavigate } from 'react-router-dom';
 
 interface NavbarProps {
     showButtons?: boolean;
@@ -9,8 +10,11 @@ interface NavbarProps {
     onSignUpClick?: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ showButtons = false, onLoginClick, onSignUpClick }) => {
+const Navbar: React.FC<NavbarProps> = (
+    { showButtons = false, onLoginClick, onSignUpClick }) => {
+            const navigate = useNavigate();
     return (
+        
         <motion.nav
             initial={{ y: -100, opacity: 0 }} 
             animate={{ y: 0, opacity: 1 }} 
@@ -21,6 +25,11 @@ const Navbar: React.FC<NavbarProps> = ({ showButtons = false, onLoginClick, onSi
                 <div className={styles.logo}>
                     <ChefHat className={styles.logoIcon} />
                     <span className={styles.logoText}>لقمتي</span>
+                </div>
+                <div>
+                    <button className={styles.logout}  onClick={() => navigate("/")}>
+                        تسجيل الخروج
+                    </button>
                 </div>
 
                 {showButtons && (
