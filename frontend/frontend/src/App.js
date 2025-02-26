@@ -5,6 +5,7 @@ import SignIn from "./pages/SignIn/signIn";
 import Splash from "./pages/Splash";
 import Home from "./pages/Home";
 import History from "./pages/History";
+import Info from "./pages/Info"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/home" element={<Home />} />
         <Route path="/history" element={<History />} />
+        <Route path="/info" element={<Info />} />
       </Routes>
     </Router>
   );

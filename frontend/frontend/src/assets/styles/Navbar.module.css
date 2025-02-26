@@ -37,3 +37,23 @@
     font-size: 1.75rem;
     font-weight: 700;
 }
+
+.logout{
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    background: #D4B675;
+    color: #1B2537;
+    min-width: 160px;
+    box-shadow: 0 4px 15px rgba(229, 192, 123, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
