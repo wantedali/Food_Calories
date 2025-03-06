@@ -6,7 +6,7 @@ import Splash from "./pages/Splash";
 import Home from "./pages/Home";
 import History from "./pages/History";
 import Info from "./pages/Info"
-
+import Analyze from "./pages/Analyze"
 function App() {
   return (
     <Router>
@@ -17,6 +17,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/history" element={<History />} />
         <Route path="/info" element={<Info />} />
+        <Route path="/analyze" element={<Analyze/>} />
       </Routes>
     </Router>
   );
