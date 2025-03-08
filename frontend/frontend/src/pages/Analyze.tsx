@@ -50,27 +50,27 @@ function App() {
         }
     };
 
-    const startCamera = async () => {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({ 
-                video: { facingMode: 'environment' } 
-            });
-    
-            if (videoRef.current) {
-                videoRef.current.srcObject = stream;
-    
-                // Ensure video plays once the stream is assigned
-                videoRef.current.onloadedmetadata = () => {
-                    videoRef.current?.play();
-                };
-    
-                setIsCameraActive(true);
-            }
-        } catch (err) {
-            console.error("Error accessing camera:", err);
-            alert("لم نتمكن من الوصول إلى الكاميرا. يرجى التحقق من الإذن.");
+const startCamera = async () => {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ 
+            video: { facingMode: 'environment' } 
+        });
+
+        console.log("Camera Stream:", stream); // Debugging log
+
+        if (videoRef.current) {
+            videoRef.current.srcObject = stream;
+            videoRef.current.onloadedmetadata = () => {
+                videoRef.current?.play();
+            };
+
+            setIsCameraActive(true);
         }
-    };
+    } catch (err) {
+        console.error("Error accessing camera:", err);
+        alert("لم نتمكن من الوصول إلى الكاميرا. يرجى التحقق من الإذن.");
+    }
+};
 
     const stopCamera = () => {
         if (videoRef.current && videoRef.current.srcObject) {

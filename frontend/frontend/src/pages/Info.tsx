@@ -180,8 +180,8 @@ const Info: React.FC = () => {
   return (
     <div className={styles.questionsPage}>
       <div className={styles.welcomeSection}>
-        <h1 className={styles.welcomeTitle}>مرحباً بك في لوحة التحكم</h1>
-        <p className={styles.welcomeText}>ابدأ بتحليل وجبتك للحصول على معلومات تغذية دقيقة</p>
+        <h1 className={styles.welcomeTitle}>رحلتك نحو صحة أفضل تبدأ هنا! </h1>
+        <p className={styles.welcomeText}>ساعدنا في معرفة جسمك أكثر لنصمم لك خطة غذائية متكاملة تناسب احتياجاتك الفريدة.</p>
       </div>
 
       <div className={styles.progressBar}>
