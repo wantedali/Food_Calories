@@ -2,671 +2,263 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap');
 
 .container {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #1B2537 0%, #121a29 100%);
-    position: relative;
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    grid-template-rows: auto 1fr;
-    direction: rtl;
-}
-
-/* Navbar Styles */
-.navbar {
-    position: sticky;
-    top: 0;
-    grid-column: 1 / -1;
-    z-index: 50;
-    padding: 1rem 2rem;
-    background: rgba(27, 37, 55, 0.98);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(212, 182, 117, 0.1);
-}
-
-.navContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.logoIcon {
-    width: 2rem;
-    height: 2rem;
-    color: #D4B675;
-}
-
-.logoText {
-    font-family: 'Amiri', serif;
-    color: white;
-    font-size: 1.75rem;
-    font-weight: 700;
-}
-
-/* Sidebar Styles */
-.sidebar {
-    background: rgba(255, 255, 255, 0.03);
-    border-left: 1px solid rgba(212, 182, 117, 0.1);
-    padding: 2rem 1rem;
-}
-
-.sidebarContent {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.sidebarButton {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    border: none;
-    background: transparent;
-    color: white;
-    border-radius: 0.5rem;
-    font-family: 'Tajawal', sans-serif;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.sidebarButton:hover {
-    background: rgba(212, 182, 117, 0.1);
-}
-
-.sidebarButton.active {
-    background: #D4B675;
-    color: #1B2537;
-}
-
-.sidebarIcon {
-    width: 1.5rem;
-    height: 1.5rem;
+  min-height: 100vh;
+  background-color: #1B2537;
+  position: relative;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: auto 1fr;
+  direction: rtl;
 }
 
 /* Main Content Styles */
 .mainContent {
-    padding: 2rem;
-    overflow-y: auto;
+  padding: 2rem;
+  overflow-y: auto;
 }
 
 .pageHeader {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .pageHeader h1 {
-    font-family: 'Amiri', serif;
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 0.5rem;
+  font-family: 'Amiri', serif;
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 0.5rem;
 }
 
 .pageHeader p {
-    font-family: 'Tajawal', sans-serif;
-    color: #D4B675;
-    font-size: 1.25rem;
+  font-family: 'Tajawal', sans-serif;
+  color: #D4B675;
+  font-size: 1.25rem;
 }
 
-/* Upload Section Styles */
-.uploadSection {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+/* Dashboard Grid */
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
-/* New Options Container */
-.optionsContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+/* Dashboard Card Styles */
+.dashboardCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(212, 182, 117, 0.1);
+  display: flex;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
 }
 
-.uploadCard {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 1rem;
-    border: 2px dashed rgba(212, 182, 117, 0.3);
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    height: 100%;
+.dashboardCard:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 182, 117, 0.2);
 }
 
-.uploadCard:hover {
-    border-color: #D4B675;
-    background: rgba(255, 255, 255, 0.08);
+.cardIcon {
+  width: 3rem;
+  height: 3rem;
+  background: rgba(212, 182, 117, 0.1);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.fileInput {
+.cardIcon .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #D4B675;
+}
+
+.cardContent {
+  flex: 1;
+}
+
+.cardContent h3 {
+  color: #D4B675;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.cardValue {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardValue .number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  font-family: 'Amiri', serif;
+}
+
+.cardValue .unit {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+.cardValue .foodName {
+  font-size: 1.75rem;
+  color: white;
+  font-family: 'Amiri', serif;
+}
+
+.cardValue .calories {
+  font-size: 1.25rem;
+  color: #D4B675;
+  margin-right: 1rem;
+}
+
+.cardSubtext {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
+}
+
+/* Macronutrients Section */
+.macronutrientsSection {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(212, 182, 117, 0.1);
+  margin-top: 2rem;
+}
+
+.macronutrientsSection h2 {
+  font-family: 'Amiri', serif;
+  font-size: 1.75rem;
+  color: white;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.macronutrientsContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.chartContainer {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.macronutrientsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.macronutrientItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.macronutrientItem:hover {
+  transform: translateX(-4px);
+}
+
+.macronutrientIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.macronutrientIcon .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #D4B675;
+}
+
+.macronutrientInfo {
+  flex: 1;
+}
+
+.macronutrientInfo h3 {
+  color: white;
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.macronutrientInfo p {
+  color: #D4B675;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+@media (max-width: 1280px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .macronutrientsContent {
+    grid-template-columns: 1fr;
+  }
+
+  .chartContainer {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
     display: none;
+  }
 }
 
-.uploadOption {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    height: 100%;
-    justify-content: center;
-}
-
-.uploadIcon {
-    width: 4rem;
-    height: 4rem;
-    background: rgba(212, 182, 117, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.icon {
-    width: 2rem;
-    height: 2rem;
-    color: #D4B675;
-}
-
-.uploadOption h3 {
-    font-family: 'Tajawal', sans-serif;
-    color: white;
-    font-size: 1.5rem;
-}
-
-.uploadOption p {
-    color: #D4B675;
-    font-size: 1rem;
-}
-
-/* Camera View Styles */
-.cameraContainer {
-    background: #121925;
-    border-radius: 1rem;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid rgba(212, 182, 117, 0.3);
-}
-
-.videoWrapper {
-    width: 100%;
-    height: 0;
-    padding-bottom: 75%; /* 4:3 aspect ratio */
-    position: relative;
-    overflow: hidden;
-}
-
-.cameraVideo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.cameraControls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5rem;
-    background: rgba(18, 25, 37, 0.8);
-    gap: 2rem;
-}
-
-.captureButton {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    background: transparent;
-    border: 2px solid #D4B675;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 0;
-    transition: all 0.3s ease;
-}
-
-.captureButton:hover {
-    background: rgba(212, 182, 117, 0.1);
-}
-
-.captureButtonInner {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background: #D4B675;
-    transition: all 0.2s ease;
-}
-
-.captureButton:active .captureButtonInner {
-    width: 2.75rem;
-    height: 2.75rem;
-}
-
-.cancelButton {
-    background: transparent;
-    border: none;
-    color: white;
-    font-family: 'Tajawal', sans-serif;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
-}
-
-.cancelButton:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Preview Section Styles */
-.previewSection {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 1rem;
-    padding: 2rem;
-    border: 1px solid rgba(212, 182, 117, 0.1);
-}
-
-.imagePreview {
-    border-radius: 0.5rem;
-    overflow: hidden;
-    aspect-ratio: 16/9;
-}
-
-.imagePreview img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Analysis Animation */
-.analyzing {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.spinnerIcon {
-    width: 3rem;
-    height: 3rem;
-    color: #D4B675;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.analyzing p {
-    color: white;
-    font-size: 1.25rem;
-}
-
-/* Results Styles */
-.results {
+@media (max-width: 640px) {
+  .navbar {
     padding: 1rem;
-}
+  }
 
-.resultHeader {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
+  .mainContent {
+    padding: 1rem;
+  }
 
-.resultIcon {
-    width: 2rem;
-    height: 2rem;
-    color: #D4B675;
-}
-
-.resultHeader h2 {
-    font-family: 'Amiri', serif;
-    color: white;
+  .pageHeader h1 {
     font-size: 2rem;
-}
+  }
 
-/* Detected Foods Styles */
-.detectedFoods {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.foodCard {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 0.75rem;
-    border: 1px solid rgba(212, 182, 117, 0.1);
+  .dashboardCard {
     padding: 1.5rem;
-    transition: all 0.3s ease;
-}
+  }
 
-.foodCard:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(212, 182, 117, 0.2);
-    transform: translateY(-2px);
-}
+  .cardValue .number {
+    font-size: 2rem;
+  }
 
-.foodHeader {
-    margin-bottom: 1.5rem;
-}
-
-.foodHeader h3 {
-    color: white;
+  .cardValue .foodName {
     font-size: 1.5rem;
-    margin-bottom: 0.25rem;
-    font-family: 'Amiri', serif;
-}
+  }
 
-.foodHeader span {
-    color: #D4B675;
-    font-size: 1rem;
-}
+  .macronutrientsSection {
+    padding: 1.5rem;
+  }
 
-/* Portion Size Styles */
-.portionSection {
-    background: rgba(212, 182, 117, 0.1);
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.portionHeader {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.portionIcon {
-    width: 1.25rem;
-    height: 1.25rem;
-    color: #D4B675;
-}
-
-.portionHeader span {
-    color: #D4B675;
-    font-size: 1rem;
-}
-
-.portionDisplay {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.portionDisplay span {
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 500;
-}
-
-.editButton {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: transparent;
-    border: 1px solid #D4B675;
-    color: #D4B675;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    font-family: 'Tajawal', sans-serif;
-    font-size: 0.875rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.editButton:hover {
-    background: rgba(212, 182, 117, 0.1);
-}
-
-.editIcon {
-    width: 1rem;
-    height: 1rem;
-}
-
-.portionEdit {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.portionButton {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.portionButton:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.portionButtonIcon {
-    width: 1.25rem;
-    height: 1.25rem;
-    color: #D4B675;
-}
-
-.portionValue {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 100px;
-}
-
-.portionNumber {
-    color: white;
+  .macronutrientsSection h2 {
     font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.portionUnit {
-    color: #D4B675;
-    font-size: 0.875rem;
-}
-
-/* Nutrition Grid Styles */
-.nutritionGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-}
-
-.nutritionItem {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid rgba(212, 182, 117, 0.1);
-}
-
-.nutritionItem h4 {
-    color: #D4B675;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.nutritionItem p {
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 500;
-}
-
-/* Total Nutrition Styles */
-.totalNutrition {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(212, 182, 117, 0.1);
-}
-
-.totalNutrition h3 {
-    color: white;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-family: 'Amiri', serif;
-}
-
-.saveButton {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #D4B675;
-    color: #1B2537;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    font-family: 'Tajawal', sans-serif;
-    font-size: 1.125rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.saveButton:hover {
-    background: #E5C686;
-    transform: translateY(-2px);
-}
-
-.saveIcon {
-    width: 1.25rem;
-    height: 1.25rem;
-}
-
-@media screen and (max-width: 1024px) {
-    .container {
-        grid-template-columns: 1fr; /* Full width for content, hide sidebar on small screens */
-    }
-
-    .sidebar {
-        display: none; /* Hide sidebar on smaller screens */
-    }
-
-    .mainContent {
-        padding: 1rem;
-    }
-
-    .uploadSection {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .optionsContainer {
-        grid-template-columns: 1fr; /* Stack options vertically */
-    }
-
-    .previewSection {
-        grid-template-columns: 1fr; /* Stack preview content */
-    }
-
-    .detectedFoods {
-        flex-direction: column; /* Stack detected food items */
-    }
-
-    .nutritionGrid {
-        grid-template-columns: 1fr; /* Stack nutrition data */
-    }
-
-    .saveButton {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logoText {
-        font-size: 1.5rem;
-    }
-
-    .uploadOption h3 {
-        font-size: 1.25rem;
-    }
-
-    .uploadOption p {
-        font-size: 0.9rem;
-    }
-
-    .imagePreview img {
-        width: 100%;
-        height: auto;
-    }
-
-    .cameraContainer {
-        width: 100%;
-    }
-
-    .detectedFoods {
-        gap: 1rem;
-    }
-
-    .nutritionItem {
-        padding: 0.75rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .pageHeader h1 {
-        font-size: 1.75rem;
-    }
-
-    .pageHeader p {
-        font-size: 1rem;
-    }
-
-    .uploadOption h3 {
-        font-size: 1rem;
-    }
-
-    .uploadOption p {
-        font-size: 0.8rem;
-    }
-
-    .resultHeader h2 {
-        font-size: 1.5rem;
-    }
-
-    .detectedFoods {
-        gap: 0.75rem;
-    }
-
-    .portionNumber {
-        font-size: 1.25rem;
-    }
-
-    .saveButton {
-        font-size: 1rem;
-    }
+  }
 }

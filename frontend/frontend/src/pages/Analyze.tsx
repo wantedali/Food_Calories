@@ -12,7 +12,7 @@ import {
     Minus,
     Camera
 } from 'lucide-react';
-import styles from '../assets/styles/Home.module.css';
+import styles from '../assets/styles/Analyze.module.css';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
