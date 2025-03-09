@@ -1,4 +1,4 @@
-/* SignInPage.module.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&display=swap');
 
 :root {
@@ -38,7 +38,7 @@
   opacity: 1;
 }
 
-/* Left Section - Image Slider */
+
 .leftSection {
   flex: 0.85;
   position: relative;
@@ -163,7 +163,7 @@
   transform: scale(1.2);
 }
 
-/* Right Section - Form */
+
 .rightSection {
   flex: 1.15;
   display: flex;
@@ -559,18 +559,18 @@
   text-decoration: underline;
 }
 
-/* =================== IMPROVED RESPONSIVE DESIGN =================== */
 
-/* Large Desktops - Keeping the desktop view exactly the same */
 
-/* Medium Desktops and Laptops (1200px and down) */
+
+
+
 @media (max-width: 1200px) {
   .leftSection, .rightSection {
-    flex: 1; /* Equal flex distribution for better balance */
+    flex: 1;
   }
 }
 
-/* Tablets and Small Laptops (992px and down) */
+
 @media (max-width: 992px) {
   .leftSection {
     flex: 0.9;
@@ -594,10 +594,10 @@
   }
 }
 
-/* Tablets (768px and down) */
+
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Stack sections vertically */
+    flex-direction: column;
     height: 100%;
     min-height: 100vh;
     overflow-y: auto;
@@ -605,7 +605,7 @@
 
   .leftSection {
     flex: none;
-    height: 40vh; /* Fixed height for the image slider */
+    height: 40vh;
     min-height: 300px;
     padding: 1.5rem;
     width: 100%;
@@ -644,7 +644,7 @@
   }
 }
 
-/* Large Phones (576px and down) */
+
 @media (max-width: 576px) {
   .leftSection {
     height: 35vh;
@@ -681,7 +681,7 @@
     padding: 0.875rem 2.5rem 0.875rem 1rem;
   }
 
-  /* Keep form options in a single row */
+ 
   .formOptions {
     flex-direction: row;
     justify-content: space-between;
@@ -690,7 +690,7 @@
   }
 }
 
-/* Small Phones (480px and down) */
+
 @media (max-width: 480px) {
   .leftSection {
     height: 30vh;
@@ -728,7 +728,7 @@
     margin-bottom: 1.25rem;
   }
 
-  /* Special handling for small screens */
+ 
   .formOptions {
     flex-direction: column;
     align-items: flex-start;
@@ -737,7 +737,7 @@
 
   .forgotPassword {
     align-self: flex-end;
-    margin-top: -1.75rem; /* Position it next to the Remember Me checkbox */
+    margin-top: -1.75rem;
   }
 
   .submitButton {
@@ -750,7 +750,7 @@
   }
 }
 
-/* Very Small Phones (360px and down) */
+
 @media (max-width: 360px) {
   .leftSection {
     height: 25vh;
@@ -791,7 +791,7 @@
     margin-top: -1.5rem;
   }
 
-  /* Fixed button height for very small screens */
+ 
   .submitButton {
     padding: 0.75rem;
     font-size: 0.9rem;

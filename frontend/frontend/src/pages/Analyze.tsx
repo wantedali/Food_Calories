@@ -12,7 +12,7 @@ import {
     Minus,
     Camera
 } from 'lucide-react';
-import styles from '../assets/styles/Home.module.css';
+import styles from '../assets/styles/Analyze.module.css';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
@@ -36,7 +36,6 @@ function App() {
     const [isHovered, setIsHovered] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
-    // Check if device is mobile
     useEffect(() => {
         const checkMobile = () => {
             setIsMobile(window.innerWidth <= 768);
@@ -134,10 +133,9 @@ function App() {
 
     return (
         <div className={styles.container}>
-            {/* Navbar */}
+
             <Navbar />
 
-            {/* Sidebar */}
             <Sidebar />
 
             <main className={styles.mainContent}>
@@ -159,7 +157,6 @@ function App() {
 
                 <div className={styles.uploadSection}>
                     <div className={isMobile ? styles.optionsContainerMobile : styles.optionsContainerDesktop}>
-                        {/* Camera Option - Only visible on mobile */}
                         {isMobile && (
                             <div className={styles.uploadCard}>
                                 <input
@@ -185,7 +182,7 @@ function App() {
                             </div>
                         )}
 
-                        {/* Gallery Upload Option - Always visible */}
+
                         <div className={`${styles.uploadCard} ${!isMobile ? styles.fullWidthCard : ''}`}>
                             <input
                                 type="file"
@@ -338,7 +335,6 @@ function App() {
                     )}
                 </div>
             </main>
-            {/* Footer */}
             <Footer />
         </div>
     );

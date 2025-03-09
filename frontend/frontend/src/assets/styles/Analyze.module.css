@@ -11,7 +11,7 @@
     direction: rtl;
 }
 
-/* Navbar Styles */
+
 .navbar {
     position: sticky;
     top: 0;
@@ -48,7 +48,7 @@
     font-weight: 700;
 }
 
-/* Sidebar Styles */
+
 .sidebar {
     background: rgba(255, 255, 255, 0.03);
     border-left: 1px solid rgba(212, 182, 117, 0.1);
@@ -90,10 +90,19 @@
     height: 1.5rem;
 }
 
-/* Main Content Styles */
+
 .mainContent {
     padding: 2rem;
     overflow-y: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainContent > * {
+    width: 100%;
+    max-width: 1200px;
 }
 
 .pageHeader {
@@ -113,14 +122,15 @@
     font-size: 1.25rem;
 }
 
-/* Upload Section Styles */
+
 .uploadSection {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
 }
 
-/* Options Container Styles */
+
 .optionsContainerMobile {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -128,10 +138,11 @@
 }
 
 .optionsContainerDesktop {
-    display: flex; /* Change to flex */
+    display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    max-width: 100%; /* Change this line */
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -139,12 +150,13 @@
     background: rgba(255, 255, 255, 0.05);
     border-radius: 1rem;
     border: 2px dashed rgba(212, 182, 117, 0.3);
-    padding: 2rem;
+    padding: 2.5rem;
     text-align: center;
     transition: all 0.3s ease;
     height: 100%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    width: 100%; /* Add this line */
+    width: 100%;
+    max-width: 100%;
 }
 
 .uploadCard:hover {
@@ -200,7 +212,7 @@
     line-height: 1.4;
 }
 
-/* Preview Section Styles */
+
 .previewSection {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -225,7 +237,7 @@
     object-fit: cover;
 }
 
-/* Analysis Animation */
+
 .analyzing {
     display: flex;
     flex-direction: column;
@@ -256,7 +268,7 @@
     font-size: 1.25rem;
 }
 
-/* Results Styles */
+
 .results {
     padding: 1rem;
 }
@@ -280,7 +292,7 @@
     font-size: 2rem;
 }
 
-/* Detected Foods Styles */
+
 .detectedFoods {
     display: flex;
     flex-direction: column;
@@ -320,7 +332,7 @@
     font-size: 1rem;
 }
 
-/* Portion Size Styles */
+
 .portionSection {
     background: rgba(212, 182, 117, 0.1);
     border-radius: 0.5rem;
@@ -430,7 +442,7 @@
     font-size: 0.875rem;
 }
 
-/* Nutrition Grid Styles */
+
 .nutritionGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -456,7 +468,7 @@
     font-weight: 500;
 }
 
-/* Total Nutrition Styles */
+
 .totalNutrition {
     margin-top: 2rem;
     padding-top: 2rem;
@@ -499,14 +511,14 @@
     height: 1.25rem;
 }
 
-/* Enhanced Responsive Design */
+
 @media screen and (max-width: 1024px) {
     .container {
-        grid-template-columns: 1fr; /* Full width for content, hide sidebar on small screens */
+        grid-template-columns: 1fr;
     }
 
     .sidebar {
-        display: none; /* Hide sidebar on smaller screens */
+        display: none;
     }
 
     .mainContent {
@@ -514,15 +526,15 @@
     }
 
     .previewSection {
-        grid-template-columns: 1fr; /* Stack preview content */
+        grid-template-columns: 1fr; 
     }
 
     .nutritionGrid {
-        grid-template-columns: 1fr 1fr; /* Keep 2 columns for nutrition data */
+        grid-template-columns: 1fr 1fr; 
     }
 }
 
-/* Improved tablet responsiveness */
+
 @media screen and (max-width: 768px) {
     .navbar {
         padding: 1rem;
@@ -548,7 +560,7 @@
     }
 
     .imagePreview {
-        aspect-ratio: auto; /* Fix aspect ratio issues on some mobile devices */
+        aspect-ratio: auto;
     }
 
     .imagePreview img {
@@ -570,7 +582,6 @@
         padding: 0.75rem;
     }
     
-    /* Make nutrition grid 2 columns for better layout on mobile */
     .nutritionGrid {
         grid-template-columns: 1fr 1fr;
         gap: 0.75rem;

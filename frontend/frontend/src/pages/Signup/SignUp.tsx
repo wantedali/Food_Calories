@@ -67,7 +67,7 @@ const SignUpPage: React.FC = () => {
       setTimeout(() => {
         submitBtn.classList.remove(styles.loading);
         console.log({ name, email, password, confirmPassword, agreeToTerms });
-        // Here you would implement your signup logic
+        
       }, 1500);
     }
   };

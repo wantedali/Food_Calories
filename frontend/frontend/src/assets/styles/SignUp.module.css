@@ -1,4 +1,4 @@
-/* SignUp.module.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&display=swap');
 
 :root {
@@ -38,7 +38,7 @@
   opacity: 1;
 }
 
-/* Left Section - Image Slider */
+
 .leftSection {
   flex: 0.85;
   position: relative;
@@ -163,7 +163,7 @@
   transform: scale(1.2);
 }
 
-/* Right Section - Form */
+
 .rightSection {
   flex: 1.15;
   display: flex;
@@ -189,7 +189,7 @@
 .formContainer {
   width: 100%;
   max-width: 480px;
-  padding: 2rem; /* Reduced from 2.5rem */
+  padding: 2rem;
   background-color: rgba(255, 255, 255, 0.03);
   background-image: linear-gradient(
     135deg, 
@@ -241,15 +241,15 @@
 }
 
 .formTitle {
-  margin-bottom: 0.3rem; /* Reduced from 0.5rem */
+  margin-bottom: 0.3rem;
   color: var(--text-light);
-  font-size: 1.85rem; /* Slightly reduced from 2rem */
+  font-size: 1.85rem;
   text-align: center;
   font-weight: 700;
 }
 
 .formSubtitle {
-  margin-bottom: 1.5rem; /* Reduced from 2rem */
+  margin-bottom: 1.5rem;
   color: var(--text-muted);
   font-size: 1rem;
   text-align: center;
@@ -259,13 +259,13 @@
 .inputGroup {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.25rem; /* Reduced from 1.5rem */
+  margin-bottom: 1.25rem;
   width: 100%;
 }
 
 .inputGroup label {
   color: var(--text-light);
-  margin-bottom: 0.4rem; /* Reduced from 0.5rem */
+  margin-bottom: 0.4rem;
   font-size: 0.9rem;
   font-weight: 500;
   opacity: 0.9;
@@ -286,7 +286,7 @@
 
 .inputGroup input {
   width: 100%;
-  padding: 0.9rem 2.5rem 0.9rem 1rem; /* Reduced from 1rem */
+  padding: 0.9rem 2.5rem 0.9rem 1rem;
   border-radius: 10px;
   border: 1px solid var(--border-color);
   background-color: var(--lighter-bg);
@@ -325,7 +325,7 @@
 }
 
 .termsCheck {
-  margin-bottom: 1.25rem; /* Reduced from 1.5rem */
+  margin-bottom: 1.25rem;
 }
 
 
@@ -486,18 +486,18 @@
   text-decoration: underline;
 }
 
-/* =================== RESPONSIVE DESIGN =================== */
 
-/* Large Desktops - Keeping the desktop view exactly the same */
 
-/* Medium Desktops and Laptops (1200px and down) */
+
+
+
 @media (max-width: 1200px) {
   .leftSection, .rightSection {
-    flex: 1; /* Equal flex distribution for better balance */
+    flex: 1;
   }
 }
 
-/* Tablets and Small Laptops (992px and down) */
+
 @media (max-width: 992px) {
   .leftSection {
     flex: 0.9;
@@ -521,10 +521,10 @@
   }
 }
 
-/* Tablets (768px and down) */
+
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Stack sections vertically */
+    flex-direction: column;
     height: 100%;
     min-height: 100vh;
     overflow-y: auto;
@@ -532,7 +532,7 @@
 
   .leftSection {
     flex: none;
-    height: 40vh; /* Fixed height for the image slider */
+    height: 40vh;
     min-height: 300px;
     padding: 1.5rem;
     width: 100%;
@@ -571,7 +571,7 @@
   }
 }
 
-/* Large Phones (576px and down) */
+
 @media (max-width: 576px) {
   .leftSection {
     height: 35vh;
@@ -609,7 +609,7 @@
   }
 }
 
-/* Small Phones (480px and down) */
+
 @media (max-width: 480px) {
   .leftSection {
     height: 30vh;
@@ -652,7 +652,7 @@
   }
 }
 
-/* Very Small Phones (360px and down) */
+
 @media (max-width: 360px) {
   .leftSection {
     height: 25vh;
@@ -688,7 +688,7 @@
     font-size: 0.8rem;
   }
 
-  /* Fixed button height for very small screens */
+ 
   .submitButton {
     padding: 0.75rem;
     font-size: 0.9rem;
