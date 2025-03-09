@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import {
     Upload,
     Image as ImageIcon,
@@ -34,11 +34,23 @@ function App() {
     const [detectedFoods, setDetectedFoods] = useState<DetectedFood[]>([]);
     const [editingPortionId, setEditingPortionId] = useState<string | null>(null);
     const [isHovered, setIsHovered] = useState(false);
-    const [isCameraActive, setIsCameraActive] = useState(false);
-    const videoRef = useRef<HTMLVideoElement>(null);
-    const canvasRef = useRef<HTMLCanvasElement>(null);
+    const [isMobile, setIsMobile] = useState(false);
 
-    const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // Check if device is mobile
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => {
+            window.removeEventListener('resize', checkMobile);
+        };
+    }, []);
+
+    const handleGalleryUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
         if (file) {
             const reader = new FileReader();
@@ -50,66 +62,15 @@ function App() {
         }
     };
 
-    const startCamera = async () => {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({ 
-                video: { facingMode: 'environment' } 
-            });
-    
-            if (videoRef.current) {
-                videoRef.current.srcObject = stream;
-    
-                // Ensure video plays once the stream is assigned
-                videoRef.current.onloadedmetadata = () => {
-                    videoRef.current?.play();
-                };
-    
-                setIsCameraActive(true);
-            }
-        } catch (err) {
-            console.error("Error accessing camera:", err);
-            alert("لم نتمكن من الوصول إلى الكاميرا. يرجى التحقق من الإذن.");
-        }
-    };
-
-    const stopCamera = () => {
-        if (videoRef.current && videoRef.current.srcObject) {
-            const stream = videoRef.current.srcObject as MediaStream;
-            const tracks = stream.getTracks();
-            
-            tracks.forEach(track => {
-                track.stop();
-            });
-            
-            videoRef.current.srcObject = null;
-            setIsCameraActive(false);
-        }
-    };
-
-    const captureImage = () => {
-        if (videoRef.current && canvasRef.current) {
-            const video = videoRef.current;
-            const canvas = canvasRef.current;
-            
-            // Set canvas dimensions to match video
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            
-            // Draw video frame to canvas
-            const context = canvas.getContext('2d');
-            if (context) {
-                context.drawImage(video, 0, 0, canvas.width, canvas.height);
-                
-                // Convert canvas to data URL
-                const imageDataUrl = canvas.toDataURL('image/jpeg');
-                setImagePreview(imageDataUrl);
-                
-                // Stop camera
-                stopCamera();
-                
-                // Process the image
+    const handleCameraCapture = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setImagePreview(reader.result as string);
                 simulateAnalysis();
-            }
+            };
+            reader.readAsDataURL(file);
         }
     };
 
@@ -197,30 +158,41 @@ function App() {
                 </motion.div>
 
                 <div className={styles.uploadSection}>
-                    <div className={styles.optionsContainer}>
-                        {/* Camera Option */}
-                        <div className={styles.uploadCard}>
-                            <motion.div
-                                className={styles.uploadOption}
-                                whileHover={{ y: -5 }}
-                                onClick={startCamera}
-                            >
-                                <div className={styles.uploadIcon}>
-                                    <Camera className={styles.icon} />
-                                </div>
-                                <h3>التقط صورة مباشرة</h3>
-                                <p>استخدم الكاميرا لإلتقاط صورة لوجبتك</p>
-                            </motion.div>
-                        </div>
+                    <div className={isMobile ? styles.optionsContainerMobile : styles.optionsContainerDesktop}>
+                        {/* Camera Option - Only visible on mobile */}
+                        {isMobile && (
+                            <div className={styles.uploadCard}>
+                                <input
+                                    type="file"
+                                    id="cameraUpload"
+                                    accept="image/*"
+                                    capture="environment"
+                                    className={styles.fileInput}
+                                    onChange={handleCameraCapture}
+                                />
+                                
+                                <motion.label
+                                    htmlFor="cameraUpload"
+                                    className={styles.uploadOption}
+                                    whileHover={{ y: -5 }}
+                                >
+                                    <div className={styles.uploadIcon}>
+                                        <Camera className={styles.icon} />
+                                    </div>
+                                    <h3>التقط صورة مباشرة</h3>
+                                    <p>استخدم الكاميرا لإلتقاط صورة لوجبتك</p>
+                                </motion.label>
+                            </div>
+                        )}
 
-                        {/* Upload Option */}
-                        <div className={styles.uploadCard}>
+                        {/* Gallery Upload Option - Always visible */}
+                        <div className={`${styles.uploadCard} ${!isMobile ? styles.fullWidthCard : ''}`}>
                             <input
                                 type="file"
                                 id="imageUpload"
                                 accept="image/*"
                                 className={styles.fileInput}
-                                onChange={handleImageUpload}
+                                onChange={handleGalleryUpload}
                             />
                             
                             <motion.label
@@ -232,7 +204,7 @@ function App() {
                             >
                                 <motion.div
                                     className={styles.uploadIcon}
-                                    animate={isHovered ? { y: [0, -5, 0] } : { y: 0 }}
+                                    animate={isHovered ? { y: [0, -20, 0] } : { y: 0 }}
                                     transition={{
                                         repeat: isHovered ? Infinity : 0, 
                                         duration: 0.6, 
@@ -247,36 +219,7 @@ function App() {
                         </div>
                     </div>
 
-                    {/* Camera View */}
-                    {isCameraActive && (
-                        <div className={styles.cameraContainer}>
-                            <div className={styles.videoWrapper}>
-                                <video 
-                                    ref={videoRef} 
-                                    autoPlay 
-                                    playsInline
-                                    className={styles.cameraVideo}
-                                />
-                                <canvas ref={canvasRef} style={{ display: 'none' }} />
-                            </div>
-                            <div className={styles.cameraControls}>
-                                <button 
-                                    className={styles.captureButton}
-                                    onClick={captureImage}
-                                >
-                                    <div className={styles.captureButtonInner}></div>
-                                </button>
-                                <button 
-                                    className={styles.cancelButton}
-                                    onClick={stopCamera}
-                                >
-                                    إلغاء
-                                </button>
-                            </div>
-                        </div>
-                    )}
-
-                    {imagePreview && !isCameraActive && (
+                    {imagePreview && (
                         <div className={styles.previewSection}>
                             <div className={styles.imagePreview}>
                                 <img src={imagePreview} alt="Preview" />

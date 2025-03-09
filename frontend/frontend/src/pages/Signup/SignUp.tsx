@@ -1,114 +1,239 @@
-import React, { useState , useEffect } from "react";
-import Slider from "react-slick";
-import styles from "../../assets/styles/SignUp.module.css";
-import { Eye, ChefHat, ArrowLeft } from 'lucide-react';
+import styles from '../../assets/styles/SignUp.module.css';
 import { useNavigate } from 'react-router-dom';
-import AOS from "aos";
-import "aos/dist/aos.css"; 
+import React, { useState, useEffect, useRef } from 'react';
+import { ChefHat, ArrowLeft, Eye, EyeOff, User, Coffee, Lock } from 'lucide-react';
 
-const SignUp = () => {
-  const navigate = useNavigate(); 
+const SignUpPage: React.FC = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [agreeToTerms, setAgreeToTerms] = useState(false);
+  const nameInputRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
+
+  const sliderImages = [
+    'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1610057099431-d73a1c9d2f2f?q=80&w=1200&auto=format&fit=crop',
+  ];
+
+  const quotes = [
+    {
+      gold: "مطبخ الأصالة",
+      white: "نكهات تراثية"
+    },
+    {
+      gold: "لذة الطعام",
+      white: "سر السعادة"
+    },
+    {
+      gold: "وجبتك بلقطة",
+      white: "صحتك بخيارك"
+    },
+    {
+      gold: "طبق شهي",
+      white: "لحياة صحية"
+    }
+  ];
+
   useEffect(() => {
-    AOS.init({
-      duration: 1000, 
-      once: true, 
-      easing: "ease-in-out", 
-    });
+    setIsVisible(true);
+    
+    setTimeout(() => {
+      if (nameInputRef.current) {
+        nameInputRef.current.focus();
+      }
+    }, 700);
+
+    const slideInterval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+    }, 5000);
+
+    return () => clearInterval(slideInterval);
   }, []);
 
-  const settings = {
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2500,
-    arrows: false,
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const submitBtn = document.querySelector(`.${styles.submitButton}`) as HTMLButtonElement;
+    if (submitBtn) {
+      submitBtn.classList.add(styles.loading);
+      setTimeout(() => {
+        submitBtn.classList.remove(styles.loading);
+        console.log({ name, email, password, confirmPassword, agreeToTerms });
+        // Here you would implement your signup logic
+      }, 1500);
+    }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
   };
 
   return (
-    <div className={styles.signUp} data-aos="fade-in">
-             <button className={styles.backButton} onClick={() => navigate("/")}>
-                  <ArrowLeft className={styles.backIcon} />
-              </button>
-      <div className={styles.leftSection} data-aos="fade-left" data-aos-delay="200">
-        <Slider {...settings}>
-          <div>
-            <img src="/images/falafel.jpg" alt="Falafel" />
-          </div>
-          <div>
-            <img src="/images/hummus.jpg" alt="Hummus" />
-          </div>
-          <div>
-            <img src="/images/kebab.jpg" alt="Kebab" />
-          </div>
-        </Slider>
-             <div className={styles.imageOverlay}>
-                <h2 className={styles.arabicTitle}>،وجبتك بلقطة</h2>
-                <p className={styles.arabicSubtitle}>صحتك بخيارك</p>
+    <div className={`${styles.container} ${isVisible ? styles.visible : ''}`}>
+      <div className={`${styles.leftSection} ${isVisible ? styles.fadeInRight : ''}`}>
+        <div className={styles.slider}>
+          {sliderImages.map((src, index) => (
+            <div
+              key={index}
+              className={`${styles.slide} ${index === currentSlide ? styles.activeSlide : ''}`}
+            >
+              <img src={src} alt={`Middle Eastern Food ${index + 1}`} />
             </div>
-      </div>
-
-      <div className={styles.rightSection} data-aos="fade-right" data-aos-delay="200">
-      <div className={styles.logo}>
-                <ChefHat className={styles.logoIcon} />
-                <span className={styles.logoText}>لقمتي</span>
-            </div>
-        <div className={styles.header}>
-          <h2 className={styles.title}>إنشاء حساب</h2>
-          <p className={styles.subtext}>
-            لديك حساب بالفعل؟{" "}
-            <span className={styles.loginText}  onClick={() => navigate("/signin")}>تسجيل الدخول</span>
-          </p>
+          ))}
+          <div className={styles.arabicStatement}>
+            <span className={styles.goldText}>{quotes[currentSlide].gold}</span>
+            <span className={styles.whiteText}>{quotes[currentSlide].white}</span>
+          </div>
         </div>
-
-        <form className={styles.form}>
-          <div className={styles.row}>
-            <div className={styles.lastNameContainer}>
-              <input
-                type="text"
-                placeholder="الإسم الأخير"
-                className={styles.lastNameInput}
-              />
-            </div>
-            <div className={styles.firstNameContainer}>
-              <input
-                type="text"
-                placeholder="الإسم الأول"
-                className={styles.firstNameInput}
-              />
-            </div>
-          </div>
-
-          <div>
-            <input
-              type="email"
-              placeholder="البريد الإلكتروني"
-              className={styles.inputField}
+        <div className={styles.sliderDots}>
+          {sliderImages.map((_, index) => (
+            <span 
+              key={index} 
+              className={`${styles.dot} ${index === currentSlide ? styles.activeDot : ''}`}
+              onClick={() => setCurrentSlide(index)}
             />
-          </div>
-          <div>
-            <input
-              type="text"
-              placeholder="كلمة السر"
-              className={styles.inputField}
-            />
+          ))}
+        </div>
+      </div>
+      <div className={`${styles.rightSection} ${isVisible ? styles.fadeInLeft : ''}`}>
+        <div className={styles.formContainer}>
+          <div className={styles.header}>
+            <div className={styles.logo}>
+              <ChefHat size={24} />
+              <span>لقمتي</span>
+            </div>
+            <button className={styles.backButton} onClick={() => navigate("/")}>
+              <ArrowLeft size={20} />
+            </button>
           </div>
 
-          <div className={styles.checkboxContainer}>
-            <input type="checkbox" id="terms" className={styles.checkbox} />
-            <label htmlFor="terms" className={styles.shroot}>
-              أوافق على الشروط والأحكام
-            </label>
-          </div>
+          <h2 className={styles.formTitle}>انضم إلينا اليوم!</h2>
+          <p className={styles.formSubtitle}> انشأ حسابك واكتشف عالم من النكهات</p>
+          
+          <form onSubmit={handleSubmit}>
+            <div className={styles.inputGroup}>
+              <label htmlFor="name">الاسم الكامل</label>
+              <div className={styles.inputWrapper}>
+                <User className={styles.inputIcon} size={18} />
+                <input
+                  id="name"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  placeholder="أدخل اسمك الكامل"
+                  ref={nameInputRef}
+                  className={name ? styles.filledInput : ''}
+                />
+              </div>
+            </div>
 
-          <button type="submit" className={styles.submitButton} onClick={() => navigate("/info")}>
-            إنشاء حساب
-          </button>
-        </form>
+            <div className={styles.inputGroup}>
+              <label htmlFor="email">البريد الإلكتروني</label>
+              <div className={styles.inputWrapper}>
+                <Coffee className={styles.inputIcon} size={18} />
+                <input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  placeholder="أدخل بريدك الإلكتروني"
+                  className={email ? styles.filledInput : ''}
+                />
+              </div>
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="password">كلمة المرور</label>
+              <div className={styles.inputWrapper}>
+                <Lock className={styles.inputIcon} size={18} />
+                <input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  placeholder="أدخل كلمة المرور"
+                  className={password ? styles.filledInput : ''}
+                />
+                <button
+                  type="button"
+                  className={styles.passwordToggle}
+                  onClick={togglePasswordVisibility}
+                  aria-label={showPassword ? "إخفاء كلمة المرور" : "إظهار كلمة المرور"}
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="confirmPassword">تأكيد كلمة المرور</label>
+              <div className={styles.inputWrapper}>
+                <Lock className={styles.inputIcon} size={18} />
+                <input
+                  id="confirmPassword"
+                  type={showConfirmPassword ? "text" : "password"}
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                  placeholder="أعد إدخال كلمة المرور"
+                  className={confirmPassword ? styles.filledInput : ''}
+                />
+                <button
+                  type="button"
+                  className={styles.passwordToggle}
+                  onClick={toggleConfirmPasswordVisibility}
+                  aria-label={showConfirmPassword ? "إخفاء كلمة المرور" : "إظهار كلمة المرور"}
+                >
+                  {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
+            </div>
+
+            <div className={styles.termsCheck}>
+              <label className={styles.checkbox}>
+                <input 
+                  type="checkbox" 
+                  checked={agreeToTerms} 
+                  onChange={() => setAgreeToTerms(!agreeToTerms)} 
+                  required
+                />
+                <span className={styles.checkmark}></span>
+         <a href="#" className={styles.termsLink} >أوافق على الشروط والأحكام </a>
+              </label>
+            </div>
+
+            <button type="submit" className={styles.submitButton}>
+              <span className={styles.buttonText}>إنشاء حساب</span>
+              <span className={styles.loadingDots}>
+                <span className={styles.dot}></span>
+                <span className={styles.dot}></span>
+                <span className={styles.dot}></span>
+              </span>
+            </button>
+
+            <div className={styles.loginLink}>
+              لديك حساب بالفعل؟ <a href="/SignIn">تسجيل الدخول</a>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
 };
 
-export default SignUp;
+export default SignUpPage;
