@@ -486,11 +486,6 @@
   text-decoration: underline;
 }
 
-
-
-
-
-
 @media (max-width: 1200px) {
   .leftSection, .rightSection {
     flex: 1;

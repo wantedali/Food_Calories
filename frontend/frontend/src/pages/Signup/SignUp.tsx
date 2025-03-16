@@ -217,7 +217,7 @@ const SignUpPage: React.FC = () => {
               </label>
             </div>
 
-            <button type="submit" className={styles.submitButton}>
+            <button type="submit" className={styles.submitButton} onClick={() => navigate("/info")}>
               <span className={styles.buttonText}>إنشاء حساب</span>
               <span className={styles.loadingDots}>
                 <span className={styles.dot}></span>
