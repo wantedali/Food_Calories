@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\FoodCalorie\\FoodCalorie.csproj": {}
+    "F:\\FoodCalorie\\backend\\FoodCalorie.csproj": {}
   },
   "projects": {
-    "F:\\FoodCalorie\\FoodCalorie.csproj": {
+    "F:\\FoodCalorie\\backend\\FoodCalorie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\FoodCalorie\\FoodCalorie.csproj",
+        "projectUniqueName": "F:\\FoodCalorie\\backend\\FoodCalorie.csproj",
         "projectName": "FoodCalorie",
-        "projectPath": "F:\\FoodCalorie\\FoodCalorie.csproj",
+        "projectPath": "F:\\FoodCalorie\\backend\\FoodCalorie.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "F:\\FoodCalorie\\obj\\",
+        "outputPath": "F:\\FoodCalorie\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -48,6 +48,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[3.2.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
