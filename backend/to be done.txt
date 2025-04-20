@@ -1,0 +1,4 @@
+1- make sure that register work well
+2- make a endpoint for Login	
+3- endpoint for add meal				
+4- endpoint for remove meal 

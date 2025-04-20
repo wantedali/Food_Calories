@@ -46,10 +46,10 @@ if (app.Environment.IsDevelopment())
 }
 
 ///test connection
-app.MapGet("/test-mongo", (IMongoDatabase database) =>
+/*app.MapGet("/test-mongo", (IMongoDatabase database) =>
 {
     return Results.Ok($"Connected to MongoDB: {database.DatabaseNamespace.DatabaseName}");
-});
+});*/
 
 
 app.UseHttpsRedirection();
