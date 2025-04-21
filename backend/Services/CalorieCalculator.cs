@@ -42,7 +42,7 @@ public static class CalorieCalculator
             {
                 case HowFast.Slow:return tdee + 250;
                 case HowFast.Moderate:return tdee + 500;
-                case HowFast.Fast:return tdee + 1000; 
+                case HowFast.Fast:return tdee + 750; 
             }
 
 
@@ -53,7 +53,7 @@ public static class CalorieCalculator
             {
                 case HowFast.Slow: return tdee - 250;
                 case HowFast.Moderate: return tdee - 500;
-                case HowFast.Fast: return tdee - 1000;
+                case HowFast.Fast: return tdee - 750;
             }
         }
         

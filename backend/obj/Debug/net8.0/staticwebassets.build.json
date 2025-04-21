@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "SdtAryjIeFEDzavOjo1JptXgY5xbZaypoiva6dukr8c=",
+  "Hash": "MI7iQCdycJm5mV4QVSN2owmmLfQ8CANX3Us5BG2TuA0=",
   "Source": "FoodCalorie",
   "BasePath": "_content/FoodCalorie",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

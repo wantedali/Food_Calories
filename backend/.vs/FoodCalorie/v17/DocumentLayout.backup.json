@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "D:\\Food_Calories\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,12 +15,20 @@
       "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\foodcalorie.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:foodcalorie.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\dtos\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,11 +58,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "TokenService.cs",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "Services\\TokenService.cs",
@@ -75,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\DTOs\\LoginRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\LoginRequest.cs",
@@ -101,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "Services\\UserService.cs",
@@ -114,12 +114,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Food_Calories\\backend\\Program.cs",
-              "RelativeToolTip": "Program.cs",
+              "ToolTip": "D:\\Food_Calories\\backend\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
               "ViewState": "AgIAABIAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-13T17:28:32.821Z",
@@ -127,20 +127,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
               "ToolTip": "D:\\Food_Calories\\backend\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAhwEQAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAhwEYAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-17T16:12:10.226Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "FoodCalorie.csproj",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\FoodCalorie.csproj",
               "RelativeDocumentMoniker": "FoodCalorie.csproj",
@@ -166,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
