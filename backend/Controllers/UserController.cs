@@ -10,10 +10,12 @@ namespace FoodCalorie.Controllers;
 public class UserController : ControllerBase
 {
     private readonly UserService _userService;
+    private readonly TokenService _tokenService;
 
-    public UserController(UserService userService)
+    public UserController(UserService userService, TokenService tokenService)
     {
         _userService = userService;
+        _tokenService = tokenService;
     }
 
     [HttpPost("register")]
@@ -53,13 +55,21 @@ public class UserController : ControllerBase
         return Ok(new { user.BMR, user.TDEE, user.CalorieGoal });
     }
 
-    /*[HttpGet("{Login}")]
-    public async Task<IActionResult> GetUser(string email , string password)
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginRequest dto)
     {
-        var user = await _userService.GetUserByNameAsync();
-        if (user == null)
-            return NotFound(new { message = "user not found" });
 
-        return Ok(user);
-    }*/
+       
+        var user = await _userService.GetUserByNameAsync(dto.Email);
+        if (user == null)
+            return Unauthorized("Invalid email or password");
+
+        var isPasswordValid = BCrypt.Net.BCrypt.Verify(dto.Password, user.password);
+        if (!isPasswordValid)
+            return Unauthorized($"Invalid email or password ");
+
+        var token = _tokenService.GenerateToken(user); 
+        return Ok(new { token });
+    }
+
 }

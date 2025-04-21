@@ -115,4 +115,11 @@ D:\Food_Calories\backend\obj\Debug\net8.0\FoodCalorie.pdb
 D:\Food_Calories\backend\obj\Debug\net8.0\FoodCalorie.genruntimeconfig.cache
 D:\Food_Calories\backend\obj\Debug\net8.0\ref\FoodCalorie.dll
 D:\Food_Calories\backend\bin\Debug\net8.0\BCrypt.Net-Next.dll
-D:\Food_Calories\backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Food_Calories\backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Food_Calories\backend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
