@@ -44,8 +44,8 @@ public class UserService
         return user;
     }
 
-    public async Task<User?> GetUserByNameAsync(string name)
+    public async Task<User?> GetUserByNameAsync(string email)
     {
-        return await _users.Find(u => u.Name == name).FirstOrDefaultAsync();
+        return await _users.Find(u => u.email == email).FirstOrDefaultAsync();
     }
 }
