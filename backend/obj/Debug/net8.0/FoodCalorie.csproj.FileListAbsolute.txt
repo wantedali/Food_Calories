@@ -163,3 +163,12 @@ D:\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 D:\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\Food_Calories\backend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+G:\FCIS\GP\Food_Calories\backend\bin\Debug\net8.0\BCrypt.Net-Next.dll
+G:\FCIS\GP\Food_Calories\backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+G:\FCIS\GP\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+G:\FCIS\GP\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\FCIS\GP\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+G:\FCIS\GP\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+G:\FCIS\GP\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+G:\FCIS\GP\Food_Calories\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+G:\FCIS\GP\Food_Calories\backend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
