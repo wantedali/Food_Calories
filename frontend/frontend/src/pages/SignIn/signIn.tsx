@@ -11,8 +11,7 @@ const SignInPage: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const emailInputRef = useRef<HTMLInputElement>(null);
-    const navigate = useNavigate();
-
+  const navigate = useNavigate();
 
   const sliderImages = [
     'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80&w=1200&auto=format&fit=crop',
@@ -22,27 +21,15 @@ const SignInPage: React.FC = () => {
   ];
 
   const quotes = [
-    {
-      gold: "وجبتك بلقطة",
-      white: "صحتك بخيارك"
-    },
-    {
-      gold: "مطبخ الأصالة",
-      white: "نكهات تراثية"
-    },
-    {
-      gold: "لذة الطعام",
-      white: "سر السعادة"
-    },
-    {
-      gold: "طبق شهي",
-      white: "لحياة صحية"
-    }
+    { gold: "وجبتك بلقطة", white: "صحتك بخيارك" },
+    { gold: "مطبخ الأصالة", white: "نكهات تراثية" },
+    { gold: "لذة الطعام", white: "سر السعادة" },
+    { gold: "طبق شهي", white: "لحياة صحية" },
   ];
 
   useEffect(() => {
     setIsVisible(true);
-    
+
     setTimeout(() => {
       if (emailInputRef.current) {
         emailInputRef.current.focus();
@@ -56,16 +43,43 @@ const SignInPage: React.FC = () => {
     return () => clearInterval(slideInterval);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const submitBtn = document.querySelector(`.${styles.submitButton}`) as HTMLButtonElement;
-    if (submitBtn) {
-      submitBtn.classList.add(styles.loading);
-      setTimeout(() => {
-        submitBtn.classList.remove(styles.loading);
-        console.log({ email, password, rememberMe });
-      }, 1500);
+    if (submitBtn) submitBtn.classList.add(styles.loading);
+
+    const loginData = {
+      email,
+      password,
+    };
+
+    try {
+      const response = await fetch("http://localhost:5062/api/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(loginData)
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        console.error("Login failed:", result);
+        alert("فشل تسجيل الدخول: تحقق من البريد وكلمة المرور");
+      } else {
+        console.log("Login successful:", result);
+        if (rememberMe) {
+          localStorage.setItem("token", result.token); // Adjust if backend sends token
+        }
+        navigate("/Home");
+      }
+    } catch (err) {
+      console.error("❗ Login error:", err);
+      alert("لقد أدخلت البريد الكتروني او كلمة السر بطريقة خاطئة");
+    } finally {
+      if (submitBtn) submitBtn.classList.remove(styles.loading);
     }
   };
 
@@ -92,8 +106,8 @@ const SignInPage: React.FC = () => {
         </div>
         <div className={styles.sliderDots}>
           {sliderImages.map((_, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className={`${styles.dot} ${index === currentSlide ? styles.activeDot : ''}`}
               onClick={() => setCurrentSlide(index)}
             />
@@ -114,7 +128,7 @@ const SignInPage: React.FC = () => {
 
           <h2 className={styles.formTitle}>مرحبا بك مرة أخرى!</h2>
           <p className={styles.formSubtitle}>سجل دخولك للاستمتاع بألذ الوجبات</p>
-          
+
           <form onSubmit={handleSubmit}>
             <div className={styles.inputGroup}>
               <label htmlFor="email">البريد الإلكتروني</label>
@@ -160,10 +174,10 @@ const SignInPage: React.FC = () => {
             <div className={styles.formOptions}>
               <div className={styles.rememberMe}>
                 <label className={styles.checkbox}>
-                  <input 
-                    type="checkbox" 
-                    checked={rememberMe} 
-                    onChange={() => setRememberMe(!rememberMe)} 
+                  <input
+                    type="checkbox"
+                    checked={rememberMe}
+                    onChange={() => setRememberMe(!rememberMe)}
                   />
                   <span className={styles.checkmark}></span>
                   تذكرني
@@ -172,7 +186,7 @@ const SignInPage: React.FC = () => {
               <a href="#" className={styles.forgotPassword}>نسيت كلمة المرور؟</a>
             </div>
 
-            <button type="submit" className={styles.submitButton} onClick={() => navigate("/info")}>
+            <button type="submit" className={styles.submitButton}>
               <span className={styles.buttonText}>تسجيل الدخول</span>
               <span className={styles.loadingDots}>
                 <span className={styles.dot}></span>
@@ -180,6 +194,7 @@ const SignInPage: React.FC = () => {
                 <span className={styles.dot}></span>
               </span>
             </button>
+
 
             <div className={styles.loginLink}>
               ليس لديك حساب؟ <a href="/SignUp">إنشاء حساب</a>
