@@ -18,6 +18,20 @@ public class UserController : ControllerBase
         _tokenService = tokenService;
     }
 
+    [HttpPost("EmailValidation")]
+    public async Task<IActionResult> Evalidation([FromBody] CradentialVaildation request)
+    {
+        try
+        {
+            var newUser = await _userService.Validation(request);
+            return Ok(new { message = "every thing is ok", user = newUser });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { error = ex.Message });
+        }
+    }
+
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterRequest request)
     {
@@ -32,7 +46,7 @@ public class UserController : ControllerBase
         }
     }
 
-    [HttpPost("test-cal")]
+    /*[HttpPost("test-cal")]
     public  IActionResult testcalc([FromBody] RegisterRequest request)
     {
         var user = new User
@@ -53,7 +67,7 @@ public class UserController : ControllerBase
         user.CalorieGoal = CalorieCalculator.finalCalorie(user);
 
         return Ok(new { user.BMR, user.TDEE, user.CalorieGoal });
-    }
+    }*/
 
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginRequest dto)
