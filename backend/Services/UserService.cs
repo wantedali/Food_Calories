@@ -16,19 +16,27 @@ public class UserService
         _users = database.GetCollection<User>("Users"); 
     }
 
-    public async Task<User> RegisterUserAsync(RegisterRequest request)
+
+    public async Task<CradentialVaildation>Validation(CradentialVaildation cr)
     {
-        var existingUser = await _users.Find(u => u.email == request.Email).FirstOrDefaultAsync();
+        var existingUser = await _users.Find(u => u.email == cr.Email).FirstOrDefaultAsync();
         if (existingUser != null)
             throw new Exception("user eixst");
 
-         request.Password = BCrypt.Net.BCrypt.HashPassword(request.Password);
+        return cr;
+    }
+
+    public async Task<User> RegisterUserAsync(RegisterRequest request)
+    {
+       
+
+         request.UserData.Password = BCrypt.Net.BCrypt.HashPassword(request.UserData.Password);
 
         var user = new User
         {
-            Name = request.Name,
-            email = request.Email,
-            password = request.Password,
+            Name = request.UserData.Name,
+            email = request.UserData.Email,
+            password = request.UserData.Password,
             Gender = request.Gender,
             ActivityLevel = request.ActivityLevel,
             Age = request.Age,
