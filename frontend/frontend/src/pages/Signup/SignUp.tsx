@@ -60,7 +60,17 @@ const SignUpPage: React.FC = () => {
     return () => clearInterval(slideInterval);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const isPasswordValid = (password: string) => {
+    const lengthCheck = password.length >= 8;
+    const upperCaseCheck = /[A-Z]/.test(password);
+    const numberCheck = /[0-9]/.test(password);
+    const specialCharCheck = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    return lengthCheck && upperCaseCheck && numberCheck && specialCharCheck;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!agreeToTerms) {
@@ -70,37 +80,68 @@ const SignUpPage: React.FC = () => {
       return;
     }
 
-    if (!name || !email || !password || !confirmPassword || !agreeToTerms) {
+    if (!name || !email || !password || !confirmPassword) {
+      setAlertMessage("يرجى تعبئة جميع الحقول");
       setShowAlert(true);
       setTimeout(() => setShowAlert(false), 3000);
       return;
     }
 
     if (password !== confirmPassword) {
-      setAlertMessage("كلمة المرور غير متطابقة")
+      setAlertMessage("كلمة المرور غير متطابقة");
       setShowAlert(true);
       setTimeout(() => setShowAlert(false), 3000);
       return;
     }
 
-    const submitBtn = document.querySelector(`.${styles.submitButton}`) as HTMLButtonElement;
-    if (submitBtn) {
-      submitBtn.classList.add(styles.loading);
-      setTimeout(() => {
-        submitBtn.classList.remove(styles.loading);
-
-        // Store name, email, and password in localStorage
-        localStorage.setItem("signupName", name);
-        localStorage.setItem("signupEmail", email);
-        localStorage.setItem("signupPassword", password);
-
-        navigate("/info");
-
-        console.log({ name, email, password, confirmPassword, agreeToTerms });
-
-      }, 1500);
+    if (!isPasswordValid(password)) {
+      setAlertMessage("يجب أن تكون كلمة المرور 8 أحرف على الأقل، وتحتوي على حرف كبير، رقم، وحرف خاص");
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
+      return;
     }
 
+    try {
+      const response = await fetch("http://localhost:5062/api/users/EmailValidation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, email, password })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        setAlertMessage("هذا الحساب موجود بالفعل");
+        console.log(response)
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 3000);
+        return;
+      }
+
+      const submitBtn = document.querySelector(`.${styles.submitButton}`) as HTMLButtonElement;
+      if (submitBtn) {
+        submitBtn.classList.add(styles.loading);
+        setTimeout(() => {
+          submitBtn.classList.remove(styles.loading);
+
+          localStorage.setItem("signupData", JSON.stringify({
+            name: name,
+            email: email,
+            password: password
+          }));
+
+          navigate("/info");
+
+          console.log({ name, email, password, confirmPassword, agreeToTerms });
+        }, 1500);
+      }
+    } catch (error) {
+      setAlertMessage("فشل في الاتصال بالخادم. حاول مرة أخرى لاحقًا.");
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
+    }
   };
 
   const togglePasswordVisibility = () => {
