@@ -19,8 +19,8 @@ public class User
     public Gender Gender { get; set; }
     public double ActivityLevel { get; set; }
     public int Age { get; set; }
-    public int Weight { get; set; }
-    public int Height { get; set; }
+    public double Weight { get; set; }
+    public double Height { get; set; }
     public Goal Goal { get; set; } = Goal.Maintain;
     public HowFast HowFast { get; set; } = HowFast.Moderate;
 

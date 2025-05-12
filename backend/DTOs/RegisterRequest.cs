@@ -17,10 +17,10 @@ namespace FoodCalorie.DTOs
         public int Age { get; set; }
 
         [Range(30, 250)]
-        public int Weight { get; set; }
+        public double Weight { get; set; }
 
         [Range(80, 250)]
-        public int Height { get; set; }
+        public double Height { get; set; }
 
         [Required]
         public Goal Goal { get; set; }
