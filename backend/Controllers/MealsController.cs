@@ -29,6 +29,20 @@ namespace FoodCalorie.Controllers
             }
         }
 
+        [HttpDelete("remove-food")]
+        public async Task<IActionResult> RemoveFood([FromQuery] string userId, [FromQuery] string mealType, [FromQuery] string foodId)
+        {
+            try
+            {
+                var updatedUser = await daily.RemoveFood(userId, mealType, foodId);
+                return Ok(new { message = "Food removed", user = updatedUser });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { error = ex.Message });
+            }
+        }
+
 
     }
 }

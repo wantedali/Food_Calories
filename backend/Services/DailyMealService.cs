@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using FoodCalorie.DTOs;
 using FoodCalorie.Models;
 using Microsoft.Extensions.Options;
@@ -46,23 +47,36 @@ public class DailyMealService
         return user;
     }
 
-    public void RemoveFood(User user, Food food, string type)
-    {
-        switch (type.ToLower()) // Ensure case insensitivity
-        {
-            case "breakfast":
-                MealService.RemoveFood(user.TodayMeals.Breakfast, food);
-                break;
-            case "lunch":
-                MealService.RemoveFood(user.TodayMeals.Lunch, food);
-                break;
-            case "dinner":
-                MealService.RemoveFood(user.TodayMeals.Dinner, food);
-                break;
-            default:
-                throw new ArgumentException("Invalid meal type. Use 'breakfast', 'lunch', or 'dinner'.");
-        }
+   
+     public async Task<User> RemoveFood(string userId, string foodId, string mealType)
+     {
+        var user = await _users.Find(u => u.Id == userId).FirstOrDefaultAsync();
+        if (user == null) throw new Exception("User not found");
 
+        Meal meal = mealType.ToLower() switch
+        {
+            "breakfast" => user.TodayMeals.Breakfast,
+            "lunch" => user.TodayMeals.Lunch,
+            "dinner" => user.TodayMeals.Dinner,
+            _ => throw new ArgumentException("Invalid meal type")
+        };
+
+        var food = meal.Items.FirstOrDefault(f => f.Id == foodId);
+        if (food == null) throw new Exception("Food not found");
+
+        MealService.RemoveFood(meal, food);
+
+
+        user.TodayMeals.TotalCalories = user.TodayMeals.Breakfast.TotalCalories + user.TodayMeals.Lunch.TotalCalories + user.TodayMeals.Dinner.TotalCalories;
+        user.TodayMeals.TotalProtein = user.TodayMeals.Breakfast.TotalProtein + user.TodayMeals.Lunch.TotalProtein + user.TodayMeals.Dinner.TotalProtein;
+        user.TodayMeals.TotalCarbs = user.TodayMeals.Breakfast.TotalCarbs + user.TodayMeals.Lunch.TotalCarbs + user.TodayMeals.Dinner.TotalCarbs;
+        user.TodayMeals.TotalFat = user.TodayMeals.Breakfast.TotalFat + user.TodayMeals.Lunch.TotalFat + user.TodayMeals.Dinner.TotalFat;
+
+        await _users.ReplaceOneAsync(u => u.Id == userId, user);
+        return user;
     }
 
+
 }
+
+
