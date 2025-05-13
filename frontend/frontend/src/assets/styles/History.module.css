@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+.container {
+  min-height: 100vh;
+  background-color: #1B2537;
+  background-image: linear-gradient(to bottom, #1e2a3d, #1B2537);
+  position: relative;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr;
+  direction: rtl;
+}
+
+.wrapper {
+  grid-column: 2;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.emptyState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.emptyStateContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 400px;
+}
+
+.emptyStateImage {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+}
+
+.emptyStateText {
+  font-family: 'Amiri', serif;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.emptyStateSubtext {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.125rem;
+  color: #D4B675;
+  opacity: 0.8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.card {
+  background-color: rgba(212, 182, 117, 0.95);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(212, 182, 117, 0.25);
+  font-family: 'Tajawal', sans-serif;
+  height: fit-content;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.card.deleting {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.cardImageContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 14rem;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.dateTag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(27, 37, 55, 0.85);
+  color: #D4B675;
+  font-size: 0.875rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 1rem;
+  font-weight: 500;
+}
+
+.cardContent {
+  padding: 1.25rem;
+}
+
+.calories {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.mealName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1B2537;
+  margin: 0;
+}
+
+.caloriesBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1B2537;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  min-width: 100px;
+  text-align: center;
+}
+
+.caloriesValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #D4B675;
+}
+
+.caloriesUnit {
+  font-size: 0.75rem;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.macroSummary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  background-color: rgba(27, 37, 55, 0.1);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.macroItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.macroLabel {
+  font-size: 0.75rem;
+  color: #1B2537;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.macroValue {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1B2537;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  flex: 1;
+}
+
+.deleteButton {
+  background-color: rgba(27, 37, 55, 0.1);
+  color: #1B2537;
+}
+
+.deleteButton:hover {
+  background-color: rgba(211, 47, 47, 0.15);
+  color: #d32f2f;
+}
+
+.detailsButton {
+  background-color: #1B2537;
+  color: white;
+}
+
+.detailsButton:hover {
+  background-color: #25324A;
+  transform: translateY(-2px);
+}
+
+.detailsButton.active {
+  background-color: #25324A;
+}
+
+.expandedContent {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(27, 37, 55, 0.15);
+  overflow: hidden;
+}
+
+.nutritionTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1B2537;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.nutritionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nutrientBar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nutrientLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #1B2537;
+  margin-bottom: 0.25rem;
+}
+
+.progressContainer {
+  height: 0.5rem;
+  background-color: rgba(27, 37, 55, 0.1);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.proteinBar {
+  background-color: #4CAF50;
+}
+
+.carbsBar {
+  background-color: #2196F3;
+}
+
+.fatsBar {
+  background-color: #FF9800;
+}
+
+.sectionHeader {
+  text-align: right;
+  margin-bottom: 2.5rem;
+}
+
+.mainHeading {
+  font-family: 'Amiri', serif;
+  font-size: 2.75rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.mainHeading::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  right: 0;
+  width: 60%;
+  height: 3px;
+  background-color: #D4B675;
+  border-radius: 2px;
+}
+
+.subHeading {
+  font-family: 'Tajawal', sans-serif;
+  color: #D4B675;
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-top: 1rem;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .wrapper {
+    grid-column: 1;
+    padding: 1.5rem;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .mainHeading {
+    font-size: 2.25rem;
+  }
+  
+  .subHeading {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrapper {
+    padding: 1rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mainHeading {
+    font-size: 2rem;
+  }
+  
+  .cardImage {
+    height: 12rem;
+  }
+}

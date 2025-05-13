@@ -6,12 +6,9 @@ using FoodCalorie.Services;
 using FoodCalorie.Models;
 using System.Text;
 
-
-
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Add services to the container
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
@@ -20,7 +17,6 @@ builder.Services.Configure<MongoDBSettings>(
     builder.Configuration.GetSection("MongoDB")
 );
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-
 
 // Register MongoDB client
 builder.Services.AddSingleton<IMongoClient>(sp =>
@@ -37,10 +33,8 @@ builder.Services.AddScoped(sp =>
     return client.GetDatabase(settings.DatabaseName);
 });
 
-
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<DailyMealService>();
-
 
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
@@ -59,29 +53,32 @@ builder.Services.AddAuthentication("Bearer")
 
 builder.Services.AddScoped<TokenService>();
 
+// ✅ CORS setup BEFORE builder.Build()
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
-
-
-// Configure the HTTP request pipeline.
+// Enable Swagger only in development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-///test connection
-/*app.MapGet("/test-mongo", (IMongoDatabase database) =>
-{
-    return Results.Ok($"Connected to MongoDB: {database.DatabaseNamespace.DatabaseName}");
-});*/
-
+// ✅ CORS setup AFTER builder.Build()
+app.UseCors("AllowReactApp");
 
 app.UseHttpsRedirection();
-app.MapControllers();
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapControllers();
 
 app.Run();
-
