@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Plus, Trash2, UtensilsCrossed } from 'lucide-react';
-import styles from '../assets/styles/test2.module.css';
+import styles from '../assets/styles/MealTracking.module.css';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
-import Footer from '../components/Footer';
+import Footer from '../components/Footer'
 
 interface Meal {
     id: string;
@@ -18,7 +18,6 @@ interface MealSection {
     icon: React.ReactNode;
 }
 
-// Sample meals for random selection
 const sampleMeals = [
     { name: 'كبسة لحم', calories: 650, portion: '300 جرام' },
     { name: 'شاورما دجاج', calories: 450, portion: '250 جرام' },
@@ -32,7 +31,7 @@ const sampleMeals = [
     { name: 'حمص', calories: 250, portion: '200 جرام' },
 ];
 
-export default function MealTracking() {
+function MealTrack() {
     const [mealSections, setMealSections] = useState<MealSection[]>([
         {
             title: 'وجبة الإفطار',
@@ -82,61 +81,65 @@ export default function MealTracking() {
 
     return (
         <div className={styles.container}>
-            {/* Navbar */}
             <Navbar />
+            <Sidebar />
 
-            <div className={styles.header}>
-                <h1>تتبع الوجبات اليومية</h1>
-                <div className={styles.totalCalories}>
-                    <span>إجمالي السعرات الحرارية اليوم:</span>
-                    <span className={styles.calorieNumber}>{calculateTotalCalories()}</span>
-                    <span className={styles.calorieUnit}>كالوري</span>
-                </div>
-            </div>
-
-            <div className={styles.sectionsGrid}>
-                {mealSections.map((section, sectionIndex) => (
-                    <div key={section.title} className={styles.mealSection}>
-                        <div className={styles.sectionHeader}>
-                            {section.icon}
-                            <h2>{section.title}</h2>
-                            <div className={styles.sectionCalories}>
-                                <span>{calculateSectionCalories(section.meals)}</span>
-                                <span className={styles.calorieUnit}>كالوري</span>
-                            </div>
-                        </div>
-
-                        <div className={styles.mealsList}>
-                            {section.meals.map(meal => (
-                                <div key={meal.id} className={styles.mealItem}>
-                                    <div className={styles.mealInfo}>
-                                        <h3>{meal.name}</h3>
-                                        <p>{meal.portion}</p>
-                                    </div>
-                                    <div className={styles.mealActions}>
-                                        <span className={styles.mealCalories}>{meal.calories} كالوري</span>
-                                        <button
-                                            onClick={() => removeMeal(sectionIndex, meal.id)}
-                                            className={styles.removeButton}
-                                        >
-                                            <Trash2 size={18} />
-                                        </button>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        <button
-                            onClick={() => addRandomMeal(sectionIndex)}
-                            className={styles.addButton}
-                        >
-                            <Plus size={20} />
-                            إضافة وجبة
-                        </button>
+            <div className={styles.mainContent}>
+                <div className={styles.header}>
+                    <h1>تتبع الوجبات اليومية</h1>
+                    <div className={styles.totalCalories}>
+                        <span>إجمالي السعرات الحرارية اليوم:</span>
+                        <span className={styles.calorieNumber}>{calculateTotalCalories()}</span>
+                        <span className={styles.calorieUnit}>كالوري</span>
                     </div>
-                ))}
+                </div>
+
+                <div className={styles.sectionsGrid}>
+                    {mealSections.map((section, sectionIndex) => (
+                        <div key={section.title} className={styles.mealSection}>
+                            <div className={styles.sectionHeader}>
+                                {section.icon}
+                                <h2>{section.title}</h2>
+                                <div className={styles.sectionCalories}>
+                                    <span>{calculateSectionCalories(section.meals)}</span>
+                                    <span className={styles.calorieUnit}>كالوري</span>
+                                </div>
+                            </div>
+
+                            <div className={styles.mealsList}>
+                                {section.meals.map(meal => (
+                                    <div key={meal.id} className={styles.mealItem}>
+                                        <div className={styles.mealInfo}>
+                                            <h3>{meal.name}</h3>
+                                            <p>{meal.portion}</p>
+                                        </div>
+                                        <div className={styles.mealActions}>
+                                            <span className={styles.mealCalories}>{meal.calories} كالوري</span>
+                                            <button
+                                                onClick={() => removeMeal(sectionIndex, meal.id)}
+                                                className={styles.removeButton}
+                                            >
+                                                <Trash2 size={18} />
+                                            </button>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <button
+                                onClick={() => addRandomMeal(sectionIndex)}
+                                className={styles.addButton}
+                            >
+                                <Plus size={20} />
+                                إضافة وجبة
+                            </button>
+                        </div>
+                    ))}
+                </div>
             </div>
             <Footer />
         </div>
     );
 }
+
+export default MealTrack;

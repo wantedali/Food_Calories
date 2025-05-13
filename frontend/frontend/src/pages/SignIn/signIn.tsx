@@ -10,6 +10,8 @@ const SignInPage: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
   const emailInputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
@@ -66,29 +68,38 @@ const SignInPage: React.FC = () => {
       const result = await response.json();
 
       if (!response.ok) {
-        console.error("Login failed:", result);
-        alert("فشل تسجيل الدخول: تحقق من البريد وكلمة المرور");
+        setAlertMessage("فشل تسجيل الدخول: تحقق من البريد وكلمة المرور");
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 3000);
       } else {
         console.log("Login successful:", result);
         if (rememberMe) {
-          localStorage.setItem("token", result.token); // Adjust if backend sends token
+          localStorage.setItem("token", result.token);
         }
         navigate("/Home");
       }
     } catch (err) {
-      console.error("❗ Login error:", err);
-      alert("لقد أدخلت البريد الكتروني او كلمة السر بطريقة خاطئة");
+      setAlertMessage("لقد أدخلت البريد الكتروني او كلمة السر بطريقة خاطئة");
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
     } finally {
       if (submitBtn) submitBtn.classList.remove(styles.loading);
     }
   };
-
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
   return (
     <div className={`${styles.container} ${isVisible ? styles.visible : ''}`}>
+      {/* Add this alert overlay */}
+      {showAlert && (
+        <div className={styles.alertOverlay}>
+          <div className={styles.alert}>
+            <p>{alertMessage}</p>
+          </div>
+        </div>
+      )}
       <div className={`${styles.leftSection} ${isVisible ? styles.fadeInRight : ''}`}>
         <div className={styles.slider}>
           {sliderImages.map((src, index) => (

@@ -59,7 +59,7 @@ const Sidebar: React.FC = () => {
                     }
                 >
                     <Book className={styles.sidebarIcon} />
-                    <span>وصفاتي</span>
+                    <span>السعرات اليومية</span>
                 </NavLink>
 
                 <NavLink

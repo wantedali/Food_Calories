@@ -29,12 +29,27 @@ interface NumericSpinnerProps {
 
 const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, max, step, unit, label, optional = false }) => {
   const [currentValue, setCurrentValue] = useState<number | null>(value);
+  const [isEditing, setIsEditing] = useState(false); // Track editing state
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleChange = (newValue: number) => {
-    const limitedValue = Math.max(min, Math.min(max, newValue));
-    setCurrentValue(limitedValue);
-    onChange(limitedValue);
+    setCurrentValue(newValue);
+
+    // Only enforce min/max when not actively editing
+    if (!isEditing) {
+      const limitedValue = Math.max(min, Math.min(max, newValue));
+      onChange(limitedValue);
+    }
+  };
+
+  const handleBlur = () => {
+    setIsEditing(false);
+    // When input loses focus, enforce min/max
+    if (currentValue !== null) {
+      const limitedValue = Math.max(min, Math.min(max, currentValue));
+      setCurrentValue(limitedValue);
+      onChange(limitedValue);
+    }
   };
 
   const increment = () => {
@@ -103,7 +118,11 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, m
           <input
             type="number"
             value={currentValue ?? ''}
-            onChange={(e) => handleChange(parseFloat(e.target.value))}
+            onChange={(e) => {
+              setIsEditing(true);
+              handleChange(parseFloat(e.target.value) || 0);
+            }}
+            onBlur={handleBlur}
             min={min}
             max={max}
             step={step}
@@ -151,6 +170,12 @@ const Info: React.FC = () => {
     { label: "الحفاظ على الوزن الحالي", value: 1 }, // Maintain = 1
   ];
 
+  const howFastOptions = [
+    { label: "بطيء", value: 0 }, // Slow
+    { label: "معتدل", value: 1 }, // Moderate
+    { label: "سريع", value: 2 }, // Fast
+  ];
+
   const activityLevels = [
     { label: "خامل (Sedentary) - لا يوجد تمرين أو نشاط قليل جداً", value: 1.2 }, // 3.0 / 2.5 = 1.2
     { label: "نشاط خفيف (Lightly Active) - تمرين 1-3 أيام أسبوعياً", value: 1.4 }, // 3.5 / 2.5 = 1.4
@@ -165,18 +190,17 @@ const Info: React.FC = () => {
     if (name === 'activityLevel') {
       const selected = activityLevels.find(level => level.label === value);
       if (selected) {
-        setUserInfo(prev => ({
-          ...prev,
-          [name]: selected.value
-        }));
+        setUserInfo(prev => ({ ...prev, [name]: selected.value }));
       }
     } else if (name === 'goal') {
       const selected = goalOptions.find(option => option.label === value);
       if (selected) {
-        setUserInfo(prev => ({
-          ...prev,
-          [name]: selected.value
-        }));
+        setUserInfo(prev => ({ ...prev, [name]: selected.value }));
+      }
+    } else if (name === 'howFast') {
+      const selected = howFastOptions.find(option => option.label === value);
+      if (selected) {
+        setUserInfo(prev => ({ ...prev, [name]: selected.value }));
       }
     } else {
       setUserInfo(prev => ({
@@ -185,6 +209,8 @@ const Info: React.FC = () => {
       }));
     }
   };
+
+
   const handleNumericChange = (field: keyof UserInfo) => (value: number) => {
     setUserInfo(prev => ({
       ...prev,
@@ -193,15 +219,12 @@ const Info: React.FC = () => {
   };
 
   const handleNext = async () => {
-    if (step < 6) {
+    if (step < 7) { // Changed from 6 to 7
       setStep(step + 1);
-    } else if (step === 6) {
-      // When clicking next on Goal Question (step 6), submit the data
+    } else if (step === 7) { // Changed from 6 to 7
       await handleSubmit();
-      // Then move to Calorie Target (step 7)
-      setStep(7);
+      setStep(8); // Changed from 7 to 8
     } else {
-      // When clicking next on Calorie Target (step 7), navigate to home
       navigate("/home");
     }
   };
@@ -284,7 +307,7 @@ const Info: React.FC = () => {
       </div>
 
       <div className={styles.progressBar}>
-        <div className={styles.progress} style={{ width: `${((step + 1) / 8) * 100}%` }}></div>
+        <div className={styles.progress} style={{ width: `${((step + 1) / 9) * 100}%` }}></div>
       </div>
 
       <div className={styles.questionsSlider}>
@@ -443,8 +466,30 @@ const Info: React.FC = () => {
           </div>
         </div>
 
-        {/* Calorie Target */}
+        {/* Goal Speed Question */}
         <div className={getStepClass(7)}>
+          <h2 className={styles.questionTitle}>ما هي سرعة تحقيق الهدف؟</h2>
+          <p className={styles.questionDescription}>
+            اختر السرعة التي تريد بها تحقيق هدفك
+          </p>
+          <div className={styles.selectContainer}>
+            <select
+              name="howFast"
+              value={howFastOptions.find(option => option.value === userInfo.howFast)?.label || ''}
+              onChange={handleInputChange}
+              className={styles.selectInput}
+            >
+              {howFastOptions.map((option, index) => (
+                <option key={index} value={option.label}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        {/* Calorie Target */}
+        <div className={getStepClass(8)}>
           <h2 className={styles.questionTitle}>هدف السعرات الحرارية اليومية</h2>
           <div className={styles.calorieTarget}>
             <p className={styles.calorieText}>
@@ -461,13 +506,16 @@ const Info: React.FC = () => {
       </div>
 
       <div className={styles.navigationButtons}>
-        {step > 0 && (
-          <button className={styles.prevButton} onClick={handlePrev}>
-            السابق
-          </button>
-        )}
+        <button
+          className={styles.prevButton}
+          onClick={handlePrev}
+          disabled={step === 8}
+          style={step === 8 ? { opacity: 0.5, cursor: 'not-allowed' } : {}}
+        >
+          السابق
+        </button>
         <button className={styles.nextButton} onClick={handleNext}>
-          {step === 7 ? 'إنهاء' : 'التالي'}
+          {step === 8 ? 'إنهاء' : 'التالي'}
         </button>
       </div>
     </div>
