@@ -1,0 +1,6 @@
+path: D:/model/yolo_subset_dataset
+train: images\train
+val: images\val
+test: images\test
+names: {}
+nc: 0

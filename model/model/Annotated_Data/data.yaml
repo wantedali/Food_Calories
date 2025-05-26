@@ -1,0 +1,35 @@
+path: /kaggle/input/annotateddataset/Annotated_Data
+
+train: images/train
+val: images/val
+
+names:
+  0: banana
+  1: apple
+  2: sandwich
+  3: orange
+  4: broccoli
+  5: carrot
+  6: hot dog
+  7: pizza
+  8: donut
+  9: cake
+  # ----- Now your custom classes -----
+  10: baklava
+  11: bamya_bella7ma
+  12: batates_bella7ma
+  13: beef_tartare
+  14: beid_bel_basterma
+  15: beshamel
+  16: carrot_cake
+  17: churros
+  18: fatet_la7ma
+  19: flafel
+  20: fool
+  21: hot_dog_custom
+  22: hummus
+  23: kabab_7alla
+  24: koshary
+  25: kunafa
+  26: Molokhya
+  27: mosa2a_bella7ma
