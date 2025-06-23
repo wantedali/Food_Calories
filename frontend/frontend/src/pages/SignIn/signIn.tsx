@@ -172,7 +172,7 @@ const SignInPage: React.FC = () => {
               <a href="#" className={styles.forgotPassword}>نسيت كلمة المرور؟</a>
             </div>
 
-            <button type="submit" className={styles.submitButton} onClick={() => navigate("/info")}>
+            <button type="submit" className={styles.submitButton} onClick={() => navigate("/home")}>
               <span className={styles.buttonText}>تسجيل الدخول</span>
               <span className={styles.loadingDots}>
                 <span className={styles.dot}></span>
