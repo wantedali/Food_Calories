@@ -7,6 +7,9 @@ import Home from "./pages/Home";
 import History from "./pages/History";
 import Info from "./pages/Info"
 import Analyze from "./pages/Analyze"
+import Test from "./pages/Test"
+import MealTracking from "./pages/MealTracking"
+
 function App() {
   return (
     <Router>
@@ -17,7 +20,8 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/history" element={<History />} />
         <Route path="/info" element={<Info />} />
-        <Route path="/analyze" element={<Analyze/>} />
+        <Route path="/analyze" element={<Analyze />} />
+        <Route path="/Recipes" element={<MealTracking />} />
       </Routes>
     </Router>
   );

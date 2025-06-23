@@ -2,15 +2,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import styles from "../../src/assets/styles/Info.module.css";
 import { useNavigate } from 'react-router-dom';
 
+const signupData = JSON.parse(localStorage.getItem("signupData") || "{}");
+
 interface UserInfo {
   age: number;
   weight: number;
   height: number;
-  gender: string;
+  gender: number;
   bodyFat: number | null;
-  activityLevel: string;
-  goal: string;
-  dailyCalorieTarget: number;
+  activityLevel: number;
+  goal: number;
+  howFast: number;
+  caloriesNum: number;
 }
 
 interface NumericSpinnerProps {
@@ -26,12 +29,27 @@ interface NumericSpinnerProps {
 
 const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, max, step, unit, label, optional = false }) => {
   const [currentValue, setCurrentValue] = useState<number | null>(value);
+  const [isEditing, setIsEditing] = useState(false); // Track editing state
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleChange = (newValue: number) => {
-    const limitedValue = Math.max(min, Math.min(max, newValue));
-    setCurrentValue(limitedValue);
-    onChange(limitedValue);
+    setCurrentValue(newValue);
+
+    // Only enforce min/max when not actively editing
+    if (!isEditing) {
+      const limitedValue = Math.max(min, Math.min(max, newValue));
+      onChange(limitedValue);
+    }
+  };
+
+  const handleBlur = () => {
+    setIsEditing(false);
+    // When input loses focus, enforce min/max
+    if (currentValue !== null) {
+      const limitedValue = Math.max(min, Math.min(max, currentValue));
+      setCurrentValue(limitedValue);
+      onChange(limitedValue);
+    }
   };
 
   const increment = () => {
@@ -67,6 +85,10 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, m
     }
   };
 
+  // useEffect(() => {
+  //   console.log("Updated caloriesNum:", UserInfo.caloriesNum);
+  // }, [UserInfo.caloriesNum]);
+
   useEffect(() => {
     return () => stopTimer();
   }, []);
@@ -78,7 +100,7 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, m
         {optional && <span className={styles.optionalLabel}> (اختياري)</span>}
       </label>
       <div className={styles.spinnerWrapper}>
-        <button 
+        <button
           className={styles.spinnerButton}
           onMouseDown={startIncrement}
           onMouseUp={stopTimer}
@@ -91,12 +113,16 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, m
             <path fill="currentColor" d="M7 14l5-5 5 5z" />
           </svg>
         </button>
-        
+
         <div className={styles.spinnerValueContainer}>
           <input
             type="number"
             value={currentValue ?? ''}
-            onChange={(e) => handleChange(parseFloat(e.target.value))}
+            onChange={(e) => {
+              setIsEditing(true);
+              handleChange(parseFloat(e.target.value) || 0);
+            }}
+            onBlur={handleBlur}
             min={min}
             max={max}
             step={step}
@@ -104,8 +130,8 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, m
           />
           <span className={styles.spinnerUnit}>{unit}</span>
         </div>
-        
-        <button 
+
+        <button
           className={styles.spinnerButton}
           onMouseDown={startDecrement}
           onMouseUp={stopTimer}
@@ -124,26 +150,66 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, m
 };
 
 const Info: React.FC = () => {
-    const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [step, setStep] = useState(0);
   const [userInfo, setUserInfo] = useState<UserInfo>({
     age: 25,
     weight: 70,
     height: 170,
-    gender: '',
+    gender: 0,
     bodyFat: 30,
-    activityLevel: 'sedentary',
-    goal: 'maintain',
-    dailyCalorieTarget: 2000,
+    activityLevel: 1.2,
+    goal: 1,
+    howFast: 1,
+    caloriesNum: 0,
   });
+
+  const goalOptions = [
+    { label: "زيادة الوزن", value: 2 }, // Gain = 2
+    { label: "إنقاص الوزن", value: 0 }, // Lose = 0
+    { label: "الحفاظ على الوزن الحالي", value: 1 }, // Maintain = 1
+  ];
+
+  const howFastOptions = [
+    { label: "بطيء", value: 0 }, // Slow
+    { label: "معتدل", value: 1 }, // Moderate
+    { label: "سريع", value: 2 }, // Fast
+  ];
+
+  const activityLevels = [
+    { label: "خامل (Sedentary) - لا يوجد تمرين أو نشاط قليل جداً", value: 1.2 }, // 3.0 / 2.5 = 1.2
+    { label: "نشاط خفيف (Lightly Active) - تمرين 1-3 أيام أسبوعياً", value: 1.4 }, // 3.5 / 2.5 = 1.4
+    { label: "نشاط متوسط (Moderately Active) - تمرين 3-5 أيام أسبوعياً", value: 1.6 }, // 4.0 / 2.5 = 1.6
+    { label: "نشاط عالي (Very Active) - تمرين 6-7 أيام أسبوعياً", value: 1.8 }, // 4.5 / 2.5 = 1.8
+    { label: "نشاط شديد جداً (Super Active) - تمرين شاق جداً يومياً", value: 2.0 }, // 5.0 / 2.5 = 2.0
+  ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setUserInfo((prev) => ({
-      ...prev,
-      [name]: name === 'age' || name === 'weight' || name === 'height' ? Number(value) : value,
-    }));
+
+    if (name === 'activityLevel') {
+      const selected = activityLevels.find(level => level.label === value);
+      if (selected) {
+        setUserInfo(prev => ({ ...prev, [name]: selected.value }));
+      }
+    } else if (name === 'goal') {
+      const selected = goalOptions.find(option => option.label === value);
+      if (selected) {
+        setUserInfo(prev => ({ ...prev, [name]: selected.value }));
+      }
+    } else if (name === 'howFast') {
+      const selected = howFastOptions.find(option => option.label === value);
+      if (selected) {
+        setUserInfo(prev => ({ ...prev, [name]: selected.value }));
+      }
+    } else {
+      setUserInfo(prev => ({
+        ...prev,
+        [name]: name === 'age' || name === 'weight' || name === 'height' ? Number(value) : value,
+      }));
+    }
   };
+
 
   const handleNumericChange = (field: keyof UserInfo) => (value: number) => {
     setUserInfo(prev => ({
@@ -152,12 +218,14 @@ const Info: React.FC = () => {
     }));
   };
 
-  const handleNext = () => {
-    if (step < 7) {
+  const handleNext = async () => {
+    if (step < 7) { // Changed from 6 to 7
       setStep(step + 1);
+    } else if (step === 7) { // Changed from 6 to 7
+      await handleSubmit();
+      setStep(8); // Changed from 7 to 8
     } else {
-      handleSubmit();
-      navigate("/home")
+      navigate("/home");
     }
   };
 
@@ -167,8 +235,62 @@ const Info: React.FC = () => {
     }
   };
 
-  const handleSubmit = () => {
-    console.log('Submitting user info:', userInfo);
+  useEffect(() => {
+    console.log("caloriesNum updated:", userInfo.caloriesNum);
+  }, [userInfo.caloriesNum]);
+
+  // Add this useEffect to track caloriesNum changes
+  useEffect(() => {
+    console.log("caloriesNum updated:", userInfo.caloriesNum);
+  }, [userInfo.caloriesNum]);
+
+  // Update your handleSubmit function:
+  const handleSubmit = async () => {
+    const signupData = JSON.parse(localStorage.getItem("signupData") || "{}");
+
+    const fullUserData = {
+      userData: signupData,
+      age: userInfo.age,
+      weight: userInfo.weight,
+      height: userInfo.height,
+      gender: userInfo.gender,
+      bodyFat: userInfo.bodyFat,
+      activityLevel: userInfo.activityLevel,
+      goal: userInfo.goal,
+      howFast: userInfo.howFast
+    };
+
+    try {
+      const response = await fetch("http://localhost:5062/api/users/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(fullUserData)
+      });
+
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log("API Response:", responseData);
+
+        // Correct the path to calorieGoal based on your actual response structure
+        const calorieGoal = responseData.calorieGoal || responseData.user?.calorieGoal;
+
+        if (calorieGoal) {
+          console.log("Updating caloriesNum with:", calorieGoal);
+          setUserInfo(prev => ({
+            ...prev,
+            caloriesNum: calorieGoal
+          }));
+        }
+      } else {
+        console.error("Failed to register user");
+        const errorData = await response.json();
+        console.error("Error details:", errorData);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   const getStepClass = (stepNumber: number) => {
@@ -185,7 +307,7 @@ const Info: React.FC = () => {
       </div>
 
       <div className={styles.progressBar}>
-        <div className={styles.progress} style={{ width: `${(step / 7) * 100}%` }}></div>
+        <div className={styles.progress} style={{ width: `${((step + 1) / 9) * 100}%` }}></div>
       </div>
 
       <div className={styles.questionsSlider}>
@@ -227,7 +349,7 @@ const Info: React.FC = () => {
         <div className={getStepClass(2)}>
           <h2 className={styles.questionTitle}>ما هو طولك؟</h2>
           <p className={styles.questionDescription}>
-            الطول مع الوزن يساعدنا في حساب مؤشر كتلة الجسم 
+            الطول مع الوزن يساعدنا في حساب مؤشر كتلة الجسم
           </p>
           <NumericSpinner
             value={userInfo.height}
@@ -265,17 +387,22 @@ const Info: React.FC = () => {
             يؤثر مستوى نشاطك على احتياجاتك اليومية من السعرات الحرارية
           </p>
           <div className={styles.selectContainer}>
-            <select 
-              name="activityLevel" 
-              value={userInfo.activityLevel} 
-              onChange={handleInputChange}
+            <select
+              name="activityLevel"
+              value={activityLevels.find(level => level.value === userInfo.activityLevel)?.label || ''}
+              onChange={(e) => {
+                const selected = activityLevels.find(level => level.label === e.target.value);
+                if (selected) {
+                  setUserInfo(prev => ({ ...prev, activityLevel: selected.value }));
+                }
+              }}
               className={styles.selectInput}
             >
-              <option value="sedentary">خامل (Sedentary) - لا يوجد تمرين أو نشاط قليل جداً</option>
-              <option value="lightly">نشاط خفيف (Lightly Active) - تمرين 1-3 أيام أسبوعياً</option>
-              <option value="moderately">نشاط متوسط (Moderately Active) - تمرين 3-5 أيام أسبوعياً</option>
-              <option value="very">نشاط عالي (Very Active) - تمرين 6-7 أيام أسبوعياً</option>
-              <option value="super">نشاط شديد جداً (Super Active) - تمرين شاق جداً يومياً</option>
+              {activityLevels.map((level, index) => (
+                <option key={index} value={level.label}>
+                  {level.label}
+                </option>
+              ))}
             </select>
           </div>
         </div>
@@ -287,24 +414,24 @@ const Info: React.FC = () => {
             الاحتياجات الغذائية تختلف بين الذكور والإناث
           </p>
           <div className={styles.radioButtons}>
-            <label className={userInfo.gender === 'Male' ? `${styles.radioLabel} ${styles.selected}` : styles.radioLabel}>
+            <label className={userInfo.gender === 0 ? `${styles.radioLabel} ${styles.selected}` : styles.radioLabel}>
               <input
                 type="radio"
                 name="gender"
                 value="Male"
-                checked={userInfo.gender === 'Male'}
-                onChange={handleInputChange}
+                checked={userInfo.gender === 0}
+                onChange={() => setUserInfo(prev => ({ ...prev, gender: 0 }))}
                 className={styles.radioInput}
               />
               ذكر
             </label>
-            <label className={userInfo.gender === 'Female' ? `${styles.radioLabel} ${styles.selected}` : styles.radioLabel}>
+            <label className={userInfo.gender === 1 ? `${styles.radioLabel} ${styles.selected}` : styles.radioLabel}>
               <input
                 type="radio"
                 name="gender"
                 value="Female"
-                checked={userInfo.gender === 'Female'}
-                onChange={handleInputChange}
+                checked={userInfo.gender === 1}
+                onChange={() => setUserInfo(prev => ({ ...prev, gender: 1 }))}
                 className={styles.radioInput}
               />
               أنثى
@@ -319,28 +446,57 @@ const Info: React.FC = () => {
             حدد هدفك لنساعدك في تحقيقه من خلال خطة غذائية مناسبة
           </p>
           <div className={styles.selectContainer}>
-            <select 
-              name="goal" 
-              value={userInfo.goal} 
+            <select
+              name="goal"
+              value={goalOptions.find(option => option.value === userInfo.goal)?.label || ''}
+              onChange={(e) => {
+                const selected = goalOptions.find(option => option.label === e.target.value);
+                if (selected) {
+                  setUserInfo(prev => ({ ...prev, goal: selected.value }));
+                }
+              }}
+              className={styles.selectInput}
+            >
+              {goalOptions.map((option, index) => (
+                <option key={index} value={option.label}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        {/* Goal Speed Question */}
+        <div className={getStepClass(7)}>
+          <h2 className={styles.questionTitle}>ما هي سرعة تحقيق الهدف؟</h2>
+          <p className={styles.questionDescription}>
+            اختر السرعة التي تريد بها تحقيق هدفك
+          </p>
+          <div className={styles.selectContainer}>
+            <select
+              name="howFast"
+              value={howFastOptions.find(option => option.value === userInfo.howFast)?.label || ''}
               onChange={handleInputChange}
               className={styles.selectInput}
             >
-              <option value="gain">زيادة الوزن</option>
-              <option value="lose">إنقاص الوزن</option>
-              <option value="maintain">الحفاظ على الوزن الحالي</option>
+              {howFastOptions.map((option, index) => (
+                <option key={index} value={option.label}>
+                  {option.label}
+                </option>
+              ))}
             </select>
           </div>
         </div>
 
         {/* Calorie Target */}
-        <div className={getStepClass(7)}>
+        <div className={getStepClass(8)}>
           <h2 className={styles.questionTitle}>هدف السعرات الحرارية اليومية</h2>
           <div className={styles.calorieTarget}>
             <p className={styles.calorieText}>
               بناءً على معلوماتك الشخصية وهدفك، نقترح عليك الاستهلاك اليومي التالي:
             </p>
             <div className={styles.calorieNumber}>
-              {userInfo.dailyCalorieTarget} سعرة حرارية
+              {Math.floor(userInfo.caloriesNum)} سعرة حرارية
             </div>
             <p className={styles.calorieNote}>
               هذا تقدير مبدئي يعتمد على معدل الأيض الأساسي. قد تحتاج للتعديل حسب مستوى نشاطك اليومي وأهدافك الخاصة.
@@ -350,13 +506,16 @@ const Info: React.FC = () => {
       </div>
 
       <div className={styles.navigationButtons}>
-        {step > 0 && (
-          <button className={styles.prevButton} onClick={handlePrev}>
-            السابق
-          </button>
-        )}
+        <button
+          className={styles.prevButton}
+          onClick={handlePrev}
+          disabled={step === 8}
+          style={step === 8 ? { opacity: 0.5, cursor: 'not-allowed' } : {}}
+        >
+          السابق
+        </button>
         <button className={styles.nextButton} onClick={handleNext}>
-          {step === 7 ? 'إنهاء' : 'التالي'}
+          {step === 8 ? 'إنهاء' : 'التالي'}
         </button>
       </div>
     </div>

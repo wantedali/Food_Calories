@@ -13,6 +13,8 @@ const SignUpPage: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [agreeToTerms, setAgreeToTerms] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
   const nameInputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
@@ -44,7 +46,7 @@ const SignUpPage: React.FC = () => {
 
   useEffect(() => {
     setIsVisible(true);
-    
+
     setTimeout(() => {
       if (nameInputRef.current) {
         nameInputRef.current.focus();
@@ -58,17 +60,87 @@ const SignUpPage: React.FC = () => {
     return () => clearInterval(slideInterval);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const isPasswordValid = (password: string) => {
+    const lengthCheck = password.length >= 8;
+    const upperCaseCheck = /[A-Z]/.test(password);
+    const numberCheck = /[0-9]/.test(password);
+    const specialCharCheck = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    return lengthCheck && upperCaseCheck && numberCheck && specialCharCheck;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    const submitBtn = document.querySelector(`.${styles.submitButton}`) as HTMLButtonElement;
-    if (submitBtn) {
-      submitBtn.classList.add(styles.loading);
-      setTimeout(() => {
-        submitBtn.classList.remove(styles.loading);
-        console.log({ name, email, password, confirmPassword, agreeToTerms });
-        
-      }, 1500);
+
+    if (!agreeToTerms) {
+      setAlertMessage("يرجى الموافقة على الشروط والأحكام");
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
+      return;
+    }
+
+    if (!name || !email || !password || !confirmPassword) {
+      setAlertMessage("يرجى تعبئة جميع الحقول");
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setAlertMessage("كلمة المرور غير متطابقة");
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
+      return;
+    }
+
+    if (!isPasswordValid(password)) {
+      setAlertMessage("يجب أن تكون كلمة المرور 8 أحرف على الأقل، وتحتوي على حرف كبير، رقم، وحرف خاص");
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:5062/api/users/EmailValidation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, email, password })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        setAlertMessage("هذا الحساب موجود بالفعل");
+        console.log(response)
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 3000);
+        return;
+      }
+
+      const submitBtn = document.querySelector(`.${styles.submitButton}`) as HTMLButtonElement;
+      if (submitBtn) {
+        submitBtn.classList.add(styles.loading);
+        setTimeout(() => {
+          submitBtn.classList.remove(styles.loading);
+
+          localStorage.setItem("signupData", JSON.stringify({
+            name: name,
+            email: email,
+            password: password
+          }));
+
+          navigate("/info");
+
+          console.log({ name, email, password, confirmPassword, agreeToTerms });
+        }, 1500);
+      }
+    } catch (error) {
+      setAlertMessage("فشل في الاتصال بالخادم. حاول مرة أخرى لاحقًا.");
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
     }
   };
 
@@ -82,6 +154,15 @@ const SignUpPage: React.FC = () => {
 
   return (
     <div className={`${styles.container} ${isVisible ? styles.visible : ''}`}>
+
+      {showAlert && (
+        <div className={styles.alertOverlay}>
+          <div className={styles.alert}>
+            <p>{alertMessage}</p>
+          </div>
+        </div>
+      )}
+
       <div className={`${styles.leftSection} ${isVisible ? styles.fadeInRight : ''}`}>
         <div className={styles.slider}>
           {sliderImages.map((src, index) => (
@@ -99,8 +180,8 @@ const SignUpPage: React.FC = () => {
         </div>
         <div className={styles.sliderDots}>
           {sliderImages.map((_, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className={`${styles.dot} ${index === currentSlide ? styles.activeDot : ''}`}
               onClick={() => setCurrentSlide(index)}
             />
@@ -121,7 +202,7 @@ const SignUpPage: React.FC = () => {
 
           <h2 className={styles.formTitle}>انضم إلينا اليوم!</h2>
           <p className={styles.formSubtitle}> انشأ حسابك واكتشف عالم من النكهات</p>
-          
+
           <form onSubmit={handleSubmit}>
             <div className={styles.inputGroup}>
               <label htmlFor="name">الاسم الكامل</label>
@@ -206,18 +287,17 @@ const SignUpPage: React.FC = () => {
 
             <div className={styles.termsCheck}>
               <label className={styles.checkbox}>
-                <input 
-                  type="checkbox" 
-                  checked={agreeToTerms} 
-                  onChange={() => setAgreeToTerms(!agreeToTerms)} 
-                  required
+                <input
+                  type="checkbox"
+                  checked={agreeToTerms}
+                  onChange={() => setAgreeToTerms(!agreeToTerms)}
                 />
                 <span className={styles.checkmark}></span>
-         <a href="#" className={styles.termsLink} >أوافق على الشروط والأحكام </a>
+                أوافق على <a href="#" onClick={(e) => e.preventDefault()} className={styles.termsLink}>الشروط والأحكام</a>
               </label>
             </div>
 
-            <button type="submit" className={styles.submitButton} onClick={() => navigate("/info")}>
+            <button type="submit" className={styles.submitButton}>
               <span className={styles.buttonText}>إنشاء حساب</span>
               <span className={styles.loadingDots}>
                 <span className={styles.dot}></span>
