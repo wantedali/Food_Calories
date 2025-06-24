@@ -33,11 +33,16 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, m
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleChange = (newValue: number) => {
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> amr_backend
     setCurrentValue(newValue);
 
     // Only enforce min/max when not actively editing
     if (!isEditing) {
-      const limitedValue = Math.max(min, Math.min(max, newValue));
+      const limitedValue =  newValue;
       onChange(limitedValue);
     }
   };
@@ -46,10 +51,14 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, m
     setIsEditing(false);
     // When input loses focus, enforce min/max
     if (currentValue !== null) {
-      const limitedValue = Math.max(min, Math.min(max, currentValue));
+      const limitedValue =  currentValue;
       setCurrentValue(limitedValue);
       onChange(limitedValue);
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> amr_backend
   };
 
   const increment = () => {
@@ -118,13 +127,20 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, m
           <input
             type="number"
             value={currentValue ?? ''}
+<<<<<<< HEAD
+=======
+
+>>>>>>> amr_backend
             onChange={(e) => {
               setIsEditing(true);
               handleChange(parseFloat(e.target.value) || 0);
             }}
             onBlur={handleBlur}
+<<<<<<< HEAD
             min={min}
             max={max}
+=======
+>>>>>>> amr_backend
             step={step}
             className={styles.spinnerInput}
           />
