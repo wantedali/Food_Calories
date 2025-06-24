@@ -40,6 +40,11 @@ public class User
     // Stores only the last 7 days of meals
     private List<DailyMeal> _mealHistory = new List<DailyMeal>();
 
+
+    public List<History> Histories = new List<History>();
+
+    public List<AnalysisHistory>AnalysisHistories = new List<AnalysisHistory>();
+
    
    
 }
