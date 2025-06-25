@@ -18,7 +18,7 @@ interface MealCard {
   name: string;
   calories: number;
   nutritionDetails: NutritionDetails;
-  date?: string; 
+  date?: string;
 }
 
 const History: React.FC = () => {
@@ -67,12 +67,12 @@ const History: React.FC = () => {
       date: "٢٠ فبراير ٢٠٢٥",
       nutritionDetails: {
         protein: 5,
-        carbs: 40,
-        fats: 2
+        carbs: 100,
+        fats: 25
       }
     }
   ]);
-  
+
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [isDeleting, setIsDeleting] = useState<string | null>(null);
   const detailsRef = useRef<HTMLDivElement>(null);
@@ -121,16 +121,16 @@ const History: React.FC = () => {
         </motion.div>
 
         {meals.length === 0 ? (
-          <motion.div 
+          <motion.div
             className={styles.emptyState}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
             <div className={styles.emptyStateContent}>
-              <img 
-                src="/empty-plate.svg" 
-                alt="صحن فارغ" 
+              <img
+                src="/empty-plate.svg"
+                alt="صحن فارغ"
                 className={styles.emptyStateImage}
               />
               <h2 className={styles.emptyStateText}>
@@ -142,7 +142,7 @@ const History: React.FC = () => {
             </div>
           </motion.div>
         ) : (
-          <motion.div 
+          <motion.div
             className={styles.grid}
             initial="hidden"
             animate="visible"
@@ -232,7 +232,7 @@ const History: React.FC = () => {
                               <span>{meal.nutritionDetails.protein}غ</span>
                             </div>
                             <div className={styles.progressContainer}>
-                              <motion.div 
+                              <motion.div
                                 className={`${styles.progressBar} ${styles.proteinBar}`}
                                 custom={meal.nutritionDetails.protein / (meal.nutritionDetails.protein + meal.nutritionDetails.carbs + meal.nutritionDetails.fats) * 100}
                                 variants={progressVariants}
@@ -241,14 +241,14 @@ const History: React.FC = () => {
                               />
                             </div>
                           </div>
-                          
+
                           <div className={styles.nutrientBar}>
                             <div className={styles.nutrientLabel}>
                               <span>الكربوهيدرات</span>
                               <span>{meal.nutritionDetails.carbs}غ</span>
                             </div>
                             <div className={styles.progressContainer}>
-                              <motion.div 
+                              <motion.div
                                 className={`${styles.progressBar} ${styles.carbsBar}`}
                                 custom={meal.nutritionDetails.carbs / (meal.nutritionDetails.protein + meal.nutritionDetails.carbs + meal.nutritionDetails.fats) * 100}
                                 variants={progressVariants}
@@ -257,14 +257,14 @@ const History: React.FC = () => {
                               />
                             </div>
                           </div>
-                          
+
                           <div className={styles.nutrientBar}>
                             <div className={styles.nutrientLabel}>
                               <span>الدهون</span>
                               <span>{meal.nutritionDetails.fats}غ</span>
                             </div>
                             <div className={styles.progressContainer}>
-                              <motion.div 
+                              <motion.div
                                 className={`${styles.progressBar} ${styles.fatsBar}`}
                                 custom={meal.nutritionDetails.fats / (meal.nutritionDetails.protein + meal.nutritionDetails.carbs + meal.nutritionDetails.fats) * 100}
                                 variants={progressVariants}

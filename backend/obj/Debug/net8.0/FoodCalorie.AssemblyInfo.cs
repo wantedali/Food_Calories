@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FoodCalorie")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c40d820c0eb34ef6641e441f8fc6d73833643349")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+171c0f85df54820e52077dd8903bc8099bed44f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("FoodCalorie")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FoodCalorie")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
