@@ -2,6 +2,8 @@ import styles from '../../assets/styles/SignIn.module.css';
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect, useRef } from 'react';
 import { ChefHat, ArrowLeft, Eye, EyeOff, Coffee, Lock } from 'lucide-react';
+import { jwtDecode } from "jwt-decode";
+
 
 const SignInPage: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -14,6 +16,15 @@ const SignInPage: React.FC = () => {
   const [alertMessage, setAlertMessage] = useState("");
   const emailInputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+
+  interface DecodedToken {
+    "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": string;
+    "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress": string;
+    "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": string;
+    exp: number; // Optional: expiry date
+    iss: string; // Optional: issuer
+    aud: string; // Optional: audience
+  }
 
   const sliderImages = [
     'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80&w=1200&auto=format&fit=crop',
@@ -73,9 +84,26 @@ const SignInPage: React.FC = () => {
         setTimeout(() => setShowAlert(false), 3000);
       } else {
         console.log("Login successful:", result);
-        if (rememberMe) {
-          localStorage.setItem("token", result.token);
+        const token = result.token;
+        localStorage.setItem("token", token);
+
+        if (token) {
+          const decoded = jwtDecode<DecodedToken>(token);
+
+          const userId = decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
+          const email = decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"];
+          const name = decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"];
+
+          console.log("User ID:", userId);
+          console.log("Email:", email);
+          console.log("Name:", name);
+
+          // const response = await fetch(`http://localhost:5062/api/users/${userId}`);
+          // const userData = await response.json();
+          // console.log(userData.weight); // or caloriesNum, etc.
         }
+
+
         navigate("/Home");
       }
     } catch (err) {
