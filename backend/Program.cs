@@ -34,6 +34,8 @@ builder.Services.AddScoped(sp =>
 });
 
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<DailyMealService>();
+builder.Services.AddScoped<IHistoryService, HistoryService>();
 
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>

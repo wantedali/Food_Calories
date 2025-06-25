@@ -1,9 +1,12 @@
 using FoodCalorie.Models;
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
 
 namespace FoodCalorie.Services;
 
 public static class MealService
 {
+    
     public static void AddFood(Meal meal,Food food)
     {
         meal.Items.Add(food);
