@@ -14,6 +14,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 function App() {
 
   const name = localStorage.getItem("name");
+  console.log(name);
 
   // Mock user data - in a real app, this would come from your auth system
   const userData = {

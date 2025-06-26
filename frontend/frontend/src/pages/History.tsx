@@ -5,8 +5,7 @@ import styles from "../assets/styles/History.module.css";
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
-
-
+import LoadingScreen from "../components/LoadingScreen";
 
 interface NutritionDetails {
   protein: number;
@@ -30,96 +29,67 @@ const History: React.FC = () => {
   const hasLogged = useRef(false);
 
   useEffect(() => {
-    if (!hasLogged.current) {
-      console.log("jjjjj")
-      hasLogged.current = true;
-    }
+    const fetchUserHistory = async () => {
+      const userId = localStorage.getItem("userId");
+      if (!userId) return;
+
+      try {
+        const response = await fetch(`http://localhost:5062/api/History/user/${userId}`);
+        if (!response.ok) throw new Error("Failed to fetch history");
+
+        const data = await response.json();
+
+        // Main meals (with image)
+        const analysisMeals = data.analysisHistories.map((meal: any) => ({
+          id: meal.id,
+          imageUrl: `data:${meal.imageContentType};base64,${meal.imageBase64}`,
+          name: meal.mealName,
+          calories: meal.calories,
+          nutritionDetails: {
+            protein: meal.protein,
+            carbs: meal.carbs,
+            fats: meal.fat
+          },
+          mealSize: 0,
+          date: "" // or use backend date if available
+        }));
+
+        setMeals(analysisMeals);
+
+        // Manual meals (no image)
+        const manual = data.histories.map((meal: any) => ({
+          id: meal.id.timestamp.toString(), // or a unique fallback
+          imageUrl: PLACEHOLDER_IMG,
+          name: meal.mealName,
+          calories: meal.calories,
+          nutritionDetails: {
+            protein: meal.protein,
+            carbs: meal.carbs,
+            fats: meal.fat
+          },
+          mealSize: meal.wieght ?? 0,
+          date: new Date(meal.date).toLocaleDateString("ar-EG", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+          })
+        }));
+
+        setManualMeals(manual);
+
+      } catch (error) {
+        console.error("Error fetching user history:", error);
+      }
+    };
+
+    fetchUserHistory();
   }, []);
 
-  const [meals, setMeals] = useState<MealCard[]>([
-    {
-      id: '1',
-      imageUrl: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=3165&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      name: "كيك",
-      calories: 450,
-      date: "٢٣ فبراير ٢٠٢٥",
-      nutritionDetails: {
-        protein: 25,
-        carbs: 55,
-        fats: 15
-      },
-      mealSize: 150
-    },
-    {
-      id: '2',
-      imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c',
-      name: "سلطة خضراء",
-      calories: 320,
-      date: "٢٢ فبراير ٢٠٢٥",
-      nutritionDetails: {
-        protein: 18,
-        carbs: 30,
-        fats: 12
-      },
-      mealSize: 120
-    },
-    {
-      id: '3',
-      imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      name: "طبق خضروات",
-      calories: 280,
-      date: "٢١ فبراير ٢٠٢٥",
-      nutritionDetails: {
-        protein: 12,
-        carbs: 45,
-        fats: 8
-      },
-      mealSize: 100
-    },
-    {
-      id: '4',
-      imageUrl: 'https://plus.unsplash.com/premium_photo-1698867575634-d39ef95fa6a7?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      name: "وجبة فواكه",
-      calories: 180,
-      date: "٢٠ فبراير ٢٠٢٥",
-      nutritionDetails: {
-        protein: 5,
-        carbs: 40,
-        fats: 2
-      },
-      mealSize: 90
-    }
-  ]);
 
-  // Manually added meals (simulate as if fetched or added in another way)
-  const [manualMeals, setManualMeals] = useState<MealCard[]>([
-    {
-      id: 'm1',
-      imageUrl: PLACEHOLDER_IMG,
-      name: "شوربة عدس",
-      calories: 180,
-      date: "١٩ فبراير ٢٠٢٥",
-      nutritionDetails: {
-        protein: 8,
-        carbs: 28,
-        fats: 3
-      },
-      mealSize: 250
-    },
-    {
-      id: 'm2',
-      imageUrl: PLACEHOLDER_IMG,
-      name: "بيض مسلوق",
-      calories: 155,
-      date: "١٨ فبراير ٢٠٢٥",
-      nutritionDetails: {
-        protein: 13,
-        carbs: 1,
-        fats: 11
-      },
-      mealSize: 2
-    }
-  ]);
+
+  const [meals, setMeals] = useState<MealCard[]>([]);
+  const [manualMeals, setManualMeals] = useState<MealCard[]>([]);
+
 
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [isDeleting, setIsDeleting] = useState<string | null>(null);

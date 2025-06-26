@@ -6,6 +6,7 @@ import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import { jwtDecode } from "jwt-decode";
 import { useRef, useEffect } from 'react';
+import LoadingScreen from "../components/LoadingScreen";
 
 interface Meal {
   id: string;
@@ -34,34 +35,9 @@ const sampleMeals = [
 ];
 
 function MealTrack() {
-
   const [calorieGoal, setCalorieGoal] = useState<number | null>(null);
-
-  const hasLogged = useRef(false);
-  const userId = localStorage.getItem("userId");
-
-  useEffect(() => {
-    const userId = localStorage.getItem("userId");
-
-    if (!userId) return;
-
-    const fetchCalorieGoal = async () => {
-      try {
-        const response = await fetch(`http://localhost:5062/api/users/getUser?id=${userId}`);
-        if (!response.ok) throw new Error("Failed to fetch user");
-
-        const userData = await response.json();
-
-        console.log("Full user data:", userData); // for debugging
-        setCalorieGoal(userData.calorieGoal); // only save the goal
-
-      } catch (err) {
-        console.error("Error fetching calorie goal:", err);
-      }
-    };
-
-    fetchCalorieGoal();
-  }, []);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const [mealSections, setMealSections] = useState<MealSection[]>([
     {
@@ -80,6 +56,45 @@ function MealTrack() {
       icon: <UtensilsCrossed className={styles.mealIcon} />,
     },
   ]);
+
+  useEffect(() => {
+    const fetchCalorieGoal = async () => {
+      const userId = localStorage.getItem("userId");
+
+      if (!userId) {
+        setError("لم يتم العثور على معرف المستخدم");
+        setIsLoading(false);
+        return;
+      }
+
+      try {
+        setIsLoading(true);
+
+        // Add a minimum loading time to show the loading screen
+        const [response] = await Promise.all([
+          fetch(`http://localhost:5062/api/users/getUser?id=${userId}`),
+          new Promise(resolve => setTimeout(resolve, 2000)) // Minimum 2 seconds loading
+        ]);
+
+        if (!response.ok) {
+          throw new Error("فشل في جلب بيانات المستخدم");
+        }
+
+        const userData = await response.json();
+        console.log("Full user data:", userData);
+
+        setCalorieGoal(userData.calorieGoal);
+        setError(null);
+      } catch (err) {
+        console.error("Error fetching calorie goal:", err);
+        setError(err instanceof Error ? err.message : "حدث خطأ في جلب البيانات");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchCalorieGoal();
+  }, []);
 
   const addRandomMeal = (sectionIndex: number) => {
     const randomMeal = sampleMeals[Math.floor(Math.random() * sampleMeals.length)];
@@ -110,15 +125,41 @@ function MealTrack() {
     return meals.reduce((total, meal) => total + meal.calories, 0);
   };
 
+  // Show loading screen while fetching data
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
+
+  // Show error state if there's an error
+  if (error) {
+    return (
+      <div className={styles.container}>
+        <Navbar />
+        <Sidebar />
+        <div className={styles.mainContent}>
+          <div className={styles.errorContainer}>
+            <h2>حدث خطأ</h2>
+            <p>{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className={styles.retryButton}
+            >
+              إعادة المحاولة
+            </button>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
   const totalCalories = calculateTotalCalories();
-  // Ensure calorieGoal is always an integer or fallback to 0
-  const calorieGoalInt = Math.floor(calorieGoal ?? 0); // assuming calorieGoalRaw comes from the API
-
-  const safeGoal = Math.max(calorieGoalInt, 1); // make sure it's at least 1 to avoid division by 0
-
+  const calorieGoalInt = Math.floor(calorieGoal ?? 0);
+  const safeGoal = Math.max(calorieGoalInt, 1);
   const calorieProgress = Math.round((totalCalories / safeGoal) * 100);
   const remainingCalories = calorieGoalInt - totalCalories;
   const isExceeded = totalCalories > calorieGoalInt;
+
   const getProgressStatus = () => {
     if (isExceeded) {
       return {
@@ -149,7 +190,6 @@ function MealTrack() {
 
   const progressStatus = getProgressStatus();
 
-
   return (
     <div className={styles.container}>
       <Navbar />
@@ -167,7 +207,7 @@ function MealTrack() {
 
             <div className={styles.calorieLimit}>
               <div className={styles.limitInfo}>
-                <span>الحد اليومي: {calorieGoalInt ?? "جار التحميل..."} كالوري</span>
+                <span>الحد اليومي: {calorieGoalInt} كالوري</span>
                 <span className={`${styles.remainingCalories} ${isExceeded ? styles.exceeded : ''}`}>
                   {isExceeded ? `زيادة: ${Math.abs(remainingCalories)}` : `متبقي: ${remainingCalories}`} كالوري
                 </span>
