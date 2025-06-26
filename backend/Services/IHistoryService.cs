@@ -6,7 +6,7 @@ namespace FoodCalorie.Services
 {
     public interface IHistoryService
     {
-        Task SaveHistoryAsync(History history);
+        Task SaveHistoryAsync(HistoryDto history);
         Task SaveAnalysisHistoryAsync(IFormFile imageFile, AnalysisHistory history);
 
         Task<UserHistoryResponseWithImage?> GetUserHistoriesAsync(string userId);
