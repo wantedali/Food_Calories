@@ -1410,24 +1410,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\amr khaled\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\DELL\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Food_Calories\\backend\\FoodCalorie.csproj",
+      "projectUniqueName": "G:\\FCIS\\GP\\Food_Calories\\backend\\FoodCalorie.csproj",
       "projectName": "FoodCalorie",
-      "projectPath": "D:\\Food_Calories\\backend\\FoodCalorie.csproj",
-      "packagesPath": "C:\\Users\\amr khaled\\.nuget\\packages\\",
-      "outputPath": "D:\\Food_Calories\\backend\\obj\\",
+      "projectPath": "G:\\FCIS\\GP\\Food_Calories\\backend\\FoodCalorie.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "G:\\FCIS\\GP\\Food_Calories\\backend\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\amr khaled\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1452,8 +1447,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -1499,7 +1493,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
