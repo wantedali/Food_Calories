@@ -7,12 +7,14 @@ import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import { useRef, useEffect, useState } from 'react';
+import LoadingScreen from "../components/LoadingScreen";
 
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function App() {
 
+  const [error, setError] = useState<string | null>(null);
   const name = localStorage.getItem("name");
   console.log(name);
 

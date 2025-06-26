@@ -50,15 +50,15 @@ const History: React.FC = () => {
             carbs: meal.carbs,
             fats: meal.fat
           },
-          mealSize: 0,
-          date: "" // or use backend date if available
+          mealSize: meal.wieght,
+          date: meal.date // or use backend date if available
         }));
 
         setMeals(analysisMeals);
 
         // Manual meals (no image)
         const manual = data.histories.map((meal: any) => ({
-          id: meal.id.timestamp.toString(), // or a unique fallback
+          id: meal.id, // or a unique fallback
           imageUrl: PLACEHOLDER_IMG,
           name: meal.mealName,
           calories: meal.calories,

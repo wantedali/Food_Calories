@@ -37,7 +37,7 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, m
 
     // Only enforce min/max when not actively editing
     if (!isEditing) {
-      const limitedValue =  newValue;
+      const limitedValue = newValue;
       onChange(limitedValue);
     }
   };
@@ -46,7 +46,7 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, m
     setIsEditing(false);
     // When input loses focus, enforce min/max
     if (currentValue !== null) {
-      const limitedValue =  currentValue;
+      const limitedValue = currentValue;
       setCurrentValue(limitedValue);
       onChange(limitedValue);
     }
@@ -210,7 +210,6 @@ const Info: React.FC = () => {
     }
   };
 
-
   const handleNumericChange = (field: keyof UserInfo) => (value: number) => {
     setUserInfo(prev => ({
       ...prev,
@@ -225,7 +224,7 @@ const Info: React.FC = () => {
       await handleSubmit();
       setStep(8); // Changed from 7 to 8
     } else {
-      navigate("/home");
+      navigate("/signin");
     }
   };
 
