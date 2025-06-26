@@ -4,6 +4,8 @@ import styles from '../assets/styles/MealTracking.module.css';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
+import { jwtDecode } from "jwt-decode";
+import { useRef, useEffect } from 'react';
 
 interface Meal {
   id: string;
@@ -32,8 +34,34 @@ const sampleMeals = [
 ];
 
 function MealTrack() {
-  // Daily calorie limit (this would normally come from user profile/settings)
-  const dailyCalorieLimit = 2200;
+
+  const [calorieGoal, setCalorieGoal] = useState<number | null>(null);
+
+  const hasLogged = useRef(false);
+  const userId = localStorage.getItem("userId");
+
+  useEffect(() => {
+    const userId = localStorage.getItem("userId");
+
+    if (!userId) return;
+
+    const fetchCalorieGoal = async () => {
+      try {
+        const response = await fetch(`http://localhost:5062/api/users/getUser?id=${userId}`);
+        if (!response.ok) throw new Error("Failed to fetch user");
+
+        const userData = await response.json();
+
+        console.log("Full user data:", userData); // for debugging
+        setCalorieGoal(userData.calorieGoal); // only save the goal
+
+      } catch (err) {
+        console.error("Error fetching calorie goal:", err);
+      }
+    };
+
+    fetchCalorieGoal();
+  }, []);
 
   const [mealSections, setMealSections] = useState<MealSection[]>([
     {
@@ -83,10 +111,14 @@ function MealTrack() {
   };
 
   const totalCalories = calculateTotalCalories();
-  const calorieProgress = (totalCalories / dailyCalorieLimit) * 100;
-  const remainingCalories = dailyCalorieLimit - totalCalories;
-  const isExceeded = totalCalories > dailyCalorieLimit;
+  // Ensure calorieGoal is always an integer or fallback to 0
+  const calorieGoalInt = Math.floor(calorieGoal ?? 0); // assuming calorieGoalRaw comes from the API
 
+  const safeGoal = Math.max(calorieGoalInt, 1); // make sure it's at least 1 to avoid division by 0
+
+  const calorieProgress = Math.round((totalCalories / safeGoal) * 100);
+  const remainingCalories = calorieGoalInt - totalCalories;
+  const isExceeded = totalCalories > calorieGoalInt;
   const getProgressStatus = () => {
     if (isExceeded) {
       return {
@@ -117,11 +149,12 @@ function MealTrack() {
 
   const progressStatus = getProgressStatus();
 
+
   return (
     <div className={styles.container}>
       <Navbar />
       <Sidebar />
-      
+
       <div className={styles.mainContent}>
         <div className={styles.header}>
           <h1>تتبع الوجبات اليومية</h1>
@@ -131,23 +164,23 @@ function MealTrack() {
               <span className={styles.calorieNumber}>{totalCalories}</span>
               <span className={styles.calorieUnit}>كالوري</span>
             </div>
-            
+
             <div className={styles.calorieLimit}>
               <div className={styles.limitInfo}>
-                <span>الحد اليومي: {dailyCalorieLimit} كالوري</span>
+                <span>الحد اليومي: {calorieGoalInt ?? "جار التحميل..."} كالوري</span>
                 <span className={`${styles.remainingCalories} ${isExceeded ? styles.exceeded : ''}`}>
                   {isExceeded ? `زيادة: ${Math.abs(remainingCalories)}` : `متبقي: ${remainingCalories}`} كالوري
                 </span>
               </div>
-              
+
               <div className={styles.progressContainer}>
                 <div className={styles.progressBar}>
-                  <div 
+                  <div
                     className={`${styles.progressFill} ${isExceeded ? styles.exceededFill : ''}`}
                     style={{ width: `${Math.min(calorieProgress, 100)}%` }}
                   ></div>
                   {isExceeded && (
-                    <div 
+                    <div
                       className={styles.exceededIndicator}
                       style={{ width: `${Math.min(calorieProgress - 100, 50)}%` }}
                     ></div>
@@ -157,7 +190,7 @@ function MealTrack() {
                   {Math.round(calorieProgress)}%
                 </span>
               </div>
-              
+
               <div className={`${styles.statusIndicator} ${progressStatus.className}`}>
                 {progressStatus.icon}
                 <span>{progressStatus.text}</span>

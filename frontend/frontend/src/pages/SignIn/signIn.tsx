@@ -98,9 +98,7 @@ const SignInPage: React.FC = () => {
           console.log("Email:", email);
           console.log("Name:", name);
 
-          // const response = await fetch(`http://localhost:5062/api/users/${userId}`);
-          // const userData = await response.json();
-          // console.log(userData.weight); // or caloriesNum, etc.
+          localStorage.setItem("userId", userId);
         }
 
 
