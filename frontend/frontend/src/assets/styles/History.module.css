@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
 
+
 .container {
   min-height: 100vh;
   background-color: #1B2537;
@@ -132,8 +133,8 @@
   align-items: center;
   background-color: #1B2537;
   border-radius: 0.75rem;
-  padding: 0.5rem 0.75rem;
-  min-width: 100px;
+  padding: 0.3rem 0.6rem;
+  min-width: 55px;
   text-align: center;
 }
 
@@ -145,6 +146,29 @@
 
 .caloriesUnit {
   font-size: 0.75rem;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.gramsBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1B2537;
+  border-radius: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  min-width: 55px;
+  text-align: center;
+}
+
+.gramsValue {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #D4B675;
+}
+
+.gramsUnit {
+  font-size: 0.7rem;
   color: #ffffff;
   font-weight: 300;
 }
@@ -314,6 +338,80 @@
   margin-top: 1rem;
   display: block;
 }
+
+.gramsBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1B2537;
+  border-radius: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  min-width: 55px;
+  text-align: center;
+}
+
+.gramsValue {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #D4B675;
+}
+
+.gramsUnit {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.addToMealButtons {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.addToMealButton {
+  background-color: #25324A;
+  color: #D4B675;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.85rem;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.addToMealButton:hover {
+  background-color: #1B2537;
+  color: #fff;
+}
+
+.addToMealButtons {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.addToMealButton {
+  background-color: #25324A;
+  color: #D4B675;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.85rem;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.addToMealButton:hover {
+  background-color: #1B2537;
+  color: #fff;
+}
+
 
 @media (max-width: 1024px) {
   .container {

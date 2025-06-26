@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&display=swap');
 
 :root {
@@ -85,9 +86,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.7));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.7)
+  );
   z-index: 1;
 }
 
@@ -114,15 +117,8 @@
 }
 
 @keyframes floatText {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .goldText {
@@ -175,7 +171,7 @@
   align-items: center;
   padding: 2rem;
   background-color: var(--dark-bg);
-  background-image:
+  background-image: 
     radial-gradient(circle at 10% 20%, rgba(212, 182, 117, 0.03) 0%, transparent 30%),
     radial-gradient(circle at 90% 80%, rgba(212, 182, 117, 0.03) 0%, transparent 30%);
   overflow-y: auto;
@@ -195,9 +191,11 @@
   max-width: 480px;
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.03);
-  background-image: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.05) 0%,
-      rgba(255, 255, 255, 0.02) 100%);
+  background-image: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.05) 0%, 
+    rgba(255, 255, 255, 0.02) 100%
+  );
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -371,11 +369,11 @@
   transition: var(--transition-fast);
 }
 
-.checkbox:hover input~.checkmark {
+.checkbox:hover input ~ .checkmark {
   border-color: var(--primary-color);
 }
 
-.checkbox input:checked~.checkmark {
+.checkbox input:checked ~ .checkmark {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
 }
@@ -386,7 +384,7 @@
   display: none;
 }
 
-.checkbox input:checked~.checkmark:after {
+.checkbox input:checked ~ .checkmark:after {
   display: block;
   left: 6px;
   top: 2px;
@@ -457,17 +455,8 @@
 }
 
 @keyframes dotPulse {
-
-  0%,
-  100% {
-    transform: scale(0.8);
-    opacity: 0.5;
-  }
-
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
+  0%, 100% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 1; }
 }
 
 .submitButton.loading .buttonText {
@@ -497,46 +486,8 @@
   text-decoration: underline;
 }
 
-.alertOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(27, 37, 55, 0.7);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 2rem;
-  z-index: 50;
-  animation: fadeIn 0.3s ease-out;
-}
-
-.alert {
-  background: #D4B675;
-  color: #1B2537;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  font-family: 'Tajawal', sans-serif;
-  font-weight: 500;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  animation: slideDown 0.3s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
-}
-
 @media (max-width: 1200px) {
-
-  .leftSection,
-  .rightSection {
+  .leftSection, .rightSection {
     flex: 1;
   }
 }
@@ -559,7 +510,7 @@
   .goldText {
     font-size: 2.4rem;
   }
-
+  
   .whiteText {
     font-size: 1.6rem;
   }
@@ -605,7 +556,7 @@
   .goldText {
     font-size: 2.2rem;
   }
-
+  
   .whiteText {
     font-size: 1.4rem;
   }
@@ -639,7 +590,7 @@
   .goldText {
     font-size: 1.8rem;
   }
-
+  
   .whiteText {
     font-size: 1.2rem;
   }
@@ -668,7 +619,7 @@
   .goldText {
     font-size: 1.6rem;
   }
-
+  
   .whiteText {
     font-size: 1rem;
   }
@@ -677,7 +628,7 @@
     padding: 1.25rem;
     border-radius: 15px;
   }
-
+  
   .header {
     margin-bottom: 1rem;
   }
@@ -706,7 +657,7 @@
   .goldText {
     font-size: 1.4rem;
   }
-
+  
   .whiteText {
     font-size: 0.9rem;
   }
@@ -732,7 +683,7 @@
     font-size: 0.8rem;
   }
 
-
+ 
   .submitButton {
     padding: 0.75rem;
     font-size: 0.9rem;
