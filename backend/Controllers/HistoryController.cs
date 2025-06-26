@@ -42,7 +42,9 @@ namespace FoodCalorie.Controllers
                 Calories = model.Calories,
                 Protein = model.Protein,
                 Carbs = model.Carbs,
-                Fat = model.Fat
+                Fat = model.Fat,
+                Wieght = model.Wieght,
+                date = model.date
             };
 
             await _historyService.SaveAnalysisHistoryAsync(model.Image, history);

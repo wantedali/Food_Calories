@@ -52,6 +52,8 @@ namespace FoodCalorie.Services
             Protein = h.Protein,
             Carbs = h.Carbs,
             Fat = h.Fat,
+            Wieght = h.Wieght,
+            date = h.date,
             ImageContentType = h.ImageContentType,
             ImageBase64 = h.ImageData != null ? Convert.ToBase64String(h.ImageData) : null
         }).ToList();
@@ -67,12 +69,12 @@ namespace FoodCalorie.Services
         {
             // Traverse all users to find the image by AnalysisHistory.Id
             var user = await _users
-                .Find(u => u.AnalysisHistories.Any(h => h.Id == ObjectId.Parse(id)))
+                .Find(u => u.AnalysisHistories.Any(h => h.Id == id))
                 .FirstOrDefaultAsync();
 
             if (user == null) return null;
 
-            var history = user.AnalysisHistories.FirstOrDefault(h => h.Id == ObjectId.Parse(id));
+            var history = user.AnalysisHistories.FirstOrDefault(h => h.Id == id);
             if (history == null || history.ImageData == null)
                 return null;
 

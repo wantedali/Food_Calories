@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "D:\\Food_Calories\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\dtos\\analysishistoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:dtos\\analysishistoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\services\\historyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:services\\historyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\\u2019models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:\u2019models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\\u2019models\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:\u2019models\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\\u2019models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:\u2019models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\dtos\\analysishistorywithimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:dtos\\analysishistorywithimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\\u2019models\\meal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:\u2019models\\meal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\controllers\\historycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:controllers\\historycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\dtos\\analysishistoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:dtos\\analysishistoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\\u2019models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:\u2019models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\\u2019models\\meal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|solutionrelative:\u2019models\\meal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9744C494-0C8A-4181-BA3F-E6EDFCBA896A}|FoodCalorie.csproj|d:\\food_calories\\backend\\\u2019models\\dailymeal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -99,6 +111,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "HistoryService.cs",
+              "DocumentMoniker": "D:\\Food_Calories\\backend\\Services\\HistoryService.cs",
+              "RelativeDocumentMoniker": "Services\\HistoryService.cs",
+              "ToolTip": "D:\\Food_Calories\\backend\\Services\\HistoryService.cs",
+              "RelativeToolTip": "Services\\HistoryService.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAhwEwAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T20:35:48.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HistoryController.cs",
+              "DocumentMoniker": "D:\\Food_Calories\\backend\\Controllers\\HistoryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HistoryController.cs",
+              "ToolTip": "D:\\Food_Calories\\backend\\Controllers\\HistoryController.cs",
+              "RelativeToolTip": "Controllers\\HistoryController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T20:34:54.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "AnalysisHistoryForm.cs",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\DTOs\\AnalysisHistoryForm.cs",
               "RelativeDocumentMoniker": "DTOs\\AnalysisHistoryForm.cs",
@@ -106,37 +143,11 @@
               "RelativeToolTip": "DTOs\\AnalysisHistoryForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T19:24:36.289Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-26T19:24:36.289Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "History.cs",
-              "DocumentMoniker": "D:\\Food_Calories\\backend\\\u2019Models\\History.cs",
-              "RelativeDocumentMoniker": "\u2019Models\\History.cs",
-              "ToolTip": "D:\\Food_Calories\\backend\\\u2019Models\\History.cs",
-              "RelativeToolTip": "\u2019Models\\History.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBUAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T19:23:05.51Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MealsController.cs",
-              "DocumentMoniker": "D:\\Food_Calories\\backend\\Controllers\\MealsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\MealsController.cs",
-              "ToolTip": "D:\\Food_Calories\\backend\\Controllers\\MealsController.cs",
-              "RelativeToolTip": "Controllers\\MealsController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAAB8AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T15:59:22.164Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -144,12 +155,11 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AgIAAEoAAAAAAAAAAAAQwFgAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T16:12:10.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T16:12:10.226Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "MealService.cs",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\Services\\MealService.cs",
               "RelativeDocumentMoniker": "Services\\MealService.cs",
@@ -161,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -173,104 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CalorieCalculator.cs",
-              "DocumentMoniker": "D:\\Food_Calories\\backend\\Services\\CalorieCalculator.cs",
-              "RelativeDocumentMoniker": "Services\\CalorieCalculator.cs",
-              "ToolTip": "D:\\Food_Calories\\backend\\Services\\CalorieCalculator.cs",
-              "RelativeToolTip": "Services\\CalorieCalculator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T16:11:38.317Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Food.cs",
-              "DocumentMoniker": "D:\\Food_Calories\\backend\\\u2019Models\\Food.cs",
-              "RelativeDocumentMoniker": "\u2019Models\\Food.cs",
-              "ToolTip": "D:\\Food_Calories\\backend\\\u2019Models\\Food.cs",
-              "RelativeToolTip": "\u2019Models\\Food.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T15:57:12.939Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "D:\\Food_Calories\\backend\\Services\\TokenService.cs",
-              "RelativeDocumentMoniker": "Services\\TokenService.cs",
-              "ToolTip": "D:\\Food_Calories\\backend\\Services\\TokenService.cs",
-              "RelativeToolTip": "Services\\TokenService.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBIAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T15:41:25.156Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\Food_Calories\\backend\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Services\\UserService.cs",
-              "ToolTip": "D:\\Food_Calories\\backend\\Services\\UserService.cs",
-              "RelativeToolTip": "Services\\UserService.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAgwEEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T11:24:09.197Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\Food_Calories\\backend\\\u2019Models\\User.cs",
-              "RelativeDocumentMoniker": "\u2019Models\\User.cs",
-              "ToolTip": "D:\\Food_Calories\\backend\\\u2019Models\\User.cs",
-              "RelativeToolTip": "\u2019Models\\User.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAA6wCIAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T16:06:02.639Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DailyMealService.cs",
-              "DocumentMoniker": "D:\\Food_Calories\\backend\\Services\\DailyMealService.cs",
-              "RelativeDocumentMoniker": "Services\\DailyMealService.cs",
-              "ToolTip": "D:\\Food_Calories\\backend\\Services\\DailyMealService.cs",
-              "RelativeToolTip": "Services\\DailyMealService.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAhwEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T15:58:02.543Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "addfood.cs",
-              "DocumentMoniker": "D:\\Food_Calories\\backend\\DTOs\\addfood.cs",
-              "RelativeDocumentMoniker": "DTOs\\addfood.cs",
-              "ToolTip": "D:\\Food_Calories\\backend\\DTOs\\addfood.cs",
-              "RelativeToolTip": "DTOs\\addfood.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T17:38:59.363Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DailyMeal.cs",
-              "DocumentMoniker": "D:\\Food_Calories\\backend\\\u2019Models\\DailyMeal.cs",
-              "RelativeDocumentMoniker": "\u2019Models\\DailyMeal.cs",
-              "ToolTip": "D:\\Food_Calories\\backend\\\u2019Models\\DailyMeal.cs",
-              "RelativeToolTip": "\u2019Models\\DailyMeal.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAcwBgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T23:21:34.111Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "Meal.cs",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\\u2019Models\\Meal.cs",
               "RelativeDocumentMoniker": "\u2019Models\\Meal.cs",
@@ -282,7 +195,141 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Food_Calories\\backend\\\u2019Models\\User.cs",
+              "RelativeDocumentMoniker": "\u2019Models\\User.cs",
+              "ToolTip": "D:\\Food_Calories\\backend\\\u2019Models\\User.cs",
+              "RelativeToolTip": "\u2019Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T16:06:02.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "History.cs",
+              "DocumentMoniker": "D:\\Food_Calories\\backend\\\u2019Models\\History.cs",
+              "RelativeDocumentMoniker": "\u2019Models\\History.cs",
+              "ToolTip": "D:\\Food_Calories\\backend\\\u2019Models\\History.cs",
+              "RelativeToolTip": "\u2019Models\\History.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T19:23:05.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AnalysisHistoryWithImage.cs",
+              "DocumentMoniker": "D:\\Food_Calories\\backend\\DTOs\\AnalysisHistoryWithImage.cs",
+              "RelativeDocumentMoniker": "DTOs\\AnalysisHistoryWithImage.cs",
+              "ToolTip": "D:\\Food_Calories\\backend\\DTOs\\AnalysisHistoryWithImage.cs",
+              "RelativeToolTip": "DTOs\\AnalysisHistoryWithImage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T20:36:47.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MealsController.cs",
+              "DocumentMoniker": "D:\\Food_Calories\\backend\\Controllers\\MealsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MealsController.cs",
+              "ToolTip": "D:\\Food_Calories\\backend\\Controllers\\MealsController.cs",
+              "RelativeToolTip": "Controllers\\MealsController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAAB8AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T15:59:22.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CalorieCalculator.cs",
+              "DocumentMoniker": "D:\\Food_Calories\\backend\\Services\\CalorieCalculator.cs",
+              "RelativeDocumentMoniker": "Services\\CalorieCalculator.cs",
+              "ToolTip": "D:\\Food_Calories\\backend\\Services\\CalorieCalculator.cs",
+              "RelativeToolTip": "Services\\CalorieCalculator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T16:11:38.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Food.cs",
+              "DocumentMoniker": "D:\\Food_Calories\\backend\\\u2019Models\\Food.cs",
+              "RelativeDocumentMoniker": "\u2019Models\\Food.cs",
+              "ToolTip": "D:\\Food_Calories\\backend\\\u2019Models\\Food.cs",
+              "RelativeToolTip": "\u2019Models\\Food.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T15:57:12.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "D:\\Food_Calories\\backend\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "Services\\TokenService.cs",
+              "ToolTip": "D:\\Food_Calories\\backend\\Services\\TokenService.cs",
+              "RelativeToolTip": "Services\\TokenService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T15:41:25.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\Food_Calories\\backend\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "D:\\Food_Calories\\backend\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T11:24:09.197Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DailyMealService.cs",
+              "DocumentMoniker": "D:\\Food_Calories\\backend\\Services\\DailyMealService.cs",
+              "RelativeDocumentMoniker": "Services\\DailyMealService.cs",
+              "ToolTip": "D:\\Food_Calories\\backend\\Services\\DailyMealService.cs",
+              "RelativeToolTip": "Services\\DailyMealService.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAhwEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T15:58:02.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "addfood.cs",
+              "DocumentMoniker": "D:\\Food_Calories\\backend\\DTOs\\addfood.cs",
+              "RelativeDocumentMoniker": "DTOs\\addfood.cs",
+              "ToolTip": "D:\\Food_Calories\\backend\\DTOs\\addfood.cs",
+              "RelativeToolTip": "DTOs\\addfood.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T17:38:59.363Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 15,
+              "Title": "DailyMeal.cs",
+              "DocumentMoniker": "D:\\Food_Calories\\backend\\\u2019Models\\DailyMeal.cs",
+              "RelativeDocumentMoniker": "\u2019Models\\DailyMeal.cs",
+              "ToolTip": "D:\\Food_Calories\\backend\\\u2019Models\\DailyMeal.cs",
+              "RelativeToolTip": "\u2019Models\\DailyMeal.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAcwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T23:21:34.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "RegisterRequest.cs",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\DTOs\\RegisterRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\RegisterRequest.cs",
@@ -294,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\DTOs\\LoginRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\LoginRequest.cs",
@@ -306,7 +353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "CradentialVaildation.cs",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\DTOs\\CradentialVaildation.cs",
               "RelativeDocumentMoniker": "DTOs\\CradentialVaildation.cs",
@@ -318,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "FoodCalorie.csproj",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\FoodCalorie.csproj",
               "RelativeDocumentMoniker": "FoodCalorie.csproj",
@@ -330,7 +377,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -342,7 +389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "MongoDBSettings.cs",
               "DocumentMoniker": "D:\\Food_Calories\\backend\\\u2019Models\\MongoDBSettings.cs",
               "RelativeDocumentMoniker": "\u2019Models\\MongoDBSettings.cs",
