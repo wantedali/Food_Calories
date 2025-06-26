@@ -18,7 +18,7 @@ namespace FoodCalorie.Controllers
 
         // ✅ 1. Save Basic History (no image)
         [HttpPost("basic")]
-        public async Task<IActionResult> AddHistory([FromBody] History history)
+        public async Task<IActionResult> AddHistory([FromBody] HistoryDto history)
         {
             if (string.IsNullOrEmpty(history.UserId))
                 return BadRequest("UserId is required");
@@ -43,8 +43,7 @@ namespace FoodCalorie.Controllers
                 Protein = model.Protein,
                 Carbs = model.Carbs,
                 Fat = model.Fat,
-                Wieght = model.Wieght,
-                date = model.date
+                Wieght = model.Wieght
             };
 
             await _historyService.SaveAnalysisHistoryAsync(model.Image, history);

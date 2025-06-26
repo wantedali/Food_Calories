@@ -17,10 +17,28 @@ namespace FoodCalorie.Services
             _users = database.GetCollection<User>("Users");
         }
 
-        public async Task SaveHistoryAsync(History history)
+        public async Task SaveHistoryAsync(HistoryDto history)
         {
             var filter = Builders<User>.Filter.Eq(u => u.Id, history.UserId);
-            var update = Builders<User>.Update.Push(u => u.Histories, history);
+
+            var hist = new History
+            {
+                 UserId = history.UserId,
+
+                 MealName = history.MealName,
+
+                 Calories = history.Calories,
+
+                 Protein = history.Protein,
+
+                 Carbs = history.Carbs,
+
+                 Fat = history.Fat,
+
+                 Wieght = history.Wieght
+            };
+
+            var update = Builders<User>.Update.Push(u => u.Histories, hist);
 
             await _users.UpdateOneAsync(filter, update);
         }
