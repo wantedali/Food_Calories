@@ -52,6 +52,8 @@ namespace FoodCalorie.Services
             Protein = h.Protein,
             Carbs = h.Carbs,
             Fat = h.Fat,
+            Wieght = h.Wieght,
+            date = h.date,
             ImageContentType = h.ImageContentType,
             ImageBase64 = h.ImageData != null ? Convert.ToBase64String(h.ImageData) : null
         }).ToList();

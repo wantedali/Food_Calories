@@ -8,6 +8,8 @@
         public float Protein { get; set; }
         public float Carbs { get; set; }
         public float Fat { get; set; }
+        public float Wieght { get; set; }
+        public DateTime date { get; set; } = DateTime.UtcNow;
         public string ImageBase64 { get; set; }
         public string ImageContentType { get; set; }
     }
