@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from "../assets/styles/History.module.css";
 
@@ -27,6 +27,15 @@ interface MealCard {
 const PLACEHOLDER_IMG = "https://ui-avatars.com/api/?name=Meal&background=D4B675&color=1B2537&rounded=true&size=256"; // Or any SVG/beautiful placeholder
 
 const History: React.FC = () => {
+  const hasLogged = useRef(false);
+
+  useEffect(() => {
+    if (!hasLogged.current) {
+      console.log("jjjjj")
+      hasLogged.current = true;
+    }
+  }, []);
+
   const [meals, setMeals] = useState<MealCard[]>([
     {
       id: '1',
@@ -81,7 +90,7 @@ const History: React.FC = () => {
       mealSize: 90
     }
   ]);
-  
+
   // Manually added meals (simulate as if fetched or added in another way)
   const [manualMeals, setManualMeals] = useState<MealCard[]>([
     {
@@ -244,7 +253,7 @@ const History: React.FC = () => {
                     <span>{meal.nutritionDetails.protein}غ</span>
                   </div>
                   <div className={styles.progressContainer}>
-                    <motion.div 
+                    <motion.div
                       className={`${styles.progressBar} ${styles.proteinBar}`}
                       custom={meal.nutritionDetails.protein / (meal.nutritionDetails.protein + meal.nutritionDetails.carbs + meal.nutritionDetails.fats) * 100}
                       variants={progressVariants}
@@ -253,14 +262,14 @@ const History: React.FC = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className={styles.nutrientBar}>
                   <div className={styles.nutrientLabel}>
                     <span>الكربوهيدرات</span>
                     <span>{meal.nutritionDetails.carbs}غ</span>
                   </div>
                   <div className={styles.progressContainer}>
-                    <motion.div 
+                    <motion.div
                       className={`${styles.progressBar} ${styles.carbsBar}`}
                       custom={meal.nutritionDetails.carbs / (meal.nutritionDetails.protein + meal.nutritionDetails.carbs + meal.nutritionDetails.fats) * 100}
                       variants={progressVariants}
@@ -269,14 +278,14 @@ const History: React.FC = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className={styles.nutrientBar}>
                   <div className={styles.nutrientLabel}>
                     <span>الدهون</span>
                     <span>{meal.nutritionDetails.fats}غ</span>
                   </div>
                   <div className={styles.progressContainer}>
-                    <motion.div 
+                    <motion.div
                       className={`${styles.progressBar} ${styles.fatsBar}`}
                       custom={meal.nutritionDetails.fats / (meal.nutritionDetails.protein + meal.nutritionDetails.carbs + meal.nutritionDetails.fats) * 100}
                       variants={progressVariants}

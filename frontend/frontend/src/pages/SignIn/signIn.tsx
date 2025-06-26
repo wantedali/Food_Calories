@@ -99,6 +99,7 @@ const SignInPage: React.FC = () => {
           console.log("Name:", name);
 
           localStorage.setItem("userId", userId);
+          localStorage.setItem("name", name);
         }
 
 

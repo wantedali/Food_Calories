@@ -29,6 +29,7 @@ const Navbar: React.FC<NavbarProps> = (
                 <div>
                     <button className={styles.logout} onClick={() => {
                         localStorage.removeItem("userId");
+                        localStorage.removeItem("name")
                         localStorage.removeItem("token");
                         navigate("/");
                     }}>
