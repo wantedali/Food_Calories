@@ -69,12 +69,12 @@ namespace FoodCalorie.Services
         {
             // Traverse all users to find the image by AnalysisHistory.Id
             var user = await _users
-                .Find(u => u.AnalysisHistories.Any(h => h.Id == ObjectId.Parse(id)))
+                .Find(u => u.AnalysisHistories.Any(h => h.Id == id))
                 .FirstOrDefaultAsync();
 
             if (user == null) return null;
 
-            var history = user.AnalysisHistories.FirstOrDefault(h => h.Id == ObjectId.Parse(id));
+            var history = user.AnalysisHistories.FirstOrDefault(h => h.Id == id);
             if (history == null || history.ImageData == null)
                 return null;
 

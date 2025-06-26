@@ -7,7 +7,8 @@ namespace FoodCalorie.Models;
 public class History
 {
     [BsonId]
-    public ObjectId Id { get; set; }
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string? Id { get; set; } = ObjectId.GenerateNewId().ToString();
 
     public string UserId { get; set; }
     public string MealName { get; set; }
