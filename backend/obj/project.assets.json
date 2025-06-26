@@ -281,6 +281,22 @@
           "lib/net5.0/SharpCompress.dll": {}
         }
       },
+      "SixLabors.ImageSharp/3.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/SixLabors.ImageSharp.props": {}
+        }
+      },
       "Snappier/1.0.0": {
         "type": "package",
         "compile": {
@@ -1060,6 +1076,22 @@
         "sharpcompress.nuspec"
       ]
     },
+    "SixLabors.ImageSharp/3.1.2": {
+      "sha512": "PYdR6GUI+gW6LBaAQKTik0Ai8oLpFAz3a/KrVusxoTg3kf7F3cuIqKMhJGsuQcmDHCF+iD81Pyn4cexyHrb1ZA==",
+      "type": "package",
+      "path": "sixlabors.imagesharp/3.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "build/SixLabors.ImageSharp.props",
+        "lib/net6.0/SixLabors.ImageSharp.dll",
+        "lib/net6.0/SixLabors.ImageSharp.xml",
+        "sixlabors.imagesharp.128.png",
+        "sixlabors.imagesharp.3.1.2.nupkg.sha512",
+        "sixlabors.imagesharp.nuspec"
+      ]
+    },
     "Snappier/1.0.0": {
       "sha512": "rFtK2KEI9hIe8gtx3a0YDXdHOpedIf9wYCEYtBEmtlyiWVX3XlCNV03JrmmAi/Cdfn7dxK+k0sjjcLv4fpHnqA==",
       "type": "package",
@@ -1406,27 +1438,28 @@
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.4",
       "Microsoft.AspNetCore.OpenApi >= 8.0.2",
       "MongoDB.Driver >= 3.2.1",
+      "SixLabors.ImageSharp >= 3.1.2",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\amr khaled\\.nuget\\packages\\": {},
+    "C:\\Users\\ali khaled\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Food_Calories\\backend\\FoodCalorie.csproj",
+      "projectUniqueName": "D:\\MC\\Food_Calories\\backend\\FoodCalorie.csproj",
       "projectName": "FoodCalorie",
-      "projectPath": "D:\\Food_Calories\\backend\\FoodCalorie.csproj",
-      "packagesPath": "C:\\Users\\amr khaled\\.nuget\\packages\\",
-      "outputPath": "D:\\Food_Calories\\backend\\obj\\",
+      "projectPath": "D:\\MC\\Food_Calories\\backend\\FoodCalorie.csproj",
+      "packagesPath": "C:\\Users\\ali khaled\\.nuget\\packages\\",
+      "outputPath": "D:\\MC\\Food_Calories\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\amr khaled\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ali khaled\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1453,7 +1486,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -1474,6 +1507,10 @@
           "MongoDB.Driver": {
             "target": "Package",
             "version": "[3.2.1, )"
+          },
+          "SixLabors.ImageSharp": {
+            "target": "Package",
+            "version": "[3.1.2, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
@@ -1499,8 +1536,70 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SixLabors.ImageSharp' 3.1.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-2cmq-823j-5qj8",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SixLabors.ImageSharp' 3.1.2 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-5x7m-6737-26cr",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SixLabors.ImageSharp' 3.1.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-63p8-c4ww-9cg7",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SixLabors.ImageSharp' 3.1.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-65x7-c272-7g7r",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SixLabors.ImageSharp' 3.1.2 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-g85r-6x2q-45w7",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SixLabors.ImageSharp' 3.1.2 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-qxrv-gp6x-rc23",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
