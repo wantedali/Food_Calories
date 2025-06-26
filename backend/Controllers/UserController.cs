@@ -86,4 +86,16 @@ public class UserController : ControllerBase
         return Ok(new { token });
     }
 
+    [HttpGet("getUser")]
+    public async Task<IActionResult> GetUserById(string id)
+    {
+        var user = await _userService.GetUserById(id);
+
+        if (user == null)
+            return NotFound("User not found");
+
+        return Ok(user);
+    }
+
+
 }
