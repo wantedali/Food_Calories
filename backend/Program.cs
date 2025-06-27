@@ -5,8 +5,13 @@ using Microsoft.IdentityModel.Tokens;
 using FoodCalorie.Services;
 using FoodCalorie.Models;
 using System.Text;
+using System.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// إضافة قراءة متغيّرات البيئة (لضمان قراءة OPENAI_API_KEY)
+builder.Configuration.AddEnvironmentVariables();
+builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
 // Add services to the container
 builder.Services.AddEndpointsApiExplorer();
@@ -16,7 +21,6 @@ builder.Services.AddControllers();
 builder.Services.Configure<MongoDBSettings>(
     builder.Configuration.GetSection("MongoDB")
 );
-builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
 // Register MongoDB client
 builder.Services.AddSingleton<IMongoClient>(sp =>
@@ -54,7 +58,23 @@ builder.Services.AddAuthentication("Bearer")
 
 builder.Services.AddScoped<TokenService>();
 
-// ✅ CORS setup BEFORE builder.Build()
+// ———————————————— إضافة OpenAI HttpClient ————————————————
+
+var openAiKey = builder.Configuration["OPENAI_API_KEY"];
+if (string.IsNullOrWhiteSpace(openAiKey))
+{
+    throw new Exception("Please set the OPENAI_API_KEY environment variable.");
+}
+
+builder.Services.AddHttpClient("OpenAI", client =>
+{
+    client.BaseAddress = new Uri("https://api.openai.com/v1/");
+    client.DefaultRequestHeaders.Authorization =
+        new AuthenticationHeaderValue("Bearer", openAiKey);
+});
+
+// ——————————————————————————————————————————————————————————————
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
@@ -74,9 +94,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// ✅ CORS setup AFTER builder.Build()
 app.UseCors("AllowReactApp");
-
+app.UseStaticFiles();  // serves wwwroot by default
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

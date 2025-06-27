@@ -19,25 +19,20 @@ interface UserInfo {
 interface NumericSpinnerProps {
   value: number | null;
   onChange: (newValue: number) => void;
-  min: number;
-  max: number;
   step: number;
   unit: string;
   label: string;
   optional?: boolean;
 }
 
-const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, max, step, unit, label, optional = false }) => {
+const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, step, unit, label, optional = false }) => {
   const [currentValue, setCurrentValue] = useState<number | null>(value);
   const [isEditing, setIsEditing] = useState(false); // Track editing state
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleChange = (newValue: number) => {
-<<<<<<< HEAD
-=======
 
 
->>>>>>> amr_backend
     setCurrentValue(newValue);
 
     // Only enforce min/max when not actively editing
@@ -55,26 +50,19 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, m
       setCurrentValue(limitedValue);
       onChange(limitedValue);
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> amr_backend
   };
 
   const increment = () => {
     if (currentValue !== null) {
       handleChange(parseFloat((currentValue + step).toFixed(1)));
-    } else {
-      handleChange(min);
-    }
+    } 
   };
 
   const decrement = () => {
     if (currentValue !== null) {
       handleChange(parseFloat((currentValue - step).toFixed(1)));
-    } else {
-      handleChange(max);
-    }
+    } 
   };
 
   const startIncrement = () => {
@@ -127,20 +115,12 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, min, m
           <input
             type="number"
             value={currentValue ?? ''}
-<<<<<<< HEAD
-=======
 
->>>>>>> amr_backend
             onChange={(e) => {
               setIsEditing(true);
               handleChange(parseFloat(e.target.value) || 0);
             }}
             onBlur={handleBlur}
-<<<<<<< HEAD
-            min={min}
-            max={max}
-=======
->>>>>>> amr_backend
             step={step}
             className={styles.spinnerInput}
           />
@@ -336,8 +316,6 @@ const Info: React.FC = () => {
           <NumericSpinner
             value={userInfo.age}
             onChange={handleNumericChange('age')}
-            min={10}
-            max={100}
             step={1}
             unit="سنة"
             label="العمر"
@@ -353,9 +331,7 @@ const Info: React.FC = () => {
           <NumericSpinner
             value={userInfo.weight}
             onChange={handleNumericChange('weight')}
-            min={30}
-            max={250}
-            step={0.1}
+            step={0.5}
             unit="كجم"
             label="الوزن"
           />
@@ -370,8 +346,6 @@ const Info: React.FC = () => {
           <NumericSpinner
             value={userInfo.height}
             onChange={handleNumericChange('height')}
-            min={100}
-            max={250}
             step={0.5}
             unit="سم"
             label="الطول"
@@ -387,9 +361,7 @@ const Info: React.FC = () => {
           <NumericSpinner
             value={userInfo.bodyFat}
             onChange={handleNumericChange('bodyFat')}
-            min={3}
-            max={60}
-            step={0.1}
+            step={0.3}
             unit="%"
             label="نسبة الدهون"
             optional={true}

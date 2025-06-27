@@ -55,6 +55,7 @@ namespace FoodCalorie.Services
             var update = Builders<User>.Update.Push(u => u.AnalysisHistories, history);
 
             await _users.UpdateOneAsync(filter, update);
+            
         }
 
       public async Task<UserHistoryResponseWithImage?> GetUserHistoriesAsync(string userId)
@@ -82,6 +83,29 @@ namespace FoodCalorie.Services
             AnalysisHistories = analysisHistories ?? new List<AnalysisHistoryWithImage>()
         };
     }
+
+        public async Task<bool> RemoveHistoryAsync(string userId, string historyId, string type)
+        {
+            var filter = Builders<User>.Filter.Eq(u => u.Id, userId);
+
+            UpdateDefinition<User> update;
+
+            if (type == "manualmeal")
+            {
+                update = Builders<User>.Update.PullFilter(u => u.Histories, h => h.Id == historyId);
+            }
+            else if (type == "meal")
+            {
+                update = Builders<User>.Update.PullFilter(u => u.AnalysisHistories, h => h.Id == historyId);
+            }
+            else
+            {
+                return false; // Invalid type
+            }
+
+            var result = await _users.UpdateOneAsync(filter, update);
+            return result.ModifiedCount > 0;
+        }
 
         public async Task<FileStreamResult?> GetImageAsync(string id)
         {
