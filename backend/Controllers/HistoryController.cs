@@ -50,6 +50,18 @@ namespace FoodCalorie.Controllers
             return Ok("Saved successfully");
         }
 
+        [HttpDelete("remove-history")]
+        public async Task<IActionResult> RemoveHistory([FromQuery] string userId,[FromQuery] string historyId,[FromQuery] string type)
+        {
+            var success = await _historyService.RemoveHistoryAsync(userId, historyId, type.ToLower());
+            if (!success)
+                return NotFound("History not found or invalid type");
+
+            return Ok("History item removed successfully");
+        }
+
+
+
         // ✅ 3. Get Both Lists with Images
         [HttpGet("user/{userId}")]
         public async Task<IActionResult> GetUserHistory(string userId)

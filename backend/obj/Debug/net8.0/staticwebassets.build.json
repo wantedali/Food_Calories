@@ -1,11 +1,1670 @@
 {
   "Version": 1,
-  "Hash": "SdtAryjIeFEDzavOjo1JptXgY5xbZaypoiva6dukr8c=",
+  "Hash": "0I/EpkZXcE9RjvV8b0t8hZS6sKSt0x1xoYT7vDuARxs=",
   "Source": "FoodCalorie",
   "BasePath": "_content/FoodCalorie",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "FoodCalorie\\wwwroot",
+      "Source": "FoodCalorie",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\093095a0-3db9-4e00-b9b2-b237c22e2202.jpg",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/093095a0-3db9-4e00-b9b2-b237c22e2202#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "72rb23lrme",
+      "Integrity": "v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\093095a0-3db9-4e00-b9b2-b237c22e2202.jpg"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\1d85f265-bc8e-4af8-a92c-93e32d2195cf.jpg",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/1d85f265-bc8e-4af8-a92c-93e32d2195cf#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "72rb23lrme",
+      "Integrity": "v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\1d85f265-bc8e-4af8-a92c-93e32d2195cf.jpg"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\381609fd-de8b-4f68-a837-eae1e7b1e531.jpg",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/381609fd-de8b-4f68-a837-eae1e7b1e531#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "72rb23lrme",
+      "Integrity": "v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\381609fd-de8b-4f68-a837-eae1e7b1e531.jpg"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\472b8cf1-cb27-4290-97f8-b86373828990.jpg",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/472b8cf1-cb27-4290-97f8-b86373828990#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "72rb23lrme",
+      "Integrity": "v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\472b8cf1-cb27-4290-97f8-b86373828990.jpg"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\47e9585c-4d78-47e3-acd8-ea6a79444544.jpg",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/47e9585c-4d78-47e3-acd8-ea6a79444544#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ca9mmirnx1",
+      "Integrity": "fFmp5GdSo7rb3MOgAiU+/6mXOxQLpLbeEpXe8qjo/0M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\47e9585c-4d78-47e3-acd8-ea6a79444544.jpg"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\8a38d099-e10e-47dd-8b7f-fa9159738247.webp",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/8a38d099-e10e-47dd-8b7f-fa9159738247#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "whhjnyyzlh",
+      "Integrity": "rAEPDH9AgymQCaCK/bFF8byjIfD6oKL0lJsxYaNf+RM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\8a38d099-e10e-47dd-8b7f-fa9159738247.webp"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\8badfed6-34a8-4bb5-900d-84e0e0544fb5.jpg",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/8badfed6-34a8-4bb5-900d-84e0e0544fb5#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "72rb23lrme",
+      "Integrity": "v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\8badfed6-34a8-4bb5-900d-84e0e0544fb5.jpg"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\92e6416c-609a-4cb6-b72f-803577dae4dd.jpg",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/92e6416c-609a-4cb6-b72f-803577dae4dd#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "nati5fp6s4",
+      "Integrity": "McrodSxHFJbXGSxrB3jbDgqVNvGyMqi0fQGT/gy9EQY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\92e6416c-609a-4cb6-b72f-803577dae4dd.jpg"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.jpg",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "72rb23lrme",
+      "Integrity": "v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.jpg"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\a08e67d7-bbcb-456e-b091-903d0c6874bb.jpg",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/a08e67d7-bbcb-456e-b091-903d0c6874bb#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "65cgpxkqfj",
+      "Integrity": "hsH5SRdyuGzMQKzhDzQ7UGt08jpMeFiLQdvUpluh+XQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\a08e67d7-bbcb-456e-b091-903d0c6874bb.jpg"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\a285b071-a7a9-4cb6-9a0a-2a557ed25db2.webp",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/a285b071-a7a9-4cb6-9a0a-2a557ed25db2#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vaen5wvlkj",
+      "Integrity": "2YKMKbQnCFGvGOdZtwfX46bVJyxAPk0TT9Vg5uK2hgI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\a285b071-a7a9-4cb6-9a0a-2a557ed25db2.webp"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\c0349ddb-0173-4b7c-82ca-62f60a6de817.jpg",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/c0349ddb-0173-4b7c-82ca-62f60a6de817#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "m21hhmrms9",
+      "Integrity": "UudFt6pBtYyO+SXS1tYEiQODA93eEUL8sg6VTMauWdA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\c0349ddb-0173-4b7c-82ca-62f60a6de817.jpg"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\c500bd11-caf4-46d7-bdac-10059f548ade.jpg",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/c500bd11-caf4-46d7-bdac-10059f548ade#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "72rb23lrme",
+      "Integrity": "v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\c500bd11-caf4-46d7-bdac-10059f548ade.jpg"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\d44ad5ed-bff4-469a-8dcd-1560e041cd38.jpg",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/d44ad5ed-bff4-469a-8dcd-1560e041cd38#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "72rb23lrme",
+      "Integrity": "v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\d44ad5ed-bff4-469a-8dcd-1560e041cd38.jpg"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\f64bd105-e6b8-4882-a503-de5810706b13.webp",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/f64bd105-e6b8-4882-a503-de5810706b13#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vaen5wvlkj",
+      "Integrity": "2YKMKbQnCFGvGOdZtwfX46bVJyxAPk0TT9Vg5uK2hgI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\f64bd105-e6b8-4882-a503-de5810706b13.webp"
+    },
+    {
+      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\fdbf10b7-cd38-4b12-af36-782e14f49089.jpg",
+      "SourceId": "FoodCalorie",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "BasePath": "_content/FoodCalorie",
+      "RelativePath": "uploads/fdbf10b7-cd38-4b12-af36-782e14f49089#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "72rb23lrme",
+      "Integrity": "v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\fdbf10b7-cd38-4b12-af36-782e14f49089.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "uploads/093095a0-3db9-4e00-b9b2-b237c22e2202.72rb23lrme.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\093095a0-3db9-4e00-b9b2-b237c22e2202.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "72rb23lrme"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/093095a0-3db9-4e00-b9b2-b237c22e2202.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/093095a0-3db9-4e00-b9b2-b237c22e2202.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\093095a0-3db9-4e00-b9b2-b237c22e2202.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/1d85f265-bc8e-4af8-a92c-93e32d2195cf.72rb23lrme.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\1d85f265-bc8e-4af8-a92c-93e32d2195cf.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "72rb23lrme"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/1d85f265-bc8e-4af8-a92c-93e32d2195cf.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/1d85f265-bc8e-4af8-a92c-93e32d2195cf.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\1d85f265-bc8e-4af8-a92c-93e32d2195cf.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/381609fd-de8b-4f68-a837-eae1e7b1e531.72rb23lrme.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\381609fd-de8b-4f68-a837-eae1e7b1e531.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "72rb23lrme"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/381609fd-de8b-4f68-a837-eae1e7b1e531.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/381609fd-de8b-4f68-a837-eae1e7b1e531.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\381609fd-de8b-4f68-a837-eae1e7b1e531.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/472b8cf1-cb27-4290-97f8-b86373828990.72rb23lrme.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\472b8cf1-cb27-4290-97f8-b86373828990.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "72rb23lrme"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/472b8cf1-cb27-4290-97f8-b86373828990.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/472b8cf1-cb27-4290-97f8-b86373828990.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\472b8cf1-cb27-4290-97f8-b86373828990.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/47e9585c-4d78-47e3-acd8-ea6a79444544.ca9mmirnx1.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\47e9585c-4d78-47e3-acd8-ea6a79444544.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "147582"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fFmp5GdSo7rb3MOgAiU+/6mXOxQLpLbeEpXe8qjo/0M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ca9mmirnx1"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/47e9585c-4d78-47e3-acd8-ea6a79444544.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fFmp5GdSo7rb3MOgAiU+/6mXOxQLpLbeEpXe8qjo/0M="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/47e9585c-4d78-47e3-acd8-ea6a79444544.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\47e9585c-4d78-47e3-acd8-ea6a79444544.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "147582"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fFmp5GdSo7rb3MOgAiU+/6mXOxQLpLbeEpXe8qjo/0M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fFmp5GdSo7rb3MOgAiU+/6mXOxQLpLbeEpXe8qjo/0M="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/8a38d099-e10e-47dd-8b7f-fa9159738247.webp",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\8a38d099-e10e-47dd-8b7f-fa9159738247.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "319258"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rAEPDH9AgymQCaCK/bFF8byjIfD6oKL0lJsxYaNf+RM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rAEPDH9AgymQCaCK/bFF8byjIfD6oKL0lJsxYaNf+RM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/8a38d099-e10e-47dd-8b7f-fa9159738247.whhjnyyzlh.webp",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\8a38d099-e10e-47dd-8b7f-fa9159738247.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "319258"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rAEPDH9AgymQCaCK/bFF8byjIfD6oKL0lJsxYaNf+RM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "whhjnyyzlh"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/8a38d099-e10e-47dd-8b7f-fa9159738247.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rAEPDH9AgymQCaCK/bFF8byjIfD6oKL0lJsxYaNf+RM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/8badfed6-34a8-4bb5-900d-84e0e0544fb5.72rb23lrme.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\8badfed6-34a8-4bb5-900d-84e0e0544fb5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "72rb23lrme"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/8badfed6-34a8-4bb5-900d-84e0e0544fb5.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/8badfed6-34a8-4bb5-900d-84e0e0544fb5.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\8badfed6-34a8-4bb5-900d-84e0e0544fb5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/92e6416c-609a-4cb6-b72f-803577dae4dd.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\92e6416c-609a-4cb6-b72f-803577dae4dd.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "389804"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"McrodSxHFJbXGSxrB3jbDgqVNvGyMqi0fQGT/gy9EQY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-McrodSxHFJbXGSxrB3jbDgqVNvGyMqi0fQGT/gy9EQY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/92e6416c-609a-4cb6-b72f-803577dae4dd.nati5fp6s4.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\92e6416c-609a-4cb6-b72f-803577dae4dd.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "389804"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"McrodSxHFJbXGSxrB3jbDgqVNvGyMqi0fQGT/gy9EQY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nati5fp6s4"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/92e6416c-609a-4cb6-b72f-803577dae4dd.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-McrodSxHFJbXGSxrB3jbDgqVNvGyMqi0fQGT/gy9EQY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.72rb23lrme.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "72rb23lrme"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/a08e67d7-bbcb-456e-b091-903d0c6874bb.65cgpxkqfj.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\a08e67d7-bbcb-456e-b091-903d0c6874bb.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15984"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hsH5SRdyuGzMQKzhDzQ7UGt08jpMeFiLQdvUpluh+XQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "65cgpxkqfj"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/a08e67d7-bbcb-456e-b091-903d0c6874bb.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hsH5SRdyuGzMQKzhDzQ7UGt08jpMeFiLQdvUpluh+XQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/a08e67d7-bbcb-456e-b091-903d0c6874bb.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\a08e67d7-bbcb-456e-b091-903d0c6874bb.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15984"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hsH5SRdyuGzMQKzhDzQ7UGt08jpMeFiLQdvUpluh+XQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hsH5SRdyuGzMQKzhDzQ7UGt08jpMeFiLQdvUpluh+XQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/a285b071-a7a9-4cb6-9a0a-2a557ed25db2.vaen5wvlkj.webp",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\a285b071-a7a9-4cb6-9a0a-2a557ed25db2.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "295772"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2YKMKbQnCFGvGOdZtwfX46bVJyxAPk0TT9Vg5uK2hgI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vaen5wvlkj"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/a285b071-a7a9-4cb6-9a0a-2a557ed25db2.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2YKMKbQnCFGvGOdZtwfX46bVJyxAPk0TT9Vg5uK2hgI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/a285b071-a7a9-4cb6-9a0a-2a557ed25db2.webp",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\a285b071-a7a9-4cb6-9a0a-2a557ed25db2.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "295772"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2YKMKbQnCFGvGOdZtwfX46bVJyxAPk0TT9Vg5uK2hgI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2YKMKbQnCFGvGOdZtwfX46bVJyxAPk0TT9Vg5uK2hgI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/c0349ddb-0173-4b7c-82ca-62f60a6de817.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\c0349ddb-0173-4b7c-82ca-62f60a6de817.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12436"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UudFt6pBtYyO+SXS1tYEiQODA93eEUL8sg6VTMauWdA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UudFt6pBtYyO+SXS1tYEiQODA93eEUL8sg6VTMauWdA="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/c0349ddb-0173-4b7c-82ca-62f60a6de817.m21hhmrms9.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\c0349ddb-0173-4b7c-82ca-62f60a6de817.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12436"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UudFt6pBtYyO+SXS1tYEiQODA93eEUL8sg6VTMauWdA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m21hhmrms9"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/c0349ddb-0173-4b7c-82ca-62f60a6de817.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UudFt6pBtYyO+SXS1tYEiQODA93eEUL8sg6VTMauWdA="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/c500bd11-caf4-46d7-bdac-10059f548ade.72rb23lrme.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\c500bd11-caf4-46d7-bdac-10059f548ade.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "72rb23lrme"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/c500bd11-caf4-46d7-bdac-10059f548ade.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/c500bd11-caf4-46d7-bdac-10059f548ade.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\c500bd11-caf4-46d7-bdac-10059f548ade.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/d44ad5ed-bff4-469a-8dcd-1560e041cd38.72rb23lrme.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\d44ad5ed-bff4-469a-8dcd-1560e041cd38.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "72rb23lrme"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/d44ad5ed-bff4-469a-8dcd-1560e041cd38.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/d44ad5ed-bff4-469a-8dcd-1560e041cd38.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\d44ad5ed-bff4-469a-8dcd-1560e041cd38.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/f64bd105-e6b8-4882-a503-de5810706b13.vaen5wvlkj.webp",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\f64bd105-e6b8-4882-a503-de5810706b13.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "295772"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2YKMKbQnCFGvGOdZtwfX46bVJyxAPk0TT9Vg5uK2hgI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vaen5wvlkj"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/f64bd105-e6b8-4882-a503-de5810706b13.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2YKMKbQnCFGvGOdZtwfX46bVJyxAPk0TT9Vg5uK2hgI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/f64bd105-e6b8-4882-a503-de5810706b13.webp",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\f64bd105-e6b8-4882-a503-de5810706b13.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "295772"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2YKMKbQnCFGvGOdZtwfX46bVJyxAPk0TT9Vg5uK2hgI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2YKMKbQnCFGvGOdZtwfX46bVJyxAPk0TT9Vg5uK2hgI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/fdbf10b7-cd38-4b12-af36-782e14f49089.72rb23lrme.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\fdbf10b7-cd38-4b12-af36-782e14f49089.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "72rb23lrme"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/fdbf10b7-cd38-4b12-af36-782e14f49089.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/fdbf10b7-cd38-4b12-af36-782e14f49089.jpg",
+      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\fdbf10b7-cd38-4b12-af36-782e14f49089.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5t28PIDmbwlyLFKwWPPbsK0mLcwJmYNnUJ9h+x9+OM="
+        }
+      ]
+    }
+  ]
 }

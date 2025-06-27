@@ -11,5 +11,7 @@ namespace FoodCalorie.Services
 
         Task<UserHistoryResponseWithImage?> GetUserHistoriesAsync(string userId);
         Task<FileStreamResult?> GetImageAsync(string id);
+
+        Task<bool> RemoveHistoryAsync(string userId, string historyId, string type);
     }
 }

@@ -18,7 +18,7 @@ public class DailyMealService
     public async Task<User> AddFood(addfood newfood)
     {
         String userId = newfood.UserId;
-        Food food = newfood.food;
+        foodDto food = newfood.food;
         string type = newfood.TypeOfMeal;
 
 
@@ -76,6 +76,15 @@ public class DailyMealService
         return user;
     }
 
+
+    public async Task<DailyMeal> GetMeals(string userId)
+    {
+
+        var user = await _users.Find(u => u.Id == userId).FirstOrDefaultAsync();
+        if (user == null) throw new Exception("user not found");
+        return user.TodayMeals;
+
+    }
 
 }
 

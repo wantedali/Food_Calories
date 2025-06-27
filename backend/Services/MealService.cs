@@ -1,3 +1,4 @@
+using FoodCalorie.DTOs;
 using FoodCalorie.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
@@ -7,9 +8,17 @@ namespace FoodCalorie.Services;
 public static class MealService
 {
     
-    public static void AddFood(Meal meal,Food food)
+    public static void AddFood(Meal meal,foodDto food)
     {
-        meal.Items.Add(food);
+        var fd = new Food
+        {
+            Name = food.Name,
+            Calories = food.Calories,
+            Protein = food.Protein,
+            Carbs = food.Carbs,
+            Fat = food.Fat
+        };
+        meal.Items.Add(fd);
         meal.TotalCalories += food.Calories;
         meal.TotalProtein += food.Protein;
         meal.TotalCarbs += food.Carbs;
@@ -18,11 +27,12 @@ public static class MealService
 
     public static void RemoveFood(Meal meal,Food food)
     {
-        meal.Items.Remove(food);
         meal.TotalCalories -= food.Calories;
         meal.TotalProtein -= food.Protein;
         meal.TotalCarbs -= food.Carbs;
         meal.TotalFat -= food.Fat;
+        meal.Items.Remove(food);
+        
     }
     
 }
