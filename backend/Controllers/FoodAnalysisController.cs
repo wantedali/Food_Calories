@@ -1,4 +1,5 @@
 using FoodCalorie.Models;
+using FoodCalorie.Services;
 using Microsoft.AspNetCore.Mvc;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Formats.Jpeg;
@@ -12,10 +13,14 @@ namespace FoodCalorie.Controllers
     public class FoodAnalysisController : ControllerBase
     {
         private readonly IHttpClientFactory _httpClientFactory;
+        private readonly ChatGptService _chatGptService;
 
-        public FoodAnalysisController(IHttpClientFactory httpClientFactory)
-            => _httpClientFactory = httpClientFactory;
+        public FoodAnalysisController(IHttpClientFactory httpClientFactory , ChatGptService chatGptService)
+        { 
+             _httpClientFactory = httpClientFactory;
+            _chatGptService = chatGptService;
 
+        }
         [HttpPost("analyze")]
         [Consumes("multipart/form-data")]
         public async Task<IActionResult> Analyze([FromForm] FoodAnalysisRequest request)
@@ -83,6 +88,22 @@ namespace FoodCalorie.Controllers
 
             return Ok(new { analysis });
         }
+
+
+        [HttpPost("analyze-meal-text")]
+        public async Task<IActionResult> AnalyzeMealText([FromBody] string mealDescription)
+        {
+            try
+            {
+                var nutritionInfo = await _chatGptService.AnalyzeMealAsync(mealDescription);
+                return Ok(nutritionInfo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { error = ex.Message });
+            }
+        }
+
 
         // DTOs for deserializing OpenAI response
         private class OpenAiResponse { public List<Choice> Choices { get; set; } = null!; }

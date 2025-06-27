@@ -52,4 +52,3 @@ D:\Food_Calories\backend\obj\Debug\net8.0\refint\FoodCalorie.dll
 D:\Food_Calories\backend\obj\Debug\net8.0\FoodCalorie.pdb
 D:\Food_Calories\backend\obj\Debug\net8.0\FoodCalorie.genruntimeconfig.cache
 D:\Food_Calories\backend\obj\Debug\net8.0\ref\FoodCalorie.dll
-D:\Food_Calories\backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
