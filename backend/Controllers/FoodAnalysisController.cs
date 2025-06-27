@@ -26,13 +26,13 @@ namespace FoodCalorie.Controllers
             // --- 1) Load & resize the image ---
             using var img   = await Image.LoadAsync(request.ImageFile.OpenReadStream());
             img.Mutate(x => x.Resize(new ResizeOptions {
-                Size    = new SixLabors.ImageSharp.Size(300, 0),
+                Size    = new SixLabors.ImageSharp.Size(1024, 0),
                 Mode    = ResizeMode.Max
             }));
 
-            // --- 2) Encode as JPEG @50% quality ---
+            // --- 2) Encode as JPEG with higher quality for better recognition ---
             await using var ms = new MemoryStream();
-            var encoder = new JpegEncoder { Quality = 50 };
+            var encoder = new JpegEncoder { Quality = 85 };
             await img.SaveAsJpegAsync(ms, encoder);
 
             // --- 3) Convert to Base64 data URL ---
@@ -43,20 +43,32 @@ namespace FoodCalorie.Controllers
             // --- 4) Build OpenAI payload with inline image ---
             var payload = new
             {
-                model = "gpt-4o",   // full vision-enabled model
-                messages = new[]
+                model = "o4-mini",   // GPT-4 with vision capabilities
+                messages = new object[]
                 {
                     new {
                         role    = "system",
-                        content = "You are a nutrition expert. I will send you a food image inline; identify the dish, estimate the portion size, and provide nutrition facts (calories, protein, carbs, fat)."
+                        content = "You are a food vision specialist. Analyze the food image and provide:\n1. Name: (count + food type, e.g., '9 Donuts')\n2. Nutrition Facts per item: (calories, protein g, carbs g, fat g for ONE item)\n3. Portion Size: (what one item represents)\n4. Total Nutrition: (total calories, protein g, carbs g, fat g for ALL items detected)\n\nCount all similar food items together. Keep response simple and direct."
                     },
                     new {
                         role    = "user",
-                        content = dataUrl
+                        content = new object[] {
+                            new {
+                                type = "text",
+                                text = "Count and identify the food in this image. Provide: count + food type, nutrition per item, portion size, and total nutrition for all items."
+                            },
+                            new {
+                                type = "image_url",
+                                image_url = new {
+                                    url = dataUrl,
+                                    detail = "high"
+                                }
+                            }
+                        }
                     }
                 },
-                max_tokens  = 300,
-                temperature = 0.2m
+              
+                temperature = 1m
             };
 
             // --- 5) Call the API ---
