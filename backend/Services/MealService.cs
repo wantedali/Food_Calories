@@ -14,6 +14,7 @@ public static class MealService
         {
             Name = food.Name,
             Calories = food.Calories,
+            Protein = food.Protein,
             Carbs = food.Carbs,
             Fat = food.Fat
         };
@@ -26,12 +27,12 @@ public static class MealService
 
     public static void RemoveFood(Meal meal,Food food)
     {
-       
-        meal.Items.Remove(food);
         meal.TotalCalories -= food.Calories;
         meal.TotalProtein -= food.Protein;
         meal.TotalCarbs -= food.Carbs;
         meal.TotalFat -= food.Fat;
+        meal.Items.Remove(food);
+        
     }
     
 }

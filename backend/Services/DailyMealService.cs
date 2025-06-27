@@ -77,6 +77,15 @@ public class DailyMealService
     }
 
 
+    public async Task<DailyMeal> GetMeals(string userId)
+    {
+
+        var user = await _users.Find(u => u.Id == userId).FirstOrDefaultAsync();
+        if (user == null) throw new Exception("user not found");
+        return user.TodayMeals;
+
+    }
+
 }
 
 

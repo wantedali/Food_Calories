@@ -22,7 +22,7 @@ namespace FoodCalorie.Controllers
             try
             {
                 var newUser = await daily.AddFood(request);
-                return Ok(new { message = "food Added sucssecfully!", user = newUser });
+                return Ok(new{ Message = "food added"});
             }
             catch (Exception ex) { 
                  return BadRequest(new { error = ex.Message });
@@ -34,12 +34,26 @@ namespace FoodCalorie.Controllers
         {
             try
             {
-                var updatedUser = await daily.RemoveFood(userId, mealType, foodId);
-                return Ok(new { message = "Food removed", user = updatedUser });
+                var updatedUser = await daily.RemoveFood(userId, foodId , mealType);
+                return Ok(new { message = "Food removed"});
             }
             catch (Exception ex)
             {
                 return BadRequest(new { error = ex.Message });
+            }
+        }
+
+        [HttpGet("Get-Meals")]
+        public async Task<IActionResult>getMeals(string userid)
+        {
+            try
+            {
+                var meals = await daily.GetMeals(userid);
+                return Ok(new {daily = meals});
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
             }
         }
 
