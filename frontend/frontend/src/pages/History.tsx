@@ -23,10 +23,15 @@ interface MealCard {
   mealSize: number;
 }
 
-const PLACEHOLDER_IMG = "https://ui-avatars.com/api/?name=Meal&background=D4B675&color=1B2537&rounded=true&size=256"; // Or any SVG/beautiful placeholder
+const PLACEHOLDER_IMG = "https://ui-avatars.com/api/?name=Meal&background=D4B675&color=1B2537&rounded=true&size=256";
 
 const History: React.FC = () => {
-  const hasLogged = useRef(false);
+  const [meals, setMeals] = useState<MealCard[]>([]);
+  const [manualMeals, setManualMeals] = useState<MealCard[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [isDeleting, setIsDeleting] = useState<string | null>(null);
+  const detailsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fetchUserHistory = async () => {
@@ -39,26 +44,32 @@ const History: React.FC = () => {
 
         const data = await response.json();
 
-        // Main meals (with image)
         const analysisMeals = data.analysisHistories.map((meal: any) => ({
           id: meal.id,
-          imageUrl: `data:${meal.imageContentType};base64,${meal.imageBase64}`,
-          name: meal.mealName,
-          calories: meal.calories,
+          imageUrl: meal.imageBase64
+            ? `data:${meal.imageContentType || 'image/jpeg'};base64,${meal.imageBase64}`
+            : PLACEHOLDER_IMG,
+          name: meal.mealName || "وجبة غير معروفة",
+          calories: meal.calories ?? 0,
           nutritionDetails: {
-            protein: meal.protein,
-            carbs: meal.carbs,
-            fats: meal.fat
+            protein: meal.protein ?? 0,
+            carbs: meal.carbs ?? 0,
+            fats: meal.fat ?? 0,
           },
-          mealSize: meal.wieght,
-          date: meal.date // or use backend date if available
+          mealSize: meal.wieght ?? 0,
+          date: meal.date
+            ? new Date(meal.date).toLocaleDateString("ar-EG", {
+                year: "numeric",
+                month: "long",
+                day: "numeric"
+              })
+            : ""
         }));
 
         setMeals(analysisMeals);
 
-        // Manual meals (no image)
         const manual = data.histories.map((meal: any) => ({
-          id: meal.id, // or a unique fallback
+          id: meal.id,
           imageUrl: PLACEHOLDER_IMG,
           name: meal.mealName,
           calories: meal.calories,
@@ -76,32 +87,23 @@ const History: React.FC = () => {
         }));
 
         setManualMeals(manual);
-
       } catch (error) {
         console.error("Error fetching user history:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchUserHistory();
   }, []);
 
-
-
-  const [meals, setMeals] = useState<MealCard[]>([]);
-  const [manualMeals, setManualMeals] = useState<MealCard[]>([]);
-
-
-  const [expandedId, setExpandedId] = useState<string | null>(null);
-  const [isDeleting, setIsDeleting] = useState<string | null>(null);
-  const detailsRef = useRef<HTMLDivElement>(null);
-
   const handleDelete = (id: string, type: "main" | "manual") => {
     setIsDeleting(id);
     setTimeout(() => {
       if (type === "main") {
-        setMeals(prevMeals => prevMeals.filter(meal => meal.id !== id));
+        setMeals(prev => prev.filter(m => m.id !== id));
       } else {
-        setManualMeals(prevMeals => prevMeals.filter(meal => meal.id !== id));
+        setManualMeals(prev => prev.filter(m => m.id !== id));
       }
       setIsDeleting(null);
     }, 300);
@@ -126,12 +128,7 @@ const History: React.FC = () => {
     })
   };
 
-  // Card renderer (to avoid code duplication)
-  const renderMealCard = (
-    meal: MealCard,
-    index: number,
-    type: "main" | "manual"
-  ) => (
+  const renderMealCard = (meal: MealCard, index: number, type: "main" | "manual") => (
     <motion.div
       key={meal.id}
       className={`${styles.card} ${isDeleting === meal.id ? styles.deleting : ''}`}
@@ -143,14 +140,8 @@ const History: React.FC = () => {
       whileHover={{ y: -8, boxShadow: "0 8px 30px rgba(212, 182, 117, 0.4)" }}
     >
       <div className={styles.cardImageContainer}>
-        <img
-          src={meal.imageUrl}
-          alt={`صورة ${meal.name}`}
-          className={styles.cardImage}
-        />
-        {meal.date && (
-          <div className={styles.dateTag}>{meal.date}</div>
-        )}
+        <img src={meal.imageUrl} alt={`صورة ${meal.name}`} className={styles.cardImage} />
+        {meal.date && <div className={styles.dateTag}>{meal.date}</div>}
       </div>
 
       <div className={styles.cardContent}>
@@ -184,21 +175,17 @@ const History: React.FC = () => {
         </div>
 
         <div className={styles.buttonContainer}>
-          <button
-            onClick={() => handleDelete(meal.id, type)}
-            className={`${styles.button} ${styles.deleteButton}`}
-            aria-label="حذف الوجبة"
-          >
-            <span>حذف</span>
+          <button onClick={() => handleDelete(meal.id, type)} className={`${styles.button} ${styles.deleteButton}`}>
+            حذف
           </button>
           <button
             onClick={() => toggleExpand(meal.id)}
             className={`${styles.button} ${styles.detailsButton} ${expandedId === meal.id ? styles.active : ''}`}
-            aria-label="عرض التفاصيل"
           >
-            <span>{expandedId === meal.id ? 'إغلاق' : 'التفاصيل'}</span>
+            {expandedId === meal.id ? 'إغلاق' : 'التفاصيل'}
           </button>
         </div>
+
         <div className={styles.addToMealButtons}>
           <button className={styles.addToMealButton}>إضافة الي وجبة الفطار</button>
           <button className={styles.addToMealButton}>إضافة الي وجبة الغذاء</button>
@@ -217,53 +204,30 @@ const History: React.FC = () => {
             >
               <h4 className={styles.nutritionTitle}>التفاصيل الغذائية</h4>
               <div className={styles.nutritionInfo}>
-                <div className={styles.nutrientBar}>
-                  <div className={styles.nutrientLabel}>
-                    <span>البروتين</span>
-                    <span>{meal.nutritionDetails.protein}غ</span>
-                  </div>
-                  <div className={styles.progressContainer}>
-                    <motion.div
-                      className={`${styles.progressBar} ${styles.proteinBar}`}
-                      custom={meal.nutritionDetails.protein / (meal.nutritionDetails.protein + meal.nutritionDetails.carbs + meal.nutritionDetails.fats) * 100}
-                      variants={progressVariants}
-                      initial="hidden"
-                      animate="visible"
-                    />
-                  </div>
-                </div>
+                {["protein", "carbs", "fats"].map((key) => {
+                  const label = key === "protein" ? "البروتين" : key === "carbs" ? "الكربوهيدرات" : "الدهون";
+                  const value = meal.nutritionDetails[key as keyof NutritionDetails];
+                  const percent = value / (meal.nutritionDetails.protein + meal.nutritionDetails.carbs + meal.nutritionDetails.fats) * 100;
+                  const barClass = key === "protein" ? styles.proteinBar : key === "carbs" ? styles.carbsBar : styles.fatsBar;
 
-                <div className={styles.nutrientBar}>
-                  <div className={styles.nutrientLabel}>
-                    <span>الكربوهيدرات</span>
-                    <span>{meal.nutritionDetails.carbs}غ</span>
-                  </div>
-                  <div className={styles.progressContainer}>
-                    <motion.div
-                      className={`${styles.progressBar} ${styles.carbsBar}`}
-                      custom={meal.nutritionDetails.carbs / (meal.nutritionDetails.protein + meal.nutritionDetails.carbs + meal.nutritionDetails.fats) * 100}
-                      variants={progressVariants}
-                      initial="hidden"
-                      animate="visible"
-                    />
-                  </div>
-                </div>
-
-                <div className={styles.nutrientBar}>
-                  <div className={styles.nutrientLabel}>
-                    <span>الدهون</span>
-                    <span>{meal.nutritionDetails.fats}غ</span>
-                  </div>
-                  <div className={styles.progressContainer}>
-                    <motion.div
-                      className={`${styles.progressBar} ${styles.fatsBar}`}
-                      custom={meal.nutritionDetails.fats / (meal.nutritionDetails.protein + meal.nutritionDetails.carbs + meal.nutritionDetails.fats) * 100}
-                      variants={progressVariants}
-                      initial="hidden"
-                      animate="visible"
-                    />
-                  </div>
-                </div>
+                  return (
+                    <div key={key} className={styles.nutrientBar}>
+                      <div className={styles.nutrientLabel}>
+                        <span>{label}</span>
+                        <span>{value}غ</span>
+                      </div>
+                      <div className={styles.progressContainer}>
+                        <motion.div
+                          className={`${styles.progressBar} ${barClass}`}
+                          custom={percent}
+                          variants={progressVariants}
+                          initial="hidden"
+                          animate="visible"
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </motion.div>
           )}
@@ -271,6 +235,10 @@ const History: React.FC = () => {
       </div>
     </motion.div>
   );
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <div className={styles.container}>
@@ -281,7 +249,7 @@ const History: React.FC = () => {
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.5 }}
           className={styles.sectionHeader}
         >
           <h1 className={styles.mainHeading}>سجل وجباتك السابقة</h1>
@@ -296,17 +264,9 @@ const History: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <div className={styles.emptyStateContent}>
-              <img
-                src="/empty-plate.svg"
-                alt="صحن فارغ"
-                className={styles.emptyStateImage}
-              />
-              <h2 className={styles.emptyStateText}>
-                لا توجد وجبات محسوبة حالياً
-              </h2>
-              <p className={styles.emptyStateSubtext}>
-                ابدأ بإضافة وجباتك لمتابعة نظامك الغذائي
-              </p>
+              <img src="/empty-plate.svg" alt="صحن فارغ" className={styles.emptyStateImage} />
+              <h2 className={styles.emptyStateText}>لا توجد وجبات محسوبة حالياً</h2>
+              <p className={styles.emptyStateSubtext}>ابدأ بإضافة وجباتك لمتابعة نظامك الغذائي</p>
             </div>
           </motion.div>
         ) : (
@@ -323,7 +283,6 @@ const History: React.FC = () => {
           </motion.div>
         )}
 
-        {/* Manually Added Section */}
         {manualMeals.length > 0 && (
           <>
             <motion.div
