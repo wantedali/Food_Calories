@@ -13,43 +13,179 @@
 
 .mainContent {
     padding: 2rem;
-    margin-top: 72px;
-    margin-right: 30px;
+    margin-top: 0;
+    margin-right: 0;
+    flex: 1;
+    grid-column: 2;
+    grid-row: 2;
 }
 
 .header {
     margin-bottom: 2rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .header h1 {
     font-family: 'Amiri', serif;
     font-size: 2.5rem;
     color: white;
+    text-align: center;
+}
+
+.calorieTracker {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(212, 182, 117, 0.1);
 }
 
 .totalCalories {
-    background: rgba(212, 182, 117, 0.1);
-    padding: 1rem 1.5rem;
-    border-radius: 1rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
     color: white;
     font-family: 'Tajawal', sans-serif;
+    font-size: 1.125rem;
 }
 
 .calorieNumber {
     font-family: 'Amiri', serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #D4B675;
+    font-weight: 700;
 }
 
 .calorieUnit {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 0.875rem;
+    font-size: 1rem;
+}
+
+.calorieLimit {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.limitInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Tajawal', sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+.remainingCalories {
+    font-weight: 600;
+    color: #D4B675;
+}
+
+.remainingCalories.exceeded {
+    color: #ff6b6b;
+}
+
+.progressContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progressBar {
+    flex: 1;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progressFill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #D4B675);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.progressFill.exceededFill {
+    background: linear-gradient(90deg, #D4B675, #ff6b6b);
+}
+
+.exceededIndicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background: #ff6b6b;
+    border-radius: 6px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.progressPercentage {
+    font-family: 'Amiri', serif;
+    font-size: 1.125rem;
+    color: #D4B675;
+    font-weight: 600;
+    min-width: 50px;
+    text-align: center;
+}
+
+.statusIndicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.statusIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.excellent {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.onTrack {
+    background: rgba(212, 182, 117, 0.1);
+    color: #D4B675;
+    border: 1px solid rgba(212, 182, 117, 0.2);
+}
+
+.warning {
+    background: rgba(255, 193, 7, 0.1);
+    color: #FFC107;
+    border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.exceeded {
+    background: rgba(255, 107, 107, 0.1);
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 107, 107, 0.2);
 }
 
 .sectionsGrid {
@@ -63,6 +199,9 @@
     border-radius: 1rem;
     padding: 1.5rem;
     border: 1px solid rgba(212, 182, 117, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
 }
 
 .sectionHeader {
@@ -103,7 +242,7 @@
     flex-direction: column;
     gap: 1rem;
     margin-bottom: 1.5rem;
-    min-height: 200px;
+    flex: 1;
 }
 
 .mealItem {
@@ -177,6 +316,7 @@
     gap: 0.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-top: auto;
 }
 
 .addButton:hover {
@@ -189,20 +329,24 @@
         gap: 1.5rem;
     }
 
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
+    .calorieTracker {
+        text-align: center;
     }
 
-    .mealsList {
-        min-height: auto;
+    .limitInfo {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
     .mainContent {
-        margin-right: 0;
+        grid-column: 1;
         margin-top: 72px;
     }
 }
@@ -216,8 +360,16 @@
         font-size: 2rem;
     }
 
-    .totalCalories {
-        width: 100%;
-        justify-content: center;
+    .calorieNumber {
+        font-size: 1.5rem;
+    }
+
+    .progressContainer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .progressPercentage {
+        align-self: flex-end;
     }
 }

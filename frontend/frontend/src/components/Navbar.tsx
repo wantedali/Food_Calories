@@ -6,20 +6,20 @@ import { useNavigate } from 'react-router-dom';
 
 interface NavbarProps {
     showButtons?: boolean;
-    onLoginClick?: () => void; 
+    onLoginClick?: () => void;
     onSignUpClick?: () => void;
 }
 
 const Navbar: React.FC<NavbarProps> = (
     { showButtons = false, onLoginClick, onSignUpClick }) => {
-            const navigate = useNavigate();
+    const navigate = useNavigate();
     return (
-        
+
         <motion.nav
-            initial={{ y: -100, opacity: 0 }} 
-            animate={{ y: 0, opacity: 1 }} 
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className={styles.navbar} 
+            className={styles.navbar}
         >
             <div className={styles.navContent}>
                 <div className={styles.logo}>
@@ -27,7 +27,12 @@ const Navbar: React.FC<NavbarProps> = (
                     <span className={styles.logoText}>لقمتي</span>
                 </div>
                 <div>
-                    <button className={styles.logout}  onClick={() => navigate("/")}>
+                    <button className={styles.logout} onClick={() => {
+                        localStorage.removeItem("userId");
+                        localStorage.removeItem("name")
+                        localStorage.removeItem("token");
+                        navigate("/");
+                    }}>
                         تسجيل الخروج
                     </button>
                 </div>

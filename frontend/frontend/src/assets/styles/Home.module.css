@@ -205,6 +205,82 @@
   font-weight: 600;
 }
 
+/* Add these styles to your Home.module.css file */
+
+.welcomeSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(212, 182, 117, 0.1) 0%, rgba(27, 37, 55, 0.5) 100%);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(212, 182, 117, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcomeSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212, 182, 117, 0.05) 0%, transparent 70%);
+}
+
+.welcomeContent {
+  z-index: 1;
+}
+
+.welcomeTitle {
+  font-family: 'Amiri', serif;
+  font-size: 2.5rem;
+  color: #D4B675;
+  margin-bottom: 0.5rem;
+}
+
+.welcomeSubtitle {
+  font-family: 'Tajawal', sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.25rem;
+}
+
+.welcomeDecoration {
+  width: 5rem;
+  height: 5rem;
+  background: rgba(212, 182, 117, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.welcomeIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #D4B675;
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+  .welcomeSection {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .welcomeTitle {
+    font-size: 2rem;
+  }
+
+  .welcomeSubtitle {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 1280px) {
   .dashboardGrid {
     grid-template-columns: 1fr;

@@ -6,11 +6,24 @@ import styles from '../assets/styles/Home.module.css';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
+import { useRef, useEffect, useState } from 'react';
+import LoadingScreen from "../components/LoadingScreen";
 
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function App() {
+
+  const [error, setError] = useState<string | null>(null);
+  const name = localStorage.getItem("name");
+  console.log(name);
+
+  // Mock user data - in a real app, this would come from your auth system
+  const userData = {
+    name: name,
+    greeting: 'صباح الخير' // Change based on time of day
+  };
+
   // Mock data for demonstration
   const dashboardData = {
     totalMeals: 47,
@@ -64,6 +77,16 @@ function App() {
 
       {/* Main Content */}
       <main className={styles.mainContent}>
+        {/* Add Welcome Section */}
+        <div className={styles.welcomeSection}>
+          <div className={styles.welcomeContent}>
+            <h1 className={styles.welcomeTitle}>{userData.greeting}، {userData.name}</h1>
+            <p className={styles.welcomeSubtitle}>نتمنى لك يوماً صحياً ومليئاً بالطاقة</p>
+          </div>
+          <div className={styles.welcomeDecoration}>
+            <ChefHat className={styles.welcomeIcon} />
+          </div>
+        </div>
         <div className={styles.pageHeader}>
           <h1>لوحة المعلومات</h1>
           <p>نظرة عامة على نشاطك الغذائي</p>
@@ -169,7 +192,7 @@ function App() {
           </div>
         </div>
       </main>
-      
+
       {/* Footer */}
       <Footer />
     </div>

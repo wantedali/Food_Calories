@@ -10,6 +10,6 @@ namespace FoodCalorie.DTOs
 
         public string TypeOfMeal { get; set; }
 
-        public Food food { get; set; }
+        public foodDto food { get; set; }
     }
 }

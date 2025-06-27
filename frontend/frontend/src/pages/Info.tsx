@@ -31,13 +31,11 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, step, 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleChange = (newValue: number) => {
-
-
     setCurrentValue(newValue);
 
     // Only enforce min/max when not actively editing
     if (!isEditing) {
-      const limitedValue =  newValue;
+      const limitedValue = newValue;
       onChange(limitedValue);
     }
   };
@@ -46,11 +44,10 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, step, 
     setIsEditing(false);
     // When input loses focus, enforce min/max
     if (currentValue !== null) {
-      const limitedValue =  currentValue;
+      const limitedValue = currentValue;
       setCurrentValue(limitedValue);
       onChange(limitedValue);
     }
-
   };
 
   const increment = () => {
@@ -115,12 +112,12 @@ const NumericSpinner: React.FC<NumericSpinnerProps> = ({ value, onChange, step, 
           <input
             type="number"
             value={currentValue ?? ''}
-
             onChange={(e) => {
               setIsEditing(true);
               handleChange(parseFloat(e.target.value) || 0);
             }}
             onBlur={handleBlur}
+           
             step={step}
             className={styles.spinnerInput}
           />
@@ -206,7 +203,6 @@ const Info: React.FC = () => {
     }
   };
 
-
   const handleNumericChange = (field: keyof UserInfo) => (value: number) => {
     setUserInfo(prev => ({
       ...prev,
@@ -221,7 +217,7 @@ const Info: React.FC = () => {
       await handleSubmit();
       setStep(8); // Changed from 7 to 8
     } else {
-      navigate("/home");
+      navigate("/signin");
     }
   };
 

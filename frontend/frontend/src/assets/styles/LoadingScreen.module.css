@@ -1,0 +1,376 @@
+/* Reset */
+:global(*) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+.loadingScreen {
+    font-family: 'Tajawal', sans-serif;
+    background: #1B2537;
+    color: white;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Pattern */
+.backgroundPattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(212, 182, 117, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(212, 182, 117, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(212, 182, 117, 0.06) 0%, transparent 50%);
+    animation: backgroundShift 8s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes backgroundShift {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Main Container */
+.loadingContainer {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+    padding: 3rem 1rem;
+}
+
+/* Logo Section */
+.logoContainer {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.logoIcon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #D4B675, #E5C686);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    position: relative;
+    animation: logoFloat 3s ease-in-out infinite;
+    box-shadow: 0 10px 30px rgba(212, 182, 117, 0.3);
+}
+
+.logoIcon::before {
+    content: '🍽️';
+    font-size: 2.5rem;
+    animation: iconRotate 4s linear infinite;
+}
+
+.logoIcon::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid rgba(212, 182, 117, 0.3);
+    border-radius: 25px;
+    animation: borderPulse 2s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes iconRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes borderPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.6;
+    }
+}
+
+.logoText {
+    font-family: 'Amiri', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+    animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+.logoSubtitle {
+    font-size: 1.2rem;
+    color: #D4B675;
+    opacity: 0.8;
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* Animation Section */
+.loadingAnimation {
+    margin: 3rem 0;
+}
+
+.loadingDots {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: #D4B675;
+    border-radius: 50%;
+    animation: dotBounce 1.4s ease-in-out infinite both;
+}
+
+.dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0s;
+}
+
+@keyframes dotBounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    40% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Progress Bar */
+.progressContainer {
+    width: 300px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin: 0 auto 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.progressBar {
+    height: 100%;
+    background: linear-gradient(90deg, #D4B675, #E5C686, #D4B675);
+    background-size: 200% 100%;
+    border-radius: 3px;
+    animation: progressFill 3s ease-in-out infinite, progressShine 2s linear infinite;
+    width: 0%;
+}
+
+@keyframes progressFill {
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 70%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes progressShine {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Text */
+.loadingText {
+    font-size: 1.3rem;
+    color: #D4B675;
+    margin-bottom: 1rem;
+    animation: textFade 2s ease-in-out infinite;
+}
+
+.loadingSubtext {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    animation: subtextSlide 3s ease-in-out infinite;
+}
+
+@keyframes textFade {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes subtextSlide {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+}
+
+/* Floating Emojis */
+.floatingElement {
+    position: absolute;
+    color: rgba(212, 182, 117, 0.2);
+    font-size: 1.5rem;
+    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floatingElement:nth-of-type(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floatingElement:nth-of-type(2) {
+    top: 30%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.floatingElement:nth-of-type(3) {
+    bottom: 25%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+.floatingElement:nth-of-type(4) {
+    bottom: 35%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 0.4;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logoIcon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logoIcon::before {
+        font-size: 2rem;
+    }
+
+    .logoText {
+        font-size: 2rem;
+    }
+
+    .logoSubtitle {
+        font-size: 1rem;
+    }
+
+    .progressContainer {
+        width: 250px;
+    }
+
+    .loadingText {
+        font-size: 1.1rem;
+    }
+
+    .floatingElement {
+        font-size: 1.2rem;
+    }
+}
+
+/* Fade out transition */
+.fadeOut {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
