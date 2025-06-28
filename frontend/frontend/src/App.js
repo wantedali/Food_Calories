@@ -9,6 +9,7 @@ import Info from "./pages/Info"
 import Analyze from "./pages/Analyze"
 import Test from "./pages/Test"
 import MealTracking from "./pages/MealTracking"
+import Tips from "./pages/Tips"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/info" element={<Info />} />
         <Route path="/analyze" element={<Analyze />} />
         <Route path="/Recipes" element={<MealTracking />} />
+        <Route path="/Tips" element={<Tips />} />
       </Routes>
     </Router>
   );
