@@ -16,7 +16,8 @@ public static class MealService
             Calories = food.Calories,
             Protein = food.Protein,
             Carbs = food.Carbs,
-            Fat = food.Fat
+            Fat = food.Fat,
+            Weight = food.Weight
         };
         meal.Items.Add(fd);
         meal.TotalCalories += food.Calories;

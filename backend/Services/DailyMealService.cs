@@ -39,11 +39,13 @@ public class DailyMealService
             default:
                 throw new ArgumentException("Invalid meal type. Use 'breakfast', 'lunch', or 'dinner'.");
         }
-        user.TodayMeals.TotalProtein = user.TodayMeals.Breakfast.TotalProtein + user.TodayMeals.Lunch.TotalProtein + user.TodayMeals.Dinner.TotalProtein;
-        user.TodayMeals.TotalCarbs = user.TodayMeals.Breakfast.TotalCarbs + user.TodayMeals.Lunch.TotalCarbs + user.TodayMeals.Dinner.TotalCarbs;
-        user.TodayMeals.TotalFat = user.TodayMeals.Breakfast.TotalFat + user.TodayMeals.Lunch.TotalFat + user.TodayMeals.Dinner.TotalFat;
-        user.TodayMeals.TotalCalories = user.TodayMeals.Breakfast.TotalCalories + user.TodayMeals.Lunch.TotalCalories + user.TodayMeals.Dinner.TotalCalories;
-        await _users.ReplaceOneAsync(u => u.Id == userId, user);
+
+        RecalculateTotals(user.TodayMeals);
+
+       
+       
+        var update = Builders<User>.Update.Set(u => u.TodayMeals, user.TodayMeals);
+        await _users.UpdateOneAsync(u => u.Id == userId, update);
         return user;
     }
 
@@ -66,13 +68,11 @@ public class DailyMealService
 
         MealService.RemoveFood(meal, food);
 
+        RecalculateTotals(user.TodayMeals);
+        
+        var update = Builders<User>.Update.Set(u => u.TodayMeals, user.TodayMeals);
+        await _users.UpdateOneAsync(u => u.Id == userId, update);
 
-        user.TodayMeals.TotalCalories = user.TodayMeals.Breakfast.TotalCalories + user.TodayMeals.Lunch.TotalCalories + user.TodayMeals.Dinner.TotalCalories;
-        user.TodayMeals.TotalProtein = user.TodayMeals.Breakfast.TotalProtein + user.TodayMeals.Lunch.TotalProtein + user.TodayMeals.Dinner.TotalProtein;
-        user.TodayMeals.TotalCarbs = user.TodayMeals.Breakfast.TotalCarbs + user.TodayMeals.Lunch.TotalCarbs + user.TodayMeals.Dinner.TotalCarbs;
-        user.TodayMeals.TotalFat = user.TodayMeals.Breakfast.TotalFat + user.TodayMeals.Lunch.TotalFat + user.TodayMeals.Dinner.TotalFat;
-
-        await _users.ReplaceOneAsync(u => u.Id == userId, user);
         return user;
     }
 
@@ -84,6 +84,15 @@ public class DailyMealService
         if (user == null) throw new Exception("user not found");
         return user.TodayMeals;
 
+    }
+
+
+    private void RecalculateTotals(DailyMeal meals)
+    {
+        meals.TotalCalories = meals.Breakfast.TotalCalories + meals.Lunch.TotalCalories + meals.Dinner.TotalCalories;
+        meals.TotalProtein = meals.Breakfast.TotalProtein + meals.Lunch.TotalProtein + meals.Dinner.TotalProtein;
+        meals.TotalCarbs = meals.Breakfast.TotalCarbs + meals.Lunch.TotalCarbs + meals.Dinner.TotalCarbs;
+        meals.TotalFat = meals.Breakfast.TotalFat + meals.Lunch.TotalFat + meals.Dinner.TotalFat;
     }
 
 }
