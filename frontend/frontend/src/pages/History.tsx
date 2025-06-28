@@ -23,6 +23,19 @@ interface MealCard {
   mealSize: number;
 }
 
+interface AddMealRequest {
+  userId: string;
+  typeOfMeal: "Breakfast" | "Lunch" | "Dinner";
+  food: {
+    name: string;
+    calories: number;
+    protein: number;
+    carbs: number;
+    fat: number;
+  };
+}
+
+
 const PLACEHOLDER_IMG = "https://ui-avatars.com/api/?name=Meal&background=D4B675&color=1B2537&rounded=true&size=256";
 
 const History: React.FC = () => {
@@ -32,6 +45,9 @@ const History: React.FC = () => {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [isDeleting, setIsDeleting] = useState<string | null>(null);
   const detailsRef = useRef<HTMLDivElement>(null);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
+  const [activeMealButton, setActiveMealButton] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchUserHistory = async () => {
@@ -59,10 +75,10 @@ const History: React.FC = () => {
           mealSize: meal.wieght ?? 0,
           date: meal.date
             ? new Date(meal.date).toLocaleDateString("ar-EG", {
-                year: "numeric",
-                month: "long",
-                day: "numeric"
-              })
+              year: "numeric",
+              month: "long",
+              day: "numeric"
+            })
             : ""
         }));
 
@@ -97,17 +113,100 @@ const History: React.FC = () => {
     fetchUserHistory();
   }, []);
 
-  const handleDelete = (id: string, type: "main" | "manual") => {
+  const handleDelete = async (id: string, type: "main" | "manual") => {
+    const userId = localStorage.getItem("userId");
+    if (!userId) return;
+
+    const deleteType = type === "main" ? "Meal" : "manualMeal";
     setIsDeleting(id);
-    setTimeout(() => {
-      if (type === "main") {
-        setMeals(prev => prev.filter(m => m.id !== id));
+
+    try {
+      const response = await fetch(`http://localhost:5062/api/History/remove-history?userId=${userId}&historyId=${id}&type=${deleteType}`, {
+        method: "DELETE"
+      });
+
+      if (!response.ok) throw new Error("Failed to delete history item");
+
+      const result = await response.text();
+
+      if (result.includes("successfully")) {
+        console.log("✅ success");
+        setAlertMessage("تم حذف الوجبة من السجل بنجاح");
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 3000);
+
+        if (type === "main") {
+          setMeals(prev => prev.filter(m => m.id !== id));
+        } else {
+          setManualMeals(prev => prev.filter(m => m.id !== id));
+        }
       } else {
-        setManualMeals(prev => prev.filter(m => m.id !== id));
+        console.warn("⚠️ Unexpected response:", result);
+        setAlertMessage("فشل في حذف الوجبة الرجاء إعادة المحاولة");
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 3000);
       }
+    } catch (error) {
+      console.error("❌ Error deleting item:", error);
+    } finally {
       setIsDeleting(null);
-    }, 300);
+    }
   };
+
+  const handleAddToMeal = async (meal: MealCard, mealType: "Breakfast" | "Lunch" | "Dinner") => {
+    const buttonId = `${meal.id}-${mealType}`;
+    setActiveMealButton(buttonId); // Disable only this button
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+      setAlertMessage("يجب تسجيل الدخول أولاً");
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
+      return;
+    }
+
+    try {
+      const request: AddMealRequest = {
+        userId,
+        typeOfMeal: mealType,
+        food: {
+          name: meal.name,
+          calories: meal.calories,
+          protein: meal.nutritionDetails.protein,
+          carbs: meal.nutritionDetails.carbs,
+          fat: meal.nutritionDetails.fats
+        }
+      };
+
+      const response = await fetch('http://localhost:5062/api/Meals/AddMeal', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(request)
+      });
+
+      if (!response.ok) throw new Error("Failed to add meal");
+      console.log("sssssssssssssssss");
+
+      const result = await response.json();
+
+      if (result.message === "food added") {
+        setAlertMessage(`تم إضافة الوجبة إلى ${mealType === "Breakfast" ? "الفطور" : mealType === "Lunch" ? "الغداء" : "العشاء"} بنجاح`);
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 3000);
+      } else {
+        throw new Error("Unexpected response");
+      }
+    } catch (error) {
+      console.error("Error adding meal:", error);
+      setAlertMessage("فشل إضافة الوجبة، يرجى المحاولة مرة أخرى");
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
+    } finally {
+      setActiveMealButton(null);
+    }
+  };
+
 
   const toggleExpand = (id: string) => {
     if (expandedId === id) {
@@ -187,9 +286,56 @@ const History: React.FC = () => {
         </div>
 
         <div className={styles.addToMealButtons}>
-          <button className={styles.addToMealButton}>إضافة الي وجبة الفطار</button>
-          <button className={styles.addToMealButton}>إضافة الي وجبة الغذاء</button>
-          <button className={styles.addToMealButton}>إضافة الي وجبة العشاء</button>
+          <button
+            className={`${styles.addToMealButton} ${activeMealButton === `${meal.id}-Breakfast` ? styles.buttonLoading : ''
+              }`}
+            onClick={() => handleAddToMeal(meal, "Breakfast")}
+            disabled={activeMealButton === `${meal.id}-Breakfast`}
+          >
+            {activeMealButton === `${meal.id}-Breakfast` ? (
+              <>
+                <span className={styles.loadingDot}>.</span>
+                <span className={styles.loadingDot}>.</span>
+                <span className={styles.loadingDot}>.</span>
+              </>
+            ) : (
+              "إضافة الي وجبة الفطار"
+            )}
+          </button>
+
+          <button
+            className={`${styles.addToMealButton} ${activeMealButton === `${meal.id}-Lunch` ? styles.buttonLoading : ''
+              }`}
+            onClick={() => handleAddToMeal(meal, "Lunch")}
+            disabled={activeMealButton === `${meal.id}-Lunch`}
+          >
+            {activeMealButton === `${meal.id}-Lunch` ? (
+              <>
+                <span className={styles.loadingDot}>.</span>
+                <span className={styles.loadingDot}>.</span>
+                <span className={styles.loadingDot}>.</span>
+              </>
+            ) : (
+              "إضافة الي وجبة الغذاء"
+            )}
+          </button>
+
+          <button
+            className={`${styles.addToMealButton} ${activeMealButton === `${meal.id}-Dinner` ? styles.buttonLoading : ''
+              }`}
+            onClick={() => handleAddToMeal(meal, "Dinner")}
+            disabled={activeMealButton === `${meal.id}-Dinner`}
+          >
+            {activeMealButton === `${meal.id}-Dinner` ? (
+              <>
+                <span className={styles.loadingDot}>.</span>
+                <span className={styles.loadingDot}>.</span>
+                <span className={styles.loadingDot}>.</span>
+              </>
+            ) : (
+              "إضافة الي وجبة العشاء"
+            )}
+          </button>
         </div>
 
         <AnimatePresence>
@@ -242,6 +388,16 @@ const History: React.FC = () => {
 
   return (
     <div className={styles.container}>
+      {/* Add this alert overlay */}
+
+      {showAlert && (
+        <div className={styles.alertOverlay}>
+          <div className={styles.alert}>
+            <p>{alertMessage}</p>
+          </div>
+        </div>
+      )}
+
       <Navbar />
       <Sidebar />
 
@@ -264,7 +420,6 @@ const History: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <div className={styles.emptyStateContent}>
-              <img src="/empty-plate.svg" alt="صحن فارغ" className={styles.emptyStateImage} />
               <h2 className={styles.emptyStateText}>لا توجد وجبات محسوبة حالياً</h2>
               <p className={styles.emptyStateSubtext}>ابدأ بإضافة وجباتك لمتابعة نظامك الغذائي</p>
             </div>

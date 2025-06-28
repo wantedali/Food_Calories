@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
-import { Plus, Trash2, UtensilsCrossed, Target, AlertTriangle, CheckCircle } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Trash2, UtensilsCrossed, Target, AlertTriangle, CheckCircle } from 'lucide-react';
 import styles from '../assets/styles/MealTracking.module.css';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
-import { jwtDecode } from "jwt-decode";
-import { useRef, useEffect } from 'react';
 import LoadingScreen from "../components/LoadingScreen";
 
 interface Meal {
@@ -21,24 +19,44 @@ interface MealSection {
   icon: React.ReactNode;
 }
 
-const sampleMeals = [
-  { name: 'كبسة لحم', calories: 650, portion: '300 جرام' },
-  { name: 'شاورما دجاج', calories: 450, portion: '250 جرام' },
-  { name: 'مندي لحم', calories: 550, portion: '350 جرام' },
-  { name: 'برجر دجاج', calories: 380, portion: '180 جرام' },
-  { name: 'مجبوس سمك', calories: 420, portion: '280 جرام' },
-  { name: 'مضغوط لحم', calories: 580, portion: '320 جرام' },
-  { name: 'رز بخاري', calories: 320, portion: '200 جرام' },
-  { name: 'مشاوي مشكل', calories: 750, portion: '400 جرام' },
-  { name: 'سلطة عربية', calories: 120, portion: '150 جرام' },
-  { name: 'حمص', calories: 250, portion: '200 جرام' },
-];
+interface MealItemAPI {
+  id: string;
+  name: string;
+  calories: number;
+  protein: number;
+  carbs: number;
+  fat: number;
+}
+
+interface MealSectionAPI {
+  items: MealItemAPI[];
+  totalCalories: number;
+  totalProtein: number;
+  totalCarbs: number;
+  totalFat: number;
+}
+
+interface DailyMealsAPI {
+  id: string;
+  userId: string | null;
+  date: string;
+  breakfast: MealSectionAPI;
+  lunch: MealSectionAPI;
+  dinner: MealSectionAPI;
+  totalCalories: number;
+  totalProtein: number;
+  totalCarbs: number;
+  totalFat: number;
+}
+
+interface ApiResponse {
+  daily: DailyMealsAPI;
+}
 
 function MealTrack() {
   const [calorieGoal, setCalorieGoal] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
   const [mealSections, setMealSections] = useState<MealSection[]>([
     {
       title: 'وجبة الإفطار',
@@ -56,11 +74,13 @@ function MealTrack() {
       icon: <UtensilsCrossed className={styles.mealIcon} />,
     },
   ]);
+  const [deletingMealId, setDeletingMealId] = useState<string | null>(null);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
 
   useEffect(() => {
-    const fetchCalorieGoal = async () => {
+    const fetchData = async () => {
       const userId = localStorage.getItem("userId");
-
       if (!userId) {
         setError("لم يتم العثور على معرف المستخدم");
         setIsLoading(false);
@@ -70,49 +90,117 @@ function MealTrack() {
       try {
         setIsLoading(true);
 
-        // Add a minimum loading time to show the loading screen
-        const [response] = await Promise.all([
+        const [userResponse, mealsResponse] = await Promise.all([
           fetch(`http://localhost:5062/api/users/getUser?id=${userId}`),
-          new Promise(resolve => setTimeout(resolve, 2000)) // Minimum 2 seconds loading
+          fetch(`http://localhost:5062/api/Meals/Get-Meals?userId=${userId}`),
+          new Promise(resolve => setTimeout(resolve, 1000)) // Minimum loading time
         ]);
 
-        if (!response.ok) {
-          throw new Error("فشل في جلب بيانات المستخدم");
+        if (!userResponse.ok || !mealsResponse.ok) {
+          throw new Error("فشل في جلب البيانات");
         }
 
-        const userData = await response.json();
-        console.log("Full user data:", userData);
+        const [userData, mealsData]: [any, ApiResponse] = await Promise.all([
+          userResponse.json(),
+          mealsResponse.json()
+        ]);
 
         setCalorieGoal(userData.calorieGoal);
+
+        const transformedSections = [
+          {
+            title: 'وجبة الإفطار',
+            meals: mealsData.daily.breakfast.items.map(item => ({
+              id: item.id,
+              name: item.name,
+              calories: item.calories,
+              portion: "حسب الرغبة"
+            })),
+            icon: <UtensilsCrossed className={styles.mealIcon} />,
+          },
+          {
+            title: 'وجبة الغداء',
+            meals: mealsData.daily.lunch.items.map(item => ({
+              id: item.id,
+              name: item.name,
+              calories: item.calories,
+              portion: "حسب الرغبة"
+            })),
+            icon: <UtensilsCrossed className={styles.mealIcon} />,
+          },
+          {
+            title: 'وجبة العشاء',
+            meals: mealsData.daily.dinner.items.map(item => ({
+              id: item.id,
+              name: item.name,
+              calories: item.calories,
+              portion: "حسب الرغبة"
+            })),
+            icon: <UtensilsCrossed className={styles.mealIcon} />,
+          }
+        ];
+
+        setMealSections(transformedSections);
         setError(null);
       } catch (err) {
-        console.error("Error fetching calorie goal:", err);
+        console.error("Error fetching data:", err);
         setError(err instanceof Error ? err.message : "حدث خطأ في جلب البيانات");
       } finally {
         setIsLoading(false);
       }
     };
 
-    fetchCalorieGoal();
+    fetchData();
   }, []);
 
-  const addRandomMeal = (sectionIndex: number) => {
-    const randomMeal = sampleMeals[Math.floor(Math.random() * sampleMeals.length)];
-    const updatedSections = [...mealSections];
-    updatedSections[sectionIndex].meals.push({
-      id: Date.now().toString(),
-      ...randomMeal
-    });
+  const removeMeal = async (sectionIndex: number, mealId: string) => {
+    try {
+      const userId = localStorage.getItem("userId");
+      if (!userId) {
+        setAlertMessage("يجب تسجيل الدخول أولاً");
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 3000);
+        return;
+      }
 
-    setMealSections(updatedSections);
-  };
+      setDeletingMealId(mealId);
 
-  const removeMeal = (sectionIndex: number, mealId: string) => {
-    const updatedSections = [...mealSections];
-    updatedSections[sectionIndex].meals = updatedSections[sectionIndex].meals.filter(
-      meal => meal.id !== mealId
-    );
-    setMealSections(updatedSections);
+      const mealTypes = ["Breakfast", "Lunch", "Dinner"];
+      const mealType = mealTypes[sectionIndex];
+
+      const response = await fetch(
+        `http://localhost:5062/api/Meals/remove-food?userId=${userId}&mealType=${mealType}&foodId=${mealId}`,
+        {
+          method: "DELETE"
+        }
+      );
+
+      if (!response.ok) throw new Error("Failed to delete meal");
+
+      const result = await response.json();
+
+      if (result.message === "Food removed") {
+        setAlertMessage("تم حذف الوجبة بنجاح");
+        setShowAlert(true);
+
+        const updatedSections = [...mealSections];
+        updatedSections[sectionIndex].meals = updatedSections[sectionIndex].meals.filter(
+          meal => meal.id !== mealId
+        );
+        setMealSections(updatedSections);
+      } else {
+        throw new Error("Unexpected response");
+      }
+    } catch (error) {
+      console.error("Error removing meal:", error);
+      setAlertMessage("فشل في حذف الوجبة، يرجى المحاولة مرة أخرى");
+      setShowAlert(true);
+    } finally {
+      setTimeout(() => {
+        setShowAlert(false);
+        setDeletingMealId(null);
+      }, 3000);
+    }
   };
 
   const calculateTotalCalories = () => {
@@ -125,12 +213,10 @@ function MealTrack() {
     return meals.reduce((total, meal) => total + meal.calories, 0);
   };
 
-  // Show loading screen while fetching data
   if (isLoading) {
     return <LoadingScreen />;
   }
 
-  // Show error state if there's an error
   if (error) {
     return (
       <div className={styles.container}>
@@ -194,6 +280,15 @@ function MealTrack() {
     <div className={styles.container}>
       <Navbar />
       <Sidebar />
+
+      {/* Alert overlay */}
+      {showAlert && (
+        <div className={styles.alertOverlay}>
+          <div className={styles.alert}>
+            <p>{alertMessage}</p>
+          </div>
+        </div>
+      )}
 
       <div className={styles.mainContent}>
         <div className={styles.header}>
@@ -263,21 +358,14 @@ function MealTrack() {
                       <button
                         onClick={() => removeMeal(sectionIndex, meal.id)}
                         className={styles.removeButton}
+                        disabled={deletingMealId === meal.id}
                       >
-                        <Trash2 size={18} />
+                        {deletingMealId === meal.id ? 'جاري الحذف...' : <Trash2 size={18} />}
                       </button>
                     </div>
                   </div>
                 ))}
               </div>
-
-              <button
-                onClick={() => addRandomMeal(sectionIndex)}
-                className={styles.addButton}
-              >
-                <Plus size={20} />
-                إضافة وجبة
-              </button>
             </div>
           ))}
         </div>
