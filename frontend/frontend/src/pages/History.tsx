@@ -32,6 +32,7 @@ interface AddMealRequest {
     protein: number;
     carbs: number;
     fat: number;
+    weight: number; // Add this line
   };
 }
 
@@ -155,7 +156,7 @@ const History: React.FC = () => {
 
   const handleAddToMeal = async (meal: MealCard, mealType: "Breakfast" | "Lunch" | "Dinner") => {
     const buttonId = `${meal.id}-${mealType}`;
-    setActiveMealButton(buttonId); // Disable only this button
+    setActiveMealButton(buttonId);
     const userId = localStorage.getItem("userId");
     if (!userId) {
       setAlertMessage("يجب تسجيل الدخول أولاً");
@@ -173,7 +174,8 @@ const History: React.FC = () => {
           calories: meal.calories,
           protein: meal.nutritionDetails.protein,
           carbs: meal.nutritionDetails.carbs,
-          fat: meal.nutritionDetails.fats
+          fat: meal.nutritionDetails.fats,
+          weight: meal.mealSize // Add the weight from the meal card
         }
       };
 
@@ -186,7 +188,6 @@ const History: React.FC = () => {
       });
 
       if (!response.ok) throw new Error("Failed to add meal");
-      console.log("sssssssssssssssss");
 
       const result = await response.json();
 
@@ -199,7 +200,7 @@ const History: React.FC = () => {
       }
     } catch (error) {
       console.error("Error adding meal:", error);
-      setAlertMessage("فشل إضافة الوجبة، يرجى المحاولة مرة أخرى");
+      setAlertMessage("فشل إضافة الوجبة، يرجى المحاولة مرة أخرى");  
       setShowAlert(true);
       setTimeout(() => setShowAlert(false), 3000);
     } finally {

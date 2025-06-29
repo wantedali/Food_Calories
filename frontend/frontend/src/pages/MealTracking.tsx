@@ -11,6 +11,7 @@ interface Meal {
   name: string;
   calories: number;
   portion: string;
+  weight: number; // Add this line
 }
 
 interface MealSection {
@@ -26,6 +27,7 @@ interface MealItemAPI {
   protein: number;
   carbs: number;
   fat: number;
+  weight: number; // Add this line
 }
 
 interface MealSectionAPI {
@@ -114,7 +116,8 @@ function MealTrack() {
               id: item.id,
               name: item.name,
               calories: item.calories,
-              portion: "حسب الرغبة"
+              portion: `${item.weight || 0} جرام`, // Use actual weight from API
+              weight: item.weight || 0 // Store the numeric value
             })),
             icon: <UtensilsCrossed className={styles.mealIcon} />,
           },
@@ -124,7 +127,8 @@ function MealTrack() {
               id: item.id,
               name: item.name,
               calories: item.calories,
-              portion: "حسب الرغبة"
+              portion: `${item.weight || 0} جرام`, // Use actual weight from API
+              weight: item.weight || 0 // Store the numeric value
             })),
             icon: <UtensilsCrossed className={styles.mealIcon} />,
           },
@@ -134,7 +138,8 @@ function MealTrack() {
               id: item.id,
               name: item.name,
               calories: item.calories,
-              portion: "حسب الرغبة"
+              portion: `${item.weight || 0} جرام`, // Use actual weight from API
+              weight: item.weight || 0 // Store the numeric value
             })),
             icon: <UtensilsCrossed className={styles.mealIcon} />,
           }

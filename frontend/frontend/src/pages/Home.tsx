@@ -127,7 +127,7 @@ function App() {
       return latest; // Simplified - you might need to compare dates
     }, meals[0]);
 
-    return 'منذ ساعتين'; // Simplified - implement actual time difference calculation
+    return 'الأخيرة'; // Simplified - implement actual time difference calculation
   };
 
   // Chart configuration
