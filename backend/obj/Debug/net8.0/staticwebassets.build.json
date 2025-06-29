@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0I/EpkZXcE9RjvV8b0t8hZS6sKSt0x1xoYT7vDuARxs=",
+  "Hash": "XYP9w+9JrGiZbW6ZaO1dWfMomHlcQoyLEyMRYTTNVdw=",
   "Source": "FoodCalorie",
   "BasePath": "_content/FoodCalorie",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "FoodCalorie\\wwwroot",
       "Source": "FoodCalorie",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\093095a0-3db9-4e00-b9b2-b237c22e2202.jpg",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\093095a0-3db9-4e00-b9b2-b237c22e2202.jpg",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/093095a0-3db9-4e00-b9b2-b237c22e2202#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -38,10 +38,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\093095a0-3db9-4e00-b9b2-b237c22e2202.jpg"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\1d85f265-bc8e-4af8-a92c-93e32d2195cf.jpg",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\1d85f265-bc8e-4af8-a92c-93e32d2195cf.jpg",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/1d85f265-bc8e-4af8-a92c-93e32d2195cf#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -59,10 +59,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\1d85f265-bc8e-4af8-a92c-93e32d2195cf.jpg"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\381609fd-de8b-4f68-a837-eae1e7b1e531.jpg",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\381609fd-de8b-4f68-a837-eae1e7b1e531.jpg",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/381609fd-de8b-4f68-a837-eae1e7b1e531#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -80,10 +80,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\381609fd-de8b-4f68-a837-eae1e7b1e531.jpg"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\472b8cf1-cb27-4290-97f8-b86373828990.jpg",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\472b8cf1-cb27-4290-97f8-b86373828990.jpg",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/472b8cf1-cb27-4290-97f8-b86373828990#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -101,10 +101,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\472b8cf1-cb27-4290-97f8-b86373828990.jpg"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\47e9585c-4d78-47e3-acd8-ea6a79444544.jpg",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\47e9585c-4d78-47e3-acd8-ea6a79444544.jpg",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/47e9585c-4d78-47e3-acd8-ea6a79444544#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -122,10 +122,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\47e9585c-4d78-47e3-acd8-ea6a79444544.jpg"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\8a38d099-e10e-47dd-8b7f-fa9159738247.webp",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\8a38d099-e10e-47dd-8b7f-fa9159738247.webp",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/8a38d099-e10e-47dd-8b7f-fa9159738247#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -143,10 +143,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\8a38d099-e10e-47dd-8b7f-fa9159738247.webp"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\8badfed6-34a8-4bb5-900d-84e0e0544fb5.jpg",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\8badfed6-34a8-4bb5-900d-84e0e0544fb5.jpg",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/8badfed6-34a8-4bb5-900d-84e0e0544fb5#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -164,10 +164,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\8badfed6-34a8-4bb5-900d-84e0e0544fb5.jpg"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\92e6416c-609a-4cb6-b72f-803577dae4dd.jpg",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\92e6416c-609a-4cb6-b72f-803577dae4dd.jpg",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/92e6416c-609a-4cb6-b72f-803577dae4dd#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -185,10 +185,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\92e6416c-609a-4cb6-b72f-803577dae4dd.jpg"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.jpg",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.jpg",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -206,10 +206,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.jpg"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\a08e67d7-bbcb-456e-b091-903d0c6874bb.jpg",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\a08e67d7-bbcb-456e-b091-903d0c6874bb.jpg",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/a08e67d7-bbcb-456e-b091-903d0c6874bb#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -227,10 +227,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\a08e67d7-bbcb-456e-b091-903d0c6874bb.jpg"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\a285b071-a7a9-4cb6-9a0a-2a557ed25db2.webp",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\a285b071-a7a9-4cb6-9a0a-2a557ed25db2.webp",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/a285b071-a7a9-4cb6-9a0a-2a557ed25db2#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -248,10 +248,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\a285b071-a7a9-4cb6-9a0a-2a557ed25db2.webp"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\c0349ddb-0173-4b7c-82ca-62f60a6de817.jpg",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\c0349ddb-0173-4b7c-82ca-62f60a6de817.jpg",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/c0349ddb-0173-4b7c-82ca-62f60a6de817#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -269,10 +269,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\c0349ddb-0173-4b7c-82ca-62f60a6de817.jpg"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\c500bd11-caf4-46d7-bdac-10059f548ade.jpg",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\c500bd11-caf4-46d7-bdac-10059f548ade.jpg",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/c500bd11-caf4-46d7-bdac-10059f548ade#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -290,10 +290,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\c500bd11-caf4-46d7-bdac-10059f548ade.jpg"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\d44ad5ed-bff4-469a-8dcd-1560e041cd38.jpg",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\d44ad5ed-bff4-469a-8dcd-1560e041cd38.jpg",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/d44ad5ed-bff4-469a-8dcd-1560e041cd38#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -311,10 +311,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\d44ad5ed-bff4-469a-8dcd-1560e041cd38.jpg"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\f64bd105-e6b8-4882-a503-de5810706b13.webp",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\f64bd105-e6b8-4882-a503-de5810706b13.webp",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/f64bd105-e6b8-4882-a503-de5810706b13#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -332,10 +332,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\f64bd105-e6b8-4882-a503-de5810706b13.webp"
     },
     {
-      "Identity": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\fdbf10b7-cd38-4b12-af36-782e14f49089.jpg",
+      "Identity": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\fdbf10b7-cd38-4b12-af36-782e14f49089.jpg",
       "SourceId": "FoodCalorie",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Food_Calories\\backend\\wwwroot\\",
+      "ContentRoot": "D:\\MC\\Food_Calories\\backend\\wwwroot\\",
       "BasePath": "_content/FoodCalorie",
       "RelativePath": "uploads/fdbf10b7-cd38-4b12-af36-782e14f49089#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -356,7 +356,7 @@
   "Endpoints": [
     {
       "Route": "uploads/093095a0-3db9-4e00-b9b2-b237c22e2202.72rb23lrme.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\093095a0-3db9-4e00-b9b2-b237c22e2202.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\093095a0-3db9-4e00-b9b2-b237c22e2202.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -377,7 +377,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:55:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -401,7 +401,7 @@
     },
     {
       "Route": "uploads/093095a0-3db9-4e00-b9b2-b237c22e2202.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\093095a0-3db9-4e00-b9b2-b237c22e2202.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\093095a0-3db9-4e00-b9b2-b237c22e2202.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -422,7 +422,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:55:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -438,7 +438,7 @@
     },
     {
       "Route": "uploads/1d85f265-bc8e-4af8-a92c-93e32d2195cf.72rb23lrme.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\1d85f265-bc8e-4af8-a92c-93e32d2195cf.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\1d85f265-bc8e-4af8-a92c-93e32d2195cf.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -459,7 +459,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:28:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -483,7 +483,7 @@
     },
     {
       "Route": "uploads/1d85f265-bc8e-4af8-a92c-93e32d2195cf.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\1d85f265-bc8e-4af8-a92c-93e32d2195cf.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\1d85f265-bc8e-4af8-a92c-93e32d2195cf.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -504,7 +504,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:28:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -520,7 +520,7 @@
     },
     {
       "Route": "uploads/381609fd-de8b-4f68-a837-eae1e7b1e531.72rb23lrme.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\381609fd-de8b-4f68-a837-eae1e7b1e531.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\381609fd-de8b-4f68-a837-eae1e7b1e531.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -541,7 +541,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:26:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -565,7 +565,7 @@
     },
     {
       "Route": "uploads/381609fd-de8b-4f68-a837-eae1e7b1e531.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\381609fd-de8b-4f68-a837-eae1e7b1e531.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\381609fd-de8b-4f68-a837-eae1e7b1e531.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -586,7 +586,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:26:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -602,7 +602,7 @@
     },
     {
       "Route": "uploads/472b8cf1-cb27-4290-97f8-b86373828990.72rb23lrme.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\472b8cf1-cb27-4290-97f8-b86373828990.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\472b8cf1-cb27-4290-97f8-b86373828990.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -623,7 +623,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:48:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -647,7 +647,7 @@
     },
     {
       "Route": "uploads/472b8cf1-cb27-4290-97f8-b86373828990.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\472b8cf1-cb27-4290-97f8-b86373828990.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\472b8cf1-cb27-4290-97f8-b86373828990.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -668,7 +668,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:48:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -684,7 +684,7 @@
     },
     {
       "Route": "uploads/47e9585c-4d78-47e3-acd8-ea6a79444544.ca9mmirnx1.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\47e9585c-4d78-47e3-acd8-ea6a79444544.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\47e9585c-4d78-47e3-acd8-ea6a79444544.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -705,7 +705,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:57:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -729,7 +729,7 @@
     },
     {
       "Route": "uploads/47e9585c-4d78-47e3-acd8-ea6a79444544.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\47e9585c-4d78-47e3-acd8-ea6a79444544.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\47e9585c-4d78-47e3-acd8-ea6a79444544.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -750,7 +750,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:57:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -766,7 +766,7 @@
     },
     {
       "Route": "uploads/8a38d099-e10e-47dd-8b7f-fa9159738247.webp",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\8a38d099-e10e-47dd-8b7f-fa9159738247.webp",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\8a38d099-e10e-47dd-8b7f-fa9159738247.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -787,7 +787,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:28:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -803,7 +803,7 @@
     },
     {
       "Route": "uploads/8a38d099-e10e-47dd-8b7f-fa9159738247.whhjnyyzlh.webp",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\8a38d099-e10e-47dd-8b7f-fa9159738247.webp",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\8a38d099-e10e-47dd-8b7f-fa9159738247.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -824,7 +824,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:28:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -848,7 +848,7 @@
     },
     {
       "Route": "uploads/8badfed6-34a8-4bb5-900d-84e0e0544fb5.72rb23lrme.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\8badfed6-34a8-4bb5-900d-84e0e0544fb5.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\8badfed6-34a8-4bb5-900d-84e0e0544fb5.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -869,7 +869,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:42:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -893,7 +893,7 @@
     },
     {
       "Route": "uploads/8badfed6-34a8-4bb5-900d-84e0e0544fb5.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\8badfed6-34a8-4bb5-900d-84e0e0544fb5.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\8badfed6-34a8-4bb5-900d-84e0e0544fb5.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -914,7 +914,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:42:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -930,7 +930,7 @@
     },
     {
       "Route": "uploads/92e6416c-609a-4cb6-b72f-803577dae4dd.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\92e6416c-609a-4cb6-b72f-803577dae4dd.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\92e6416c-609a-4cb6-b72f-803577dae4dd.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -951,7 +951,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:27:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -967,7 +967,7 @@
     },
     {
       "Route": "uploads/92e6416c-609a-4cb6-b72f-803577dae4dd.nati5fp6s4.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\92e6416c-609a-4cb6-b72f-803577dae4dd.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\92e6416c-609a-4cb6-b72f-803577dae4dd.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -988,7 +988,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:27:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1012,7 +1012,7 @@
     },
     {
       "Route": "uploads/9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.72rb23lrme.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1033,7 +1033,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:10:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1057,7 +1057,7 @@
     },
     {
       "Route": "uploads/9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\9a02d5ee-d7c5-4c6d-9947-fe623e4d71e6.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1078,7 +1078,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:10:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1094,7 +1094,7 @@
     },
     {
       "Route": "uploads/a08e67d7-bbcb-456e-b091-903d0c6874bb.65cgpxkqfj.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\a08e67d7-bbcb-456e-b091-903d0c6874bb.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\a08e67d7-bbcb-456e-b091-903d0c6874bb.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1115,7 +1115,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:58:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1139,7 +1139,7 @@
     },
     {
       "Route": "uploads/a08e67d7-bbcb-456e-b091-903d0c6874bb.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\a08e67d7-bbcb-456e-b091-903d0c6874bb.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\a08e67d7-bbcb-456e-b091-903d0c6874bb.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1160,7 +1160,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:58:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1176,7 +1176,7 @@
     },
     {
       "Route": "uploads/a285b071-a7a9-4cb6-9a0a-2a557ed25db2.vaen5wvlkj.webp",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\a285b071-a7a9-4cb6-9a0a-2a557ed25db2.webp",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\a285b071-a7a9-4cb6-9a0a-2a557ed25db2.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1197,7 +1197,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:27:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1221,7 +1221,7 @@
     },
     {
       "Route": "uploads/a285b071-a7a9-4cb6-9a0a-2a557ed25db2.webp",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\a285b071-a7a9-4cb6-9a0a-2a557ed25db2.webp",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\a285b071-a7a9-4cb6-9a0a-2a557ed25db2.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1242,7 +1242,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:27:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1258,7 +1258,7 @@
     },
     {
       "Route": "uploads/c0349ddb-0173-4b7c-82ca-62f60a6de817.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\c0349ddb-0173-4b7c-82ca-62f60a6de817.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\c0349ddb-0173-4b7c-82ca-62f60a6de817.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1279,7 +1279,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:48:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1295,7 +1295,7 @@
     },
     {
       "Route": "uploads/c0349ddb-0173-4b7c-82ca-62f60a6de817.m21hhmrms9.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\c0349ddb-0173-4b7c-82ca-62f60a6de817.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\c0349ddb-0173-4b7c-82ca-62f60a6de817.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1316,7 +1316,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:48:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1340,7 +1340,7 @@
     },
     {
       "Route": "uploads/c500bd11-caf4-46d7-bdac-10059f548ade.72rb23lrme.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\c500bd11-caf4-46d7-bdac-10059f548ade.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\c500bd11-caf4-46d7-bdac-10059f548ade.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1361,7 +1361,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:15:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1385,7 +1385,7 @@
     },
     {
       "Route": "uploads/c500bd11-caf4-46d7-bdac-10059f548ade.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\c500bd11-caf4-46d7-bdac-10059f548ade.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\c500bd11-caf4-46d7-bdac-10059f548ade.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1406,7 +1406,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:15:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1422,7 +1422,7 @@
     },
     {
       "Route": "uploads/d44ad5ed-bff4-469a-8dcd-1560e041cd38.72rb23lrme.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\d44ad5ed-bff4-469a-8dcd-1560e041cd38.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\d44ad5ed-bff4-469a-8dcd-1560e041cd38.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1443,7 +1443,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:22:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1467,7 +1467,7 @@
     },
     {
       "Route": "uploads/d44ad5ed-bff4-469a-8dcd-1560e041cd38.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\d44ad5ed-bff4-469a-8dcd-1560e041cd38.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\d44ad5ed-bff4-469a-8dcd-1560e041cd38.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1488,7 +1488,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 03:22:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1504,7 +1504,7 @@
     },
     {
       "Route": "uploads/f64bd105-e6b8-4882-a503-de5810706b13.vaen5wvlkj.webp",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\f64bd105-e6b8-4882-a503-de5810706b13.webp",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\f64bd105-e6b8-4882-a503-de5810706b13.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1525,7 +1525,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:56:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1549,7 +1549,7 @@
     },
     {
       "Route": "uploads/f64bd105-e6b8-4882-a503-de5810706b13.webp",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\f64bd105-e6b8-4882-a503-de5810706b13.webp",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\f64bd105-e6b8-4882-a503-de5810706b13.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1570,7 +1570,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:56:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1586,7 +1586,7 @@
     },
     {
       "Route": "uploads/fdbf10b7-cd38-4b12-af36-782e14f49089.72rb23lrme.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\fdbf10b7-cd38-4b12-af36-782e14f49089.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\fdbf10b7-cd38-4b12-af36-782e14f49089.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1607,7 +1607,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:44:59 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1631,7 +1631,7 @@
     },
     {
       "Route": "uploads/fdbf10b7-cd38-4b12-af36-782e14f49089.jpg",
-      "AssetFile": "D:\\Food_Calories\\backend\\wwwroot\\uploads\\fdbf10b7-cd38-4b12-af36-782e14f49089.jpg",
+      "AssetFile": "D:\\MC\\Food_Calories\\backend\\wwwroot\\uploads\\fdbf10b7-cd38-4b12-af36-782e14f49089.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1652,7 +1652,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Jun 2025 01:54:29 GMT"
+          "Value": "Thu, 26 Jun 2025 02:44:59 GMT"
         },
         {
           "Name": "Cache-Control",

@@ -5,8 +5,9 @@ using Microsoft.IdentityModel.Tokens;
 using FoodCalorie.Services;
 using FoodCalorie.Models;
 using System.Text;
-using System.Net.Http.Headers;
-
+using System.Net.Http.Headers;            // ← make sure this matches your namespace
+using Microsoft.OpenApi.Models;
+using FoodCalorie.Filters;   
 var builder = WebApplication.CreateBuilder(args);
 
 // إضافة قراءة متغيّرات البيئة (لضمان قراءة OPENAI_API_KEY)
@@ -36,7 +37,11 @@ builder.Services.AddScoped(sp =>
     var client = sp.GetRequiredService<IMongoClient>();
     return client.GetDatabase(settings.DatabaseName);
 });
-
+builder.Services.AddHttpClient("FoodModel", client =>
+{
+    client.BaseAddress = new Uri("http://localhost:8000/");
+    client.Timeout = TimeSpan.FromSeconds(30);
+});
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<DailyMealService>();
 builder.Services.AddScoped<IHistoryService, HistoryService>();
@@ -75,7 +80,14 @@ builder.Services.AddHttpClient("OpenAI", client =>
 });
 
 // ——————————————————————————————————————————————————————————————
+builder.Services.AddSwaggerGen(c =>
+{
+    // Optional: give your API a name & version
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "FoodCalorie API", Version = "v1" });
 
+    // <-- Here’s the magic that collapses IFormFile into one picker
+    c.OperationFilter<FileUploadOperationFilter>();
+});
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
