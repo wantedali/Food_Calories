@@ -138,8 +138,7 @@
               "RelativeToolTip": "Services\\MealService.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwBEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T11:24:04.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T11:24:04.212Z"
             },
             {
               "$type": "Document",
@@ -173,7 +172,7 @@
               "RelativeDocumentMoniker": "Controllers\\FoodAnalysisController.cs",
               "ToolTip": "D:\\Food_Calories\\backend\\Controllers\\FoodAnalysisController.cs",
               "RelativeToolTip": "Controllers\\FoodAnalysisController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAwGQAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAAwGQAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-27T03:17:45.515Z",
               "EditorCaption": ""
@@ -200,8 +199,7 @@
               "RelativeToolTip": "\u2019Models\\Food.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T15:57:12.939Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T15:57:12.939Z"
             },
             {
               "$type": "Document",
@@ -226,8 +224,7 @@
               "RelativeToolTip": "DTOs\\foodDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T03:10:27.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T03:10:27.493Z"
             },
             {
               "$type": "Document",
@@ -237,7 +234,7 @@
               "RelativeDocumentMoniker": "Services\\ChatGptService.cs",
               "ToolTip": "D:\\Food_Calories\\backend\\Services\\ChatGptService.cs",
               "RelativeToolTip": "Services\\ChatGptService.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwA0AAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAkwGQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-27T17:55:57.672Z",
               "EditorCaption": ""
