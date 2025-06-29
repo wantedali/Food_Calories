@@ -197,14 +197,14 @@ function App() {
 
             // Transform API response to our DetectedFood interface
             const analyzedFood: DetectedFood = {
-                id: `manual-${Date.now()}`, // Generate unique ID
-                name: manualMealDescription,
+                id: `manual-${Date.now()}`,
+                name: data.name || manualMealDescription,
                 details: 'وجبة مدخلة يدوياً',
-                portionSize: 100, // Default portion size
+                portionSize: data.estimatedSize || 100, // ✅ use estimatedSize from API
                 calories: data.calories,
                 carbs: data.carbs,
                 protein: data.protein,
-                fats: data.fat // Note: API returns 'fat' but our interface uses 'fats'
+                fats: data.fat
             };
 
             setManualResults([analyzedFood]);
@@ -271,38 +271,99 @@ function App() {
             return;
         }
 
-        // If it's just for history and we're in image mode:
-        if (mealType === 'history' && saveModalType === 'image' && imageFile && detectedFoods.length > 0) {
-            const total = getTotalNutrition(detectedFoods);
+        const isManual = saveModalType === 'manual';
+        const foods = isManual ? manualResults : detectedFoods;
+        const total = getTotalNutrition(foods);
+        const totalWeight = foods.reduce((sum, f) => sum + f.portionSize, 0);
 
-            const formData = new FormData();
-            formData.append("Image", imageFile);
-            formData.append("UserId", userId);
-            formData.append("MealName", mealName);
-            formData.append("Calories", total.calories.toString());
-            formData.append("Protein", total.protein.toString());
-            formData.append("Carbs", total.carbs.toString());
-            formData.append("Fat", total.fats.toString());
-            formData.append("Wieght", weight?.toString() || "0");
+        // ✅ Save to History
+        if (mealType === 'history') {
+            if (isManual && foods.length > 0) {
+                // Save manual analysis to history
+                try {
+                    const res = await fetch('http://localhost:5062/api/History/basic', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            userId,
+                            mealName,
+                            calories: total.calories,
+                            protein: total.protein,
+                            carbs: total.carbs,
+                            fat: total.fats,
+                            wieght: weight || totalWeight
+                        })
+                    });
 
+                    const resData = await res.text();
+                    if (!res.ok) throw new Error(resData);
+
+                    alert("✅ تم حفظ الوجبة في السجل (يدوياً)");
+                } catch (err) {
+                    console.error("Saving manual to history failed:", err);
+                    alert("⚠️ فشل في حفظ الوجبة في السجل (يدوياً)");
+                }
+            } else if (!isManual && imageFile && foods.length > 0) {
+                // Save image analysis to history
+                const formData = new FormData();
+                formData.append("Image", imageFile);
+                formData.append("UserId", userId);
+                formData.append("MealName", mealName);
+                formData.append("Calories", total.calories.toString());
+                formData.append("Protein", total.protein.toString());
+                formData.append("Carbs", total.carbs.toString());
+                formData.append("Fat", total.fats.toString());
+                formData.append("Wieght", weight?.toString() || "0");
+
+                try {
+                    const res = await fetch('http://localhost:5062/api/History/analysis', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const text = await res.text();
+                    if (!res.ok) throw new Error(text);
+
+                    alert("✅ تم حفظ الوجبة في السجل (صورة)");
+                } catch (err) {
+                    console.error("Saving image meal failed:", err);
+                    alert("⚠️ فشل في حفظ الوجبة من الصورة");
+                }
+            }
+        }
+
+        // ✅ Save to Meals (breakfast/lunch/dinner)
+        else if (['breakfast', 'lunch', 'dinner'].includes(mealType) && foods.length > 0) {
             try {
-                const res = await fetch('http://localhost:5062/api/History/analysis', {
+                const res = await fetch('http://localhost:5062/api/Meals/AddMeal', {
                     method: 'POST',
-                    body: formData
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        userId,
+                        typeOfMeal: mealType,
+                        food: {
+                            name: mealName,
+                            calories: total.calories,
+                            protein: total.protein,
+                            carbs: total.carbs,
+                            fat: total.fats,
+                            weight: weight || totalWeight
+                        }
+                    })
                 });
 
-                const text = await res.text();
-                if (!res.ok) throw new Error(text);
+                const resData = await res.json();
+                if (!res.ok) throw new Error(resData.message || 'فشل في حفظ الوجبة');
 
-                alert("تم حفظ الوجبة في السجل بنجاح.");
+                alert(`✅ تم حفظ الوجبة في ${mealTypeText[mealType]}`);
             } catch (err) {
-                console.error("Saving history failed:", err);
-                alert("فشل في حفظ الوجبة في السجل.");
+                console.error("Saving meal failed:", err);
+                alert("⚠️ فشل في حفظ الوجبة");
             }
-        } else {
-            // Optional: Add other save cases (e.g. mealType !== 'history')
-            console.log(`تم حفظ الوجبة: ${mealName} في ${mealTypeText[mealType]}${weight ? ` - الوزن: ${weight} جرام` : ''}`);
+        }
 
+        // ✅ Fallback for any missed condition
+        else {
             setManualHistory(prev => [
                 ...prev,
                 {
@@ -313,6 +374,7 @@ function App() {
             ]);
         }
     };
+
 
 
     const openSaveModal = (type: 'image' | 'manual') => {
@@ -717,7 +779,7 @@ function App() {
                 onClose={() => setShowSaveModal(false)}
                 onSave={handleSave}
                 showWeightInput={saveModalType === 'image'}
-                skipMealName={saveModalType === 'image'}
+                skipMealName={false} // ✅ allow entering name for both image and manual
                 defaultMealName={getDefaultMealName()}
                 defaultWeight={getTotalWeight()}
             />
