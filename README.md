@@ -48,4 +48,44 @@ FoodCalorie is a smart web application that helps users track their daily meals 
 ---
 
 
+## 🚀 Running the Project Locally
+
+The **FoodCalorie** app is a full-stack system built with **.NET 8** for the backend and **React** for the frontend. Below is a step-by-step guide to run the project on your machine.
+
+---
+
+
+
+### 📁 Project Structure
+
+```bash
+FoodCalorie/
+├── backend/         # ASP.NET Core Web API
+├── frontend/        # React Frontend App
+└── README.md
+
+
+🖥️ 1. Clone the Repository
+
+git clone https://github.com/your-username/FoodCalorie.git
+cd FoodCalorie
+🔧 2. Backend (.NET 8 Web API)
+
+cd backend
+
+▶️ Run the API
+dotnet restore
+dotnet run
+By default, the API will run on: https://localhost:5001 or http://localhost:5000
+
+🌐 3. Frontend (React)
+
+cd ../frontend
+
+📦 Install Dependencies
+npm install
+
+▶️ Run the React App
+npm start
+
 
