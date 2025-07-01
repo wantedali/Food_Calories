@@ -56,7 +56,7 @@ The **FoodCalorie** app is a full-stack system built with **.NET 8** for the bac
 
 
 
-### 📁 Project Structure
+### 📁 Project Structure and steps to run
 
 ```bash
 FoodCalorie/
