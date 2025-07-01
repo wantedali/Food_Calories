@@ -1,6 +1,7 @@
 # 🍽️ FoodCalorie - AI-Powered Meal Analysis
 
-FoodCalorie is a backend service designed to help users track their daily meals and calories through AI. The system provides two ways to analyze food:
+FoodCalorie is a smart web application that helps users track their daily meals and monitor their nutritional intake. The system provides automatic calorie and macronutrient estimation using image and text-based meal analysis, making it easier for users to maintain their health goals.
+
 - Uploading a meal image (using YOLO deep learning models)
 - Typing a description of the food (using ChatGPT for smart estimation)
 
@@ -37,6 +38,7 @@ FoodCalorie is a backend service designed to help users track their daily meals 
 ## 🧰 Technologies Used
 
 - **.NET 8 Web API**
+- ** React.js**
 - **MongoDB Atlas**
 - **FastAPI (for image model inference)**
 - **OpenAI ChatGPT API**
