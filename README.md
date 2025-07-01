@@ -41,10 +41,9 @@ FoodCalorie is a backend service designed to help users track their daily meals 
 - **FastAPI (for image model inference)**
 - **OpenAI ChatGPT API**
 - **YOLOv8 (custom-trained models)**
-- **Docker + Docker Compose**
 - **Swagger (API docs)**
 
 ---
 
-## 📂 Project Structure
+
 
