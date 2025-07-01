@@ -38,7 +38,7 @@ FoodCalorie is a smart web application that helps users track their daily meals 
 ## 🧰 Technologies Used
 
 - **.NET 8 Web API**
-- ** React.js**
+- **React.js**
 - **MongoDB Atlas**
 - **FastAPI (for image model inference)**
 - **OpenAI ChatGPT API**
